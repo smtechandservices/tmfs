@@ -6,7 +6,7 @@ const ARTICLES = [
     alt: 'Business planning notes on a desk',
     kicker: 'Business setup · 6 min',
     title: 'Free zone or mainland? Pick by your customer, not by price',
-    desc: 'Who you invoice decides your jurisdiction. A short decision tree for founders comparing IFZA, Meydan and Dubai mainland.',
+    desc: 'Who you invoice decides your jurisdiction. A short decision tree for founders comparing IFZA, Meydan etc.',
     delay: 0,
   },
   {
@@ -19,10 +19,10 @@ const ARTICLES = [
   },
   {
     img: '/images/difc-skyline.jpg',
-    alt: 'Dubai skyline at sunset',
-    kicker: 'Property · 7 min',
-    title: 'Non-resident mortgages in Dubai: what banks actually ask for',
-    desc: 'Down payment thresholds, income proof and the stress-test rate that decides your approved amount.',
+    alt: 'DIFC skyline, Dubai’s banking district',
+    kicker: 'Banking · 7 min',
+    title: 'Corporate bank account opening: the documents UAE banks actually ask for',
+    desc: 'Business plan, proof of source of funds and shareholder KYC. What clears compliance on the first pass.',
     delay: 180,
   },
 ];
@@ -33,7 +33,7 @@ export default function Insights() {
       <div className="mx-auto max-w-[1320px] px-[20px] py-[clamp(64px,9vw,116px)]">
         <div className="mb-[40px] flex flex-wrap items-end justify-between gap-[22px]">
           <Reveal>
-            <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">05 — Insights</div>
+            <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">06 — Insights</div>
             <h2 className="max-w-[20ch] text-pretty text-[clamp(30px,4.6vw,54px)] font-extrabold leading-[1.05] tracking-[-.03em]">Notes from the filing desk</h2>
           </Reveal>
           <Reveal as="a" href="#insights" delay={120} className="flex items-center gap-[8px] text-[14px] font-bold text-ink hover:text-brand">

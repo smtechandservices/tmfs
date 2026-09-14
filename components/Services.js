@@ -28,9 +28,9 @@ const CARDS = [
   },
   {
     n: '06',
-    title: 'Property & mortgage',
-    desc: 'Residential and commercial sales, leasing and investment advisory with MID Real Estate Brokers — our sister company, 20 years in the market.',
-    href: '#properties',
+    title: 'Not sure where to start?',
+    desc: 'Book a free 20-minute call, we’ll map the right path for your business.',
+    href: '#contact',
     dark: true,
   },
 ];
@@ -58,10 +58,22 @@ function Card({ c, dup, horizontal }) {
   );
 }
 
+// Each card renders at a fixed ~175px tall with a 16px gap between them.
+// The visible window must be sized to exactly one copy's height — a column
+// with fewer cards needs a shorter window, otherwise the duplicate set
+// (needed for the seamless loop) peeks into view and the same cards appear
+// to repeat twice at once instead of scrolling smoothly.
+const CARD_H = 175;
+const GAP = 16;
+
 function MarqueeColumn({ items, direction = 'up' }) {
   const anim = direction === 'up' ? 'animate-tm-marquee-up' : 'animate-tm-marquee-down';
+  const height = items.length * CARD_H + (items.length - 1) * GAP;
   return (
-    <div className="h-[560px] overflow-hidden rounded-[22px] [mask-image:linear-gradient(180deg,transparent,black_8%,black_92%,transparent)]">
+    <div
+      className="overflow-hidden rounded-[22px] [mask-image:linear-gradient(180deg,transparent,black_8%,black_92%,transparent)]"
+      style={{ height: `${height}px` }}
+    >
       <div className={`flex flex-col gap-[16px] ${anim} hover:[animation-play-state:paused]`}>
         {items.map((c) => (
           <Card key={c.n} c={c} />
@@ -100,11 +112,11 @@ export default function Services() {
           </span>
           <h2 className="mb-[18px] max-w-[16ch] text-pretty text-[clamp(30px,4.6vw,54px)] font-extrabold leading-[1.05] tracking-[-.03em]">One team for the whole UAE stack</h2>
           <p className="mb-[32px] max-w-[42ch] text-[16px] leading-[1.6] text-muted">
-            Six services that most businesses need in their first two years here. Take one, or hand us all of it.
+            Five services that most businesses need in their first two years here. Take one, or hand us all of it.
           </p>
           <div className="flex flex-wrap gap-[32px]">
             <div className="border-l-2 border-brand pl-[16px]">
-              <div className="text-[28px] font-extrabold tracking-[-.02em] text-ink">6</div>
+              <div className="text-[28px] font-extrabold tracking-[-.02em] text-ink">5</div>
               <div className="text-[13px] text-muted">Services under one roof</div>
             </div>
             <div className="border-l-2 border-brand pl-[16px]">

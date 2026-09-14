@@ -18,7 +18,7 @@ export default function Contact() {
     <section id="contact" className="mx-auto max-w-[1320px] px-[20px] py-[clamp(64px,9vw,116px)]">
       <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[clamp(28px,4vw,56px)]">
         <Reveal>
-          <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">06, Get started</div>
+          <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">07, Get started</div>
           <h2 className="mb-[18px] max-w-[20ch] text-pretty text-[clamp(30px,4.6vw,54px)] font-extrabold leading-[1.04] tracking-[-.03em]">Fill in your details and our team will connect with you</h2>
           <p className="mb-[32px] max-w-[44ch] text-[16px] leading-[1.65] text-muted">Or skip the form. Call, WhatsApp or walk into the office next to Dubai Mall.</p>
           <ul className="flex flex-col gap-[20px]">
@@ -67,7 +67,7 @@ export default function Contact() {
                   <option>Bank account opening</option>
                   <option>Mortgage or loan</option>
                   <option>VAT &amp; accounting</option>
-                  <option>Property purchase or lease</option>
+                  <option>Corporate & compliance</option>
                   <option>Something else</option>
                 </select>
               </label>

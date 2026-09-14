@@ -19,7 +19,6 @@ const SERVICES_MENU = [
   { href: '#services', label: 'Accounting & audit' },
   { href: '#services', label: 'VAT consultancy' },
   { href: '#services', label: 'Corporate & compliance' },
-  { href: '#properties', label: 'Property & mortgage' },
 ];
 
 // Mirrors the real `PLACES` data plotted on the Dubai map (components/DubaiMap.js) —
@@ -199,7 +198,7 @@ export default function Header() {
 
         <nav className="ml-auto hidden items-center gap-[26px] navd:flex">
           <NavDropdown label="Services" href="#services" items={SERVICES_MENU} />
-          <a href="#properties" className="text-[14px] font-semibold text-ink hover:text-brand">Properties</a>
+          <a href="#about" className="text-[14px] font-semibold text-ink hover:text-brand">About</a>
           <DubaiDropdown />
           <a href="#insights" className="text-[14px] font-semibold text-ink hover:text-brand">Insights</a>
           <a href="#contact" className="text-[14px] font-semibold text-ink hover:text-brand">Contact</a>
@@ -247,8 +246,8 @@ export default function Header() {
         <div className="animate-tm-slide-down-fast border-t border-line bg-cream">
           <div className="mx-auto flex max-w-[1320px] flex-col px-[20px] pt-[10px] pb-[20px]">
             <MobileAccordion label="Services" items={SERVICES_MENU} onNavigate={closeMenu} />
-            <a href="#properties" onClick={closeMenu} className="border-b border-line-2 px-[2px] py-[14px] text-[17px] font-semibold text-ink">
-              Properties
+            <a href="#about" onClick={closeMenu} className="border-b border-line-2 px-[2px] py-[14px] text-[17px] font-semibold text-ink">
+              About
             </a>
             <MobileAccordion label="Dubai" items={DUBAI_MOBILE_MENU} onNavigate={closeMenu} />
             <a href="#insights" onClick={closeMenu} className="border-b border-line-2 px-[2px] py-[14px] text-[17px] font-semibold text-ink">

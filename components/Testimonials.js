@@ -39,7 +39,7 @@ export default function Testimonials() {
 
   return (
     <section className="mx-auto max-w-[1320px] px-[20px] py-[clamp(64px,9vw,116px)]">
-      <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">06 — Testimonials</div>
+      <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">05 — Testimonials</div>
       <Reveal delay={100} className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] items-center gap-[clamp(28px,4vw,56px)]">
         <div className="flex min-h-[280px] flex-col justify-center">
           <blockquote key={ti} className="animate-tm-slide-down">
@@ -77,7 +77,7 @@ export default function Testimonials() {
           </div>
           <div className="col-span-full rounded-[18px] border border-line bg-white p-[24px]">
             <div className="mb-[10px] font-mono text-[10px] uppercase tracking-[.16em] text-muted-2">Talk to our experts</div>
-            <p className="mb-[16px] text-[14.5px] leading-[1.6] text-muted">Our team can walk you through the whole setup or mortgage process, start to finish.</p>
+            <p className="mb-[16px] text-[14.5px] leading-[1.6] text-muted">Our team can walk you through the whole setup process, start to finish.</p>
             <div className="flex flex-wrap gap-[10px]">
               <a href="tel:+971522149086" className="flex min-h-[44px] items-center rounded-full bg-ink px-[20px] py-[11px] text-[13.5px] font-bold text-white hover:bg-brand">Call now</a>
               <a href="mailto:manager@timemachine.ae?subject=TMFS%20Website" className="flex min-h-[44px] items-center rounded-full border border-line px-[20px] py-[11px] text-[13.5px] font-semibold text-ink hover:border-ink">Email us</a>

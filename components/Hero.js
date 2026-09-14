@@ -12,14 +12,6 @@ const HERO_FIELDS = {
       ['Single owner', '2–3 partners', 'Corporate parent'],
     ],
   },
-  prop: {
-    l: ['Purpose', 'Area', 'Budget'],
-    o: [
-      ['Buy', 'Rent', 'Invest off-plan'],
-      ['Downtown Dubai', 'Business Bay', 'Dubai Marina'],
-      ['Up to AED 1.5M', 'AED 1.5M – 3M', 'AED 3M+'],
-    ],
-  },
   fin: {
     l: ['I need', 'Business stage', 'Turnover'],
     o: [
@@ -32,7 +24,6 @@ const HERO_FIELDS = {
 
 const TABS = [
   { key: 'setup', label: 'Start a company' },
-  { key: 'prop', label: 'Find property' },
   { key: 'fin', label: 'Finance & tax' },
 ];
 
@@ -62,7 +53,7 @@ export default function Hero() {
         </Reveal>
 
         <Reveal as="p" delay={160} className="max-w-[58ch] text-pretty text-[clamp(16px,2.1vw,21px)] leading-[1.55] text-fog">
-          Company formation, banking, tax and property in the UAE, handled end to end by one approachable team. Licence to bank account to keys, without the runaround.
+          Company formation, banking and tax in the UAE, handled end to end by one approachable team. Licence to bank account, without the runaround.
         </Reveal>
 
         <Reveal delay={240} className="flex flex-wrap gap-[12px]">

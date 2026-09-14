@@ -7,7 +7,7 @@ import './globals.css';
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://timemachine.ae';
 const title = 'Time Machine Financial Services | Your Vision, Our Expertise';
 const description =
-  'Company formation, banking, tax and property in the UAE, handled end to end by one approachable team. Licence to bank account to keys, without the runaround.';
+  'Company formation, banking and tax in the UAE, handled end to end by one approachable team. Licence to bank account, without the runaround.';
 const ogImage = '/images/business-bay-dusk.jpg';
 
 export const metadata = {
@@ -24,7 +24,7 @@ export const metadata = {
     'mainland company setup',
     'corporate bank account UAE',
     'VAT consultancy Dubai',
-    'Dubai property broker',
+    'corporate compliance UAE',
     'Time Machine Financial Services',
   ],
   authors: [{ name: 'Time Machine Financial Services' }],

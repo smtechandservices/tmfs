@@ -4,11 +4,10 @@ const SERVICE_LINKS = [
   { href: '#services', label: 'Accounting & audit' },
   { href: '#services', label: 'VAT consultancy' },
   { href: '#services', label: 'Corporate & compliance' },
-  { href: '#properties', label: 'Property & mortgage' },
 ];
 
 const COMPANY_LINKS = [
-  { href: '#top', label: 'About us' },
+  { href: '#about', label: 'About us' },
   { href: '#dubai', label: 'Dubai locations' },
   { href: '#insights', label: 'Insights' },
   { href: '#contact', label: 'Contact' },
@@ -75,9 +74,8 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="mx-auto flex max-w-[1320px] flex-wrap justify-between gap-[12px] border-t border-[rgba(255,255,255,.12)] px-[20px] pt-[22px] pb-[34px]">
+      <div className="mx-auto flex max-w-[1320px] flex-wrap gap-[12px] border-t border-[rgba(255,255,255,.12)] px-[20px] pt-[22px] pb-[34px]">
         <span className="text-[13px] text-muted-2">© Time Machine Group | All rights reserved</span>
-        <span className="text-[13px] text-muted-2">Sister company: MID Real Estate Brokers</span>
       </div>
     </footer>
   );

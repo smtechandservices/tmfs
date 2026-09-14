@@ -40,7 +40,7 @@ export default function Dubai({ show = true }) {
   if (!show) return null;
 
   return (
-    <section id="dubai" className="mx-auto max-w-[1320px] px-[20px] py-[clamp(64px,9vw,116px)]">
+    <section id="dubai" className="mx-auto max-w-[1320px] px-[20px] pb-12">
       <div className="mb-[36px] flex flex-wrap items-end justify-between gap-[22px]">
         <Reveal>
           <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">04 — Hyper-local</div>

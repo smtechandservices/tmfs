@@ -5,7 +5,7 @@ const STATS = [
   { to: 1200, suffix: '+', label: 'Licences & renewals processed', delay: 0 },
   { to: 18, suffix: '', label: 'UAE banking partners', delay: 90 },
   { to: 8, suffix: '', label: 'Free zones we file in directly', delay: 180 },
-  { to: 20, suffix: 'yrs', label: 'Group experience in UAE property', delay: 270 },
+  { to: 20, suffix: 'yrs', label: 'Group experience in UAE business setup', delay: 270 },
 ];
 
 export default function Stats() {
