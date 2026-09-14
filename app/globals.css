@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #14121a;
+  --color-brand: #d8262c;
+  --color-blue: #1b12e0;
+  --color-cream: #faf9f7;
+  --color-cream-2: #f4f1eb;
+  --color-line: #e5e0d8;
+  --color-line-2: #efebe4;
+  --color-line-3: #dcd7cf;
+  --color-muted: #5a5563;
+  --color-muted-2: #8a8494;
+  --color-fog: #edeae4;
+  --color-fog-2: #c9c4cf;
+  --color-brand-tint: #fbf1f0;
+
+  --font-sans: "Archivo", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --breakpoint-navd: 940px;
+  --breakpoint-navp: 620px;
+
+  --animate-tm-ken: tmKen 26s ease-in-out infinite alternate;
+  --animate-tm-marquee: tmMarquee 34s linear infinite;
+  --animate-tm-marquee-right: tmMarqueeRight 26s linear infinite;
+  --animate-tm-marquee-up: tmMarqueeUp 26s linear infinite;
+  --animate-tm-marquee-down: tmMarqueeDown 30s linear infinite;
+  --animate-tm-float: tmFloat 9s ease-in-out infinite;
+  --animate-tm-ping: tmPing 2.6s cubic-bezier(0.2, 0.6, 0.3, 1) infinite;
+  --animate-tm-ping-fast: tmPing 2.4s ease-out infinite;
+  --animate-tm-slide-down: tmSlideDown 0.5s ease both;
+  --animate-tm-slide-down-fast: tmSlideDown 0.28s ease both;
+  --animate-tm-slide-down-med: tmSlideDown 0.45s ease both;
+
+  @keyframes tmKen {
+    0% {
+      transform: scale(1.08) translate3d(0, 0, 0);
+    }
+    100% {
+      transform: scale(1.18) translate3d(-1.5%, -1.5%, 0);
+    }
+  }
+  @keyframes tmMarquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes tmMarqueeRight {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes tmMarqueeUp {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+  @keyframes tmMarqueeDown {
+    0% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes tmFloat {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes tmPing {
+    0% {
+      transform: scale(0.6);
+      opacity: 0.55;
+    }
+    70%,
+    100% {
+      transform: scale(1.6);
+      opacity: 0;
+    }
+  }
+  @keyframes tmSlideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a {
+    color: var(--color-blue);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--color-brand);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ul,
+  li,
+  figure {
+    margin: 0;
+    padding: 0;
+  }
+  ul {
+    list-style: none;
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+  input,
+  select,
+  textarea {
+    outline: none;
+  }
+  ::selection {
+    background: var(--color-brand);
+    color: #fff;
+  }
+}
+
+/*
+ * Everything below targets markup that Leaflet injects itself (map tiles,
+ * markers, popups) or a scrollbar pseudo-element — none of it is rendered
+ * by our React components, so it can't carry Tailwind classes and stays as
+ * plain global CSS.
+ */
+#tmmap {
+  background: #edeae4;
+}
+#tmmap .leaflet-tile-pane {
+  filter: grayscale(1) contrast(1.02) brightness(1.06);
+}
+#tmmap.leaflet-container {
+  font-family: "Archivo", sans-serif;
+}
+#tmrail::-webkit-scrollbar {
+  display: none;
+}
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(20, 18, 26, 0.18);
+}
+.leaflet-popup-content {
+  margin: 14px 16px;
+  width: 216px !important;
+}
+.leaflet-control-attribution {
+  font-size: 10px;
+  background: rgba(250, 249, 247, 0.85) !important;
+}
