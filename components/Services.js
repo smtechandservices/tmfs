@@ -4,33 +4,38 @@ const CARDS = [
   {
     n: '01',
     title: 'Business setup',
-    desc: 'Mainland, free zone and offshore formation across Dubai, Abu Dhabi and Sharjah — trade licence, MOA, visas and Emirates ID.',
+    desc: 'Mainland, free zone and offshore formation across Dubai, Abu Dhabi and Sharjah, trade licence, MOA, visas and Emirates ID.',
+    href: '/services#business-setup',
   },
   {
     n: '02',
     title: 'Banking',
     desc: 'Corporate, personal, offshore and non-resident account opening, plus business and personal loans compared across our bank network.',
+    href: '/services#banking',
   },
   {
     n: '03',
     title: 'Accounting & audit',
     desc: 'Bookkeeping, payroll, financial statements, internal and external audit, and FTA tax audit assistance for SMEs and corporates.',
+    href: '/services#accounting',
   },
   {
     n: '04',
     title: 'VAT consultancy',
-    desc: 'Registration and TRN, return filing, refunds, health checks and compliance audits — kept accurate and on time with the FTA.',
+    desc: 'Registration and TRN, return filing, refunds, health checks and compliance audits, kept accurate and on time with the FTA.',
+    href: '/services#vat',
   },
   {
     n: '05',
     title: 'Corporate & compliance',
     desc: 'PRO work, document clearing, attestation, AML and ESR obligations, and ongoing governance support so nothing lapses.',
+    href: '/services#compliance',
   },
   {
     n: '06',
     title: 'Not sure where to start?',
     desc: 'Book a free 20-minute call, we’ll map the right path for your business.',
-    href: '#contact',
+    href: '/contact',
     dark: true,
   },
 ];
@@ -42,7 +47,7 @@ const COL_B = [CARDS[1], CARDS[3], CARDS[5]];
 function Card({ c, dup, horizontal }) {
   return (
     <a
-      href={c.href || '#contact'}
+      href={c.href || '/contact'}
       aria-hidden={dup || undefined}
       tabIndex={dup ? -1 : undefined}
       className={`block shrink-0 rounded-[18px] border p-[22px] transition-colors duration-200 ${horizontal ? 'w-[260px]' : ''} ${

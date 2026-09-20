@@ -3,27 +3,29 @@
 import { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 
-// Tailwind classes for the three marker/popup categories. Kept as complete,
+// Tailwind classes for the two marker/popup categories. Kept as complete,
 // literal class strings (never concatenated piecemeal) so Tailwind's
 // content scanner picks them up even though they end up inside raw HTML
 // strings handed to Leaflet (divIcon / bindPopup), not JSX.
 const CATS = {
   free: { label: 'Free zone', dot: 'bg-blue', text: 'text-blue' },
-  prime: { label: 'Prime area', dot: 'bg-brand', text: 'text-brand' },
   office: { label: 'Our office', dot: 'bg-ink', text: 'text-ink' },
 };
 
+// Every free zone TMFS files in directly, plus DMCC and DIFC, which we
+// advise clients on for banking but don't file in ourselves.
 const PLACES = [
   { n: 'Millennium Central, Al Asayel St', c: 'office', ll: [25.1875, 55.2760], d: 'TMFS head office. Next to Dubai Mall. Walk-ins welcome, or book a slot.' },
-  { n: 'DMCC / JLT', c: 'free', ll: [25.0693, 55.1413], d: 'Commodities and trading licences. Strong banking acceptance for import-export.' },
-  { n: 'IFZA — Dubai Silicon Oasis', c: 'free', ll: [25.1197, 55.3773], d: 'Fast, cost-efficient consultancy and services licences. Popular first setup.' },
+  { n: 'IFZA — Dubai Silicon Oasis', c: 'free', ll: [25.1197, 55.3773], d: 'Fast, cost-efficient consultancy and services licences. Usual first company for solo founders.' },
   { n: 'Meydan Free Zone', c: 'free', ll: [25.1580, 55.3010], d: 'E-commerce and digital licences with a Dubai address and quick issuance.' },
-  { n: 'DIFC', c: 'free', ll: [25.2110, 55.2790], d: 'Common-law jurisdiction for finance, funds and holding structures.' },
-  { n: 'JAFZA — Jebel Ali', c: 'free', ll: [24.9857, 55.0500], d: 'Warehousing, logistics and manufacturing beside Jebel Ali Port.' },
-  { n: 'Downtown Dubai', c: 'prime', ll: [25.1972, 55.2744], d: 'Branded residences and offices. Steady rental demand, premium entry price.' },
-  { n: 'Business Bay', c: 'prime', ll: [25.1857, 55.2646], d: 'Mixed-use canal district. High yields on studios and one-beds.' },
-  { n: 'Dubai Marina', c: 'prime', ll: [25.0805, 55.1403], d: 'Waterfront living with short-let potential and deep tenant pool.' },
-  { n: 'Dubai Creek Harbour', c: 'prime', ll: [25.2020, 55.3390], d: 'Off-plan growth corridor. Payment plans suit staged investors.' },
+  { n: 'RAKEZ', c: 'free', ll: [25.7895, 55.9432], d: 'Ras Al Khaimah Economic Zone. Low-cost industrial, trading and service licences.' },
+  { n: 'SHAMS — Sharjah Media City', c: 'free', ll: [25.3463, 55.4209], d: 'Media, creative and consultancy licences in Sharjah.' },
+  { n: 'SPC Free Zone', c: 'free', ll: [25.3286, 55.5019], d: 'Sharjah Publishing City. Low-cost setup for publishing, media and services.' },
+  { n: 'Ajman Free Zone', c: 'free', ll: [25.4052, 55.5136], d: 'Cost-efficient trading, industrial and services licences in Ajman.' },
+  { n: 'SRTIP', c: 'free', ll: [25.3170, 55.5240], d: 'Sharjah Research Technology and Innovation Park. Tech, R&D and industrial licences.' },
+  { n: 'Dubai Mainland', c: 'free', ll: [25.2532, 55.2957], d: 'LLC, sole establishment and branch setup for trading directly in the UAE market.' },
+  { n: 'DMCC / JLT', c: 'free', ll: [25.0693, 55.1413], d: 'Commodities and trading licences. Strong banking acceptance for import-export. We advise here, not file directly.' },
+  { n: 'DIFC', c: 'free', ll: [25.2110, 55.2790], d: 'Common-law jurisdiction for finance, funds and holding structures. We advise here, not file directly.' },
 ];
 
 const CHIP_BASE =
@@ -41,7 +43,7 @@ export default function DubaiMap() {
     const el = mapElRef.current;
     if (!el || mapInstance.current) return undefined;
 
-    const map = L.map(el, { center: [25.14, 55.24], zoom: 11, scrollWheelZoom: false });
+    const map = L.map(el, { center: [25.4, 55.5], zoom: 9, minZoom: 9, maxZoom: 12, scrollWheelZoom: false });
     mapInstance.current = map;
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -79,7 +81,7 @@ export default function DubaiMap() {
     const map = mapInstance.current;
     if (!map) return;
     map.closePopup();
-    map.flyTo([25.14, 55.24], 11, { duration: 0.9 });
+    map.flyTo([25.4, 55.5], 9, { duration: 0.9 });
   };
 
   const flyToPlace = (i) => {
@@ -87,7 +89,7 @@ export default function DubaiMap() {
     const map = mapInstance.current;
     const marker = markersRef.current[i];
     if (!map || !marker) return;
-    map.flyTo(PLACES[i].ll, 14, { duration: 1 });
+    map.flyTo(PLACES[i].ll, 12, { duration: 1 });
     setTimeout(() => marker.openPopup(), 700);
   };
 

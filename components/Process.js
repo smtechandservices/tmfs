@@ -9,32 +9,24 @@ const STEPS = [
     title: 'Free consultation',
     desc: 'Twenty minutes on your activity, ownership and budget. You leave with a written cost breakdown.',
     highlights: ['20-minute call', 'Written cost estimate', 'No obligation'],
-    image: '/images/advisors-report.jpg',
-    imageAlt: 'TMFS advisors reviewing a client financial report',
   },
   {
     n: '02',
     title: 'Jurisdiction & licence',
     desc: 'We pick the zone that fits your activity and banking needs, then file it. Typically 3–7 working days.',
     highlights: ['Zone matched to activity', '3–7 working days', 'Trade licence filed'],
-    image: '/images/downtown-dubai.jpg',
-    imageAlt: 'Downtown Dubai skyline',
   },
   {
     n: '03',
     title: 'Visas & bank account',
     desc: 'Medical, Emirates ID and residence visa, alongside a compliance-ready bank application.',
     highlights: ['Emirates ID & residency', 'Bank application prepped', 'Compliance-ready'],
-    image: '/images/difc-skyline.jpg',
-    imageAlt: 'DIFC skyline, Dubai’s banking district',
   },
   {
     n: '04',
     title: 'Stay compliant',
     desc: 'Bookkeeping, VAT returns and renewal reminders so the second year is quieter than the first.',
     highlights: ['Bookkeeping & VAT', 'Renewal reminders', 'Ongoing support'],
-    image: '/images/business-planning.jpg',
-    imageAlt: 'Business planning notes on a desk',
   },
 ];
 
@@ -69,7 +61,7 @@ export default function Process() {
         <div>
           <div className="navd:sticky navd:top-[88px]">
             <Reveal>
-              <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">02 — How it goes</div>
+              <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">How it goes</div>
               <h2 className="mb-[18px] text-pretty text-[clamp(28px,4.2vw,48px)] font-extrabold leading-[1.06] tracking-[-.03em]">Four steps, one point of contact</h2>
               <p className="mb-[32px] max-w-[42ch] text-[16px] leading-[1.65] text-muted">No handoffs between departments. The consultant on your first call stays with you through licence, bank and renewal.</p>
             </Reveal>
@@ -108,17 +100,10 @@ export default function Process() {
               }}
               className="flex flex-col gap-[16px]"
             >
-              <div className="relative overflow-hidden rounded-[18px] bg-fog">
-                <img
-                  src={step.image}
-                  alt={step.imageAlt}
-                  className="block h-[200px] w-full object-cover navd:h-[240px]"
-                />
-                <div className="absolute top-[12px] left-[12px] rounded-full bg-[rgba(250,249,247,.94)] px-[12px] py-[5px] text-[11px] font-bold tracking-[.04em] text-ink backdrop-blur-[6px]">
+              <div className="rounded-[18px] border border-line bg-white p-[clamp(18px,2.4vw,28px)] shadow-[0_14px_34px_rgba(20,18,26,.05)]">
+                <div className="mb-[14px] inline-block rounded-full bg-cream-2 px-[12px] py-[5px] text-[11px] font-bold tracking-[.04em] text-ink">
                   STEP {step.n}
                 </div>
-              </div>
-              <div className="rounded-[18px] border border-line bg-white p-[clamp(18px,2.4vw,28px)] shadow-[0_14px_34px_rgba(20,18,26,.05)]">
                 <h3 className="mb-[8px] text-[21px] font-extrabold tracking-[-.02em] text-ink">{step.title}</h3>
                 <p className="mb-[16px] max-w-[52ch] text-[15px] leading-[1.55] text-muted">{step.desc}</p>
                 <div className="flex flex-wrap items-center gap-x-[16px] gap-y-[6px]">

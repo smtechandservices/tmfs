@@ -58,7 +58,7 @@ export default function Hero() {
 
         <Reveal delay={240} className="flex flex-wrap gap-[12px]">
           <a
-            href="#contact"
+            href="/contact"
             className="relative flex min-h-[52px] items-center overflow-hidden rounded-full bg-brand px-[28px] py-[15px] text-[15px] font-bold text-white hover:bg-white hover:text-ink"
           >
             <span className="relative z-[2]">Book a free consultation</span>
@@ -104,7 +104,7 @@ export default function Hero() {
               </label>
             ))}
             <a
-              href="#contact"
+              href="/contact"
               className="flex min-h-[52px] items-center justify-center rounded-[14px] bg-ink px-[20px] py-[14px] text-[14px] font-bold text-white hover:bg-brand"
             >
               Get matched

@@ -1,4 +1,5 @@
 import Reveal from './Reveal';
+import AboutTrustStats from './AboutTrustStats';
 
 const TEAM = [
   {
@@ -48,7 +49,7 @@ export default function About() {
   return (
     <section id="about" className="mx-auto max-w-[1320px] px-[20px] py-12">
       <Reveal className="mb-[48px]">
-        <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">03 — About us</div>
+        <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">About us</div>
         <h2 className="max-w-[20ch] text-pretty text-[clamp(30px,4.6vw,54px)] font-extrabold leading-[1.05] tracking-[-.03em]">Time Machine Financial Services</h2>
       </Reveal>
 
@@ -81,6 +82,8 @@ export default function About() {
           ))}
         </div>
       </div>
+
+      <AboutTrustStats />
     </section>
   );
 }

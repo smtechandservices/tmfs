@@ -14,34 +14,17 @@ function useClickOutside(ref, onOutside) {
 }
 
 const SERVICES_MENU = [
-  { href: '#services', label: 'Business setup' },
-  { href: '#services', label: 'Banking' },
-  { href: '#services', label: 'Accounting & audit' },
-  { href: '#services', label: 'VAT consultancy' },
-  { href: '#services', label: 'Corporate & compliance' },
+  { href: '/services#business-setup', label: 'Business setup' },
+  { href: '/services#banking', label: 'Banking' },
+  { href: '/services#accounting', label: 'Accounting & audit' },
+  { href: '/services#vat', label: 'VAT consultancy' },
+  { href: '/services#compliance', label: 'Corporate & compliance' },
 ];
 
-// Mirrors the real `PLACES` data plotted on the Dubai map (components/DubaiMap.js) —
-// the dropdown previews the same locations, grouped by the same three
-// categories used on the map, each with a short service blurb summarized
-// from that section's copy.
-const DUBAI_CATEGORIES = [
-  { key: 'free', label: 'Free zones', dot: 'bg-blue' },
-  { key: 'prime', label: 'Investment areas', dot: 'bg-brand' },
-  { key: 'office', label: 'Our office', dot: 'bg-ink' },
-];
-
-const DUBAI_PLACES = [
-  { name: 'Millennium Central, Al Asayel St', blurb: 'TMFS head office', cat: 'office' },
-  { name: 'DMCC / JLT', blurb: 'Commodities & trading licences', cat: 'free' },
-  { name: 'IFZA — Dubai Silicon Oasis', blurb: 'Fast, cost-efficient licences', cat: 'free' },
-  { name: 'Meydan Free Zone', blurb: 'E-commerce & digital licences', cat: 'free' },
-  { name: 'DIFC', blurb: 'Finance, funds & holding structures', cat: 'free' },
-  { name: 'JAFZA — Jebel Ali', blurb: 'Warehousing & logistics', cat: 'free' },
-  { name: 'Downtown Dubai', blurb: 'Branded residences & offices', cat: 'prime' },
-  { name: 'Business Bay', blurb: 'High-yield studios & one-beds', cat: 'prime' },
-  { name: 'Dubai Marina', blurb: 'Waterfront short-let living', cat: 'prime' },
-  { name: 'Dubai Creek Harbour', blurb: 'Off-plan growth corridor', cat: 'prime' },
+const BUSINESS_SETUP_MENU = [
+  { href: '/business-setup#mainland', label: 'Mainland' },
+  { href: '/business-setup#free-zone', label: 'Free zone' },
+  { href: '/business-setup#offshore', label: 'Offshore' },
 ];
 
 function Chevron({ className = '' }) {
@@ -90,65 +73,6 @@ function NavDropdown({ label, href, items }) {
   );
 }
 
-function DubaiDropdown() {
-  const [open, setOpen] = useState(false);
-  const [cat, setCat] = useState(DUBAI_CATEGORIES[0].key);
-  const places = DUBAI_PLACES.filter((p) => p.cat === cat);
-  const ref = useRef(null);
-  useClickOutside(ref, () => setOpen(false));
-
-  return (
-    <div ref={ref} className="relative flex items-center gap-[4px]">
-      <a href="#dubai" className="text-[14px] font-semibold text-ink hover:text-brand">
-        Dubai
-      </a>
-      <button
-        type="button"
-        aria-label="Toggle Dubai menu"
-        onClick={() => setOpen((v) => !v)}
-        className="cursor-pointer p-[4px] text-ink hover:text-brand"
-      >
-        <Chevron className={open ? 'rotate-180' : ''} />
-      </button>
-      {open && (
-      <div className="animate-tm-slide-down-fast absolute top-full left-0 z-[90] pt-[24px]">
-        <div className="flex w-[480px] overflow-hidden rounded-b-[18px] border border-line bg-white">
-          <div className="flex w-[180px] shrink-0 flex-col gap-[2px] border-r border-line bg-cream p-[10px]">
-            {DUBAI_CATEGORIES.map((c) => (
-              <button
-                key={c.key}
-                type="button"
-                onMouseEnter={() => setCat(c.key)}
-                onClick={() => setCat(c.key)}
-                className={`flex cursor-pointer items-center gap-[9px] rounded-[10px] px-[10px] py-[10px] text-left text-[13.5px] font-semibold ${
-                  cat === c.key ? 'bg-ink text-white' : 'text-ink hover:bg-cream-2'
-                }`}
-              >
-                <span className={`h-[8px] w-[8px] shrink-0 rounded-full ${c.dot}`} />
-                {c.label}
-              </button>
-            ))}
-          </div>
-          <div className="flex-1 p-[10px]">
-            {places.map((p) => (
-              <a
-                key={p.name}
-                href="#dubai"
-                onClick={() => setOpen(false)}
-                className="block rounded-[10px] px-[12px] py-[9px] hover:bg-cream-2"
-              >
-                <span className="block text-[13.5px] font-semibold text-ink">{p.name}</span>
-                <span className="block text-[12px] text-muted">{p.blurb}</span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-      )}
-    </div>
-  );
-}
-
 function MobileAccordion({ label, items, onNavigate }) {
   const [open, setOpen] = useState(false);
   return (
@@ -179,8 +103,6 @@ function MobileAccordion({ label, items, onNavigate }) {
   );
 }
 
-const DUBAI_MOBILE_MENU = DUBAI_PLACES.map((p) => ({ href: '#dubai', label: p.name }));
-
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
@@ -188,7 +110,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-[80] border-b border-line bg-[rgba(250,249,247,.88)] backdrop-blur-[14px]">
       <div className="mx-auto flex max-w-[1320px] items-center gap-[20px] px-[20px] py-[12px]">
-        <a href="#top" className="flex flex-none items-center gap-[11px]">
+        <a href="/" className="flex flex-none items-center gap-[11px]">
           <img src="/logo.png" alt="Time Machine Financial Services" className="block h-[44px] w-[44px] rounded-full" />
           <span className="flex flex-col leading-[1.05]">
             <span className="text-[15px] font-extrabold tracking-[-.01em] text-ink">TIME MACHINE</span>
@@ -197,11 +119,11 @@ export default function Header() {
         </a>
 
         <nav className="ml-auto hidden items-center gap-[26px] navd:flex">
-          <NavDropdown label="Services" href="#services" items={SERVICES_MENU} />
-          <a href="#about" className="text-[14px] font-semibold text-ink hover:text-brand">About</a>
-          <DubaiDropdown />
-          <a href="#insights" className="text-[14px] font-semibold text-ink hover:text-brand">Insights</a>
-          <a href="#contact" className="text-[14px] font-semibold text-ink hover:text-brand">Contact</a>
+          <NavDropdown label="Services" href="/services" items={SERVICES_MENU} />
+          <a href="/about" className="text-[14px] font-semibold text-ink hover:text-brand">About</a>
+          <NavDropdown label="Business Setup" href="/business-setup" items={BUSINESS_SETUP_MENU} />
+          <a href="/insights" className="text-[14px] font-semibold text-ink hover:text-brand">Insights</a>
+          <a href="/contact" className="text-[14px] font-semibold text-ink hover:text-brand">Contact</a>
         </nav>
 
         <a
@@ -212,7 +134,7 @@ export default function Header() {
         </a>
 
         <a
-          href="#contact"
+          href="/contact"
           className="relative hidden min-h-[44px] flex-none items-center overflow-hidden rounded-full bg-brand px-[20px] py-[12px] text-[13px] font-bold tracking-[.01em] text-white hover:bg-ink hover:text-white navd:flex"
         >
           Book a consultation
@@ -246,15 +168,15 @@ export default function Header() {
         <div className="animate-tm-slide-down-fast border-t border-line bg-cream">
           <div className="mx-auto flex max-w-[1320px] flex-col px-[20px] pt-[10px] pb-[20px]">
             <MobileAccordion label="Services" items={SERVICES_MENU} onNavigate={closeMenu} />
-            <a href="#about" onClick={closeMenu} className="border-b border-line-2 px-[2px] py-[14px] text-[17px] font-semibold text-ink">
+            <a href="/about" onClick={closeMenu} className="border-b border-line-2 px-[2px] py-[14px] text-[17px] font-semibold text-ink">
               About
             </a>
-            <MobileAccordion label="Dubai" items={DUBAI_MOBILE_MENU} onNavigate={closeMenu} />
-            <a href="#insights" onClick={closeMenu} className="border-b border-line-2 px-[2px] py-[14px] text-[17px] font-semibold text-ink">
+            <MobileAccordion label="Business Setup" items={BUSINESS_SETUP_MENU} onNavigate={closeMenu} />
+            <a href="/insights" onClick={closeMenu} className="border-b border-line-2 px-[2px] py-[14px] text-[17px] font-semibold text-ink">
               Insights
             </a>
             <a
-              href="#contact"
+              href="/contact"
               onClick={closeMenu}
               className="mt-[16px] rounded-full bg-brand px-[20px] py-[15px] text-center text-[15px] font-bold text-white"
             >

@@ -39,7 +39,7 @@ export default function Testimonials() {
 
   return (
     <section className="mx-auto max-w-[1320px] px-[20px] py-[clamp(64px,9vw,116px)]">
-      <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">05 — Testimonials</div>
+      <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">Testimonials</div>
       <Reveal delay={100} className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] items-center gap-[clamp(28px,4vw,56px)]">
         <div className="flex min-h-[280px] flex-col justify-center">
           <blockquote key={ti} className="animate-tm-slide-down">
