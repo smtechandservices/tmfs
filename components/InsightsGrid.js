@@ -100,12 +100,12 @@ export default function InsightsGrid() {
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-[16px]">
           {filtered.map((a, i) => (
-            <Reveal key={a.title} delay={(i % 3) * 90} className="block">
-              <div className="overflow-hidden rounded-[20px] border border-line bg-cream">
-                <div className="aspect-[16/10] overflow-hidden bg-fog">
+            <Reveal key={a.title} delay={(i % 3) * 90} className="block h-full">
+              <div className="flex h-full flex-col overflow-hidden rounded-[20px] border border-line bg-cream">
+                <div className="aspect-[16/10] shrink-0 overflow-hidden bg-fog">
                   <img src={a.img} alt={a.alt} className="block h-full w-full object-cover" />
                 </div>
-                <div className="p-[24px]">
+                <div className="flex flex-1 flex-col p-[24px]">
                   <div className="mb-[10px] flex items-center gap-[8px] font-mono text-[10px] uppercase tracking-[.16em] text-muted-2">
                     <span>{a.category}</span>
                     <span>·</span>

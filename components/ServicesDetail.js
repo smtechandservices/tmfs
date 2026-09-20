@@ -226,10 +226,8 @@ export default function ServicesDetail() {
       </section>
 
       <div className="mx-auto max-w-[1320px] px-[20px]">
-        {SECTIONS.map((section, i) => (
-          <div key={section.id} className="sticky top-[20px]" style={{ zIndex: i + 1 }}>
-            <Section section={section} />
-          </div>
+        {SECTIONS.map((section) => (
+          <Section key={section.id} section={section} />
         ))}
       </div>
 
