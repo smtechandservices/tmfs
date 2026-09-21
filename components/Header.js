@@ -108,12 +108,12 @@ export default function Header() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-[80] border-b border-line bg-[rgba(250,249,247,.88)] backdrop-blur-[14px]">
+    <header className="sticky top-0 z-[80] border-b border-line bg-[rgba(255,255,255,.88)] backdrop-blur-[14px]">
       <div className="mx-auto flex max-w-[1320px] items-center gap-[20px] px-[20px] py-[12px]">
         <a href="/" className="flex flex-none items-center gap-[11px]">
           <img src="/logo.png" alt="Time Machine Financial Services" className="block h-[44px] w-[44px] rounded-full" />
           <span className="flex flex-col leading-[1.05]">
-            <span className="text-[15px] font-extrabold tracking-[-.01em] text-ink">TIME MACHINE</span>
+            <span className="text-[15px] font-extrabold tracking-[-.01em] text-blue">TIME MACHINE</span>
             <span className="font-mono text-[9px] tracking-[.18em] text-brand">FINANCIAL SERVICES</span>
           </span>
         </a>
@@ -135,7 +135,7 @@ export default function Header() {
 
         <a
           href="/contact"
-          className="relative hidden min-h-[44px] flex-none items-center overflow-hidden rounded-full bg-brand px-[20px] py-[12px] text-[13px] font-bold tracking-[.01em] text-white hover:bg-ink hover:text-white navd:flex"
+          className="relative hidden min-h-[44px] flex-none items-center overflow-hidden rounded-full bg-brand px-[20px] py-[12px] text-[13px] font-bold tracking-[.01em] text-white hover:bg-blue hover:text-white navd:flex"
         >
           Book a consultation
         </a>

@@ -52,11 +52,11 @@ function Card({ c, dup, horizontal }) {
       tabIndex={dup ? -1 : undefined}
       className={`block shrink-0 rounded-[18px] border p-[22px] transition-colors duration-200 ${horizontal ? 'w-[260px]' : ''} ${
         c.dark
-          ? 'border-ink bg-ink hover:border-brand'
+          ? 'border-blue bg-blue hover:border-brand'
           : 'border-line bg-white hover:border-ink'
       }`}
     >
-      <h3 className={`mb-[6px] text-[17px] font-bold tracking-[-.01em] ${c.dark ? 'text-white' : 'text-ink'}`}>{c.title}</h3>
+      <h3 className={`mb-[6px] text-[17px] font-bold tracking-[-.01em] ${c.dark ? 'text-white' : 'text-blue'}`}>{c.title}</h3>
       <p className={`text-[13.5px] leading-[1.55] ${c.dark ? 'text-fog-2' : 'text-muted'}`}>{c.desc}</p>
       <span className={`mt-[12px] inline-block text-[15px] ${c.dark ? 'text-brand' : 'text-muted-2'}`}>›</span>
     </a>

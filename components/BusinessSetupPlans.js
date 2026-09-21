@@ -74,7 +74,7 @@ function TierCard({ tier }) {
       <span className="mb-[14px] inline-block w-fit rounded-full bg-brand-tint px-[13px] py-[5px] font-mono text-[10px] font-bold uppercase tracking-[.1em] text-brand">
         {tier.tag}
       </span>
-      <h3 className="mb-[10px] text-[22px] font-extrabold tracking-[-.02em] text-ink">{tier.title}</h3>
+      <h3 className="mb-[10px] text-[22px] font-extrabold tracking-[-.02em] text-blue">{tier.title}</h3>
       <p className="mb-[18px] text-[14.5px] leading-[1.6] text-muted">{tier.desc}</p>
       <a href="/contact" className="mt-auto text-[14px] font-bold text-ink hover:text-brand">
         Get started →
@@ -89,12 +89,12 @@ function PackageCard({ pkg, dup }) {
       aria-hidden={dup || undefined}
       className="flex w-[270px] shrink-0 flex-col rounded-[18px] border border-line bg-white p-[22px]"
     >
-      <h3 className="mb-[8px] text-[18px] font-bold tracking-[-.01em] text-ink">{pkg.name}</h3>
+      <h3 className="mb-[8px] text-[18px] font-bold tracking-[-.01em] text-blue">{pkg.name}</h3>
       <p className="mb-[16px] text-[13.5px] leading-[1.55] text-muted">{pkg.desc}</p>
       <ul className="mb-[20px] flex flex-1 flex-col gap-[7px]">
         {pkg.points.map((point) => (
-          <li key={point} className={`flex items-center gap-[8px] text-[13px] font-medium text-muted}`}>
-            <span className="h-[5px] w-[5px] shrink-0 rounded-full bg-brand" />
+          <li key={point} className="flex items-center gap-[8px] text-[13px] font-medium text-muted">
+            <img src="/images/pinwheel-red.png" alt="" className="h-[13px] w-[13px] shrink-0" />
             {point}
           </li>
         ))}
@@ -102,7 +102,7 @@ function PackageCard({ pkg, dup }) {
       <a
         href="/contact"
         tabIndex={dup ? -1 : undefined}
-        className="flex min-h-[44px] items-center justify-center rounded-full bg-ink px-[18px] py-[11px] text-[13.5px] font-bold text-white hover:bg-brand"
+        className="flex min-h-[44px] items-center justify-center rounded-full bg-blue px-[18px] py-[11px] text-[13.5px] font-bold text-white hover:bg-brand"
       >
         Get a quote
       </a>
@@ -224,14 +224,14 @@ export default function BusinessSetupPlans() {
         <div className="mx-auto flex max-w-[1320px] flex-wrap items-center justify-between gap-[20px] px-[20px] py-[clamp(40px,6vw,64px)]">
           <h3 className="max-w-[28ch] text-pretty text-[24px] font-extrabold tracking-[-.02em]">Still weighing jurisdictions?</h3>
           <div className="flex flex-wrap gap-[12px]">
-            <a href="/contact" className="flex min-h-[52px] items-center rounded-full bg-brand px-[28px] py-[15px] text-[15px] font-bold text-white hover:bg-ink">
+            <a href="/contact" className="flex min-h-[52px] items-center rounded-full bg-brand px-[28px] py-[15px] text-[15px] font-bold text-white hover:bg-blue">
               Book a free consultation
             </a>
             <a
               href="https://wa.me/971522149086"
               target="_blank"
               rel="noopener"
-              className="flex min-h-[52px] items-center rounded-full border border-line px-[28px] py-[15px] text-[15px] font-semibold text-ink hover:border-ink"
+              className="flex min-h-[52px] items-center rounded-full border border-line px-[28px] py-[15px] text-[15px] font-semibold text-ink hover:border-blue hover:text-blue"
             >
               Chat on WhatsApp
             </a>

@@ -124,7 +124,7 @@ function JurisdictionPicker() {
         ))}
         <a
           href="/contact"
-          className="flex min-h-[52px] items-center justify-center rounded-[14px] bg-ink px-[20px] py-[14px] text-[14px] font-bold text-white hover:bg-brand"
+          className="flex min-h-[52px] items-center justify-center rounded-[14px] bg-blue px-[20px] py-[14px] text-[14px] font-bold text-white hover:bg-brand"
         >
           Get matched
         </a>
@@ -137,7 +137,7 @@ function ItemCard({ item, large }) {
   return (
     <div className={`rounded-[18px] border border-line bg-white ${large ? 'p-[30px]' : 'p-[22px]'}`}>
       <div className="mb-[8px] flex items-center gap-[8px]">
-        <h3 className={`font-bold tracking-[-.01em] text-ink ${large ? 'text-[20px]' : 'text-[17px]'}`}>{item.title}</h3>
+        <h3 className={`font-bold tracking-[-.01em] text-blue ${large ? 'text-[20px]' : 'text-[17px]'}`}>{item.title}</h3>
         {item.badge && (
           <span className="rounded-full bg-brand-tint px-[9px] py-[2px] font-mono text-[9px] font-bold uppercase tracking-[.1em] text-brand">
             {item.badge}
@@ -184,7 +184,7 @@ function Section({ section }) {
           {section.items.map((item) => (
             <ItemCard key={item.title} item={item} large />
           ))}
-          <div className="flex flex-col justify-center rounded-[18px] border border-ink bg-ink p-[30px]">
+          <div className="flex flex-col justify-center rounded-[18px] border border-blue bg-blue p-[30px]">
             <div className="mb-[10px] font-mono text-[11px] uppercase tracking-[.16em] text-brand">{section.aside.label}</div>
             <p className="text-[15px] leading-[1.65] text-fog-2">{section.aside.text}</p>
           </div>
@@ -235,14 +235,14 @@ export default function ServicesDetail() {
         <div className="mx-auto flex max-w-[1320px] flex-wrap items-center justify-between gap-[20px] px-[20px] py-[clamp(40px,6vw,64px)]">
           <h3 className="max-w-[28ch] text-pretty text-[24px] font-extrabold tracking-[-.02em]">Not sure which service you need?</h3>
           <div className="flex flex-wrap gap-[12px]">
-            <a href="/contact" className="flex min-h-[52px] items-center rounded-full bg-brand px-[28px] py-[15px] text-[15px] font-bold text-white hover:bg-ink">
+            <a href="/contact" className="flex min-h-[52px] items-center rounded-full bg-brand px-[28px] py-[15px] text-[15px] font-bold text-white hover:bg-blue">
               Book a free consultation
             </a>
             <a
               href="https://wa.me/971522149086"
               target="_blank"
               rel="noopener"
-              className="flex min-h-[52px] items-center rounded-full border border-line px-[28px] py-[15px] text-[15px] font-semibold text-ink hover:border-ink"
+              className="flex min-h-[52px] items-center rounded-full border border-line px-[28px] py-[15px] text-[15px] font-semibold text-ink hover:border-blue hover:text-blue"
             >
               Chat on WhatsApp
             </a>

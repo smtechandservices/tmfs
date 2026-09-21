@@ -77,12 +77,12 @@ export default function Process() {
                   >
                     <span
                       className={`flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-full font-mono text-[12px] ${
-                        active === i ? 'bg-ink text-white' : 'bg-fog text-muted'
+                        active === i ? 'bg-blue text-white' : 'bg-fog text-muted'
                       }`}
                     >
                       {step.n}
                     </span>
-                    <span className={`text-[15px] font-semibold ${active === i ? 'text-ink' : 'text-muted'}`}>{step.title}</span>
+                    <span className={`text-[15px] font-semibold ${active === i ? 'text-blue' : 'text-muted'}`}>{step.title}</span>
                   </button>
                 </li>
               ))}
@@ -104,12 +104,12 @@ export default function Process() {
                 <div className="mb-[14px] inline-block rounded-full bg-cream-2 px-[12px] py-[5px] text-[11px] font-bold tracking-[.04em] text-ink">
                   STEP {step.n}
                 </div>
-                <h3 className="mb-[8px] text-[21px] font-extrabold tracking-[-.02em] text-ink">{step.title}</h3>
+                <h3 className="mb-[8px] text-[21px] font-extrabold tracking-[-.02em] text-blue">{step.title}</h3>
                 <p className="mb-[16px] max-w-[52ch] text-[15px] leading-[1.55] text-muted">{step.desc}</p>
                 <div className="flex flex-wrap items-center gap-x-[16px] gap-y-[6px]">
                   {step.highlights.map((h) => (
                     <span key={h} className="flex items-center gap-[7px] text-[13px] font-medium text-muted">
-                      <span className="h-[5px] w-[5px] shrink-0 rounded-full bg-brand" />
+                      <img src="/images/pinwheel-blue.png" alt="" className="h-[13px] w-[13px] shrink-0" />
                       {h}
                     </span>
                   ))}

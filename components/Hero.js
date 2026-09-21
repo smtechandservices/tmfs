@@ -42,7 +42,7 @@ export default function Hero() {
       </div>
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,18,26,.72)_0%,rgba(20,18,26,.42)_38%,rgba(20,18,26,.88)_100%)]"></div>
 
-      <div className="relative mx-auto flex w-full max-w-[1320px] flex-col gap-[26px] px-[20px] pt-[120px] pb-[34px]">
+      <div className="relative mx-auto flex w-full max-w-[1320px] flex-col gap-[26px] px-[20px] pt-[160px] pb-[34px]">
         <Reveal className="flex items-center gap-[12px]">
           <span className="block h-[2px] w-[34px] bg-brand"></span>
           <span className="font-mono text-[11px] uppercase tracking-[.2em] text-white">Dubai · UAE · Since 2019</span>
@@ -75,8 +75,8 @@ export default function Hero() {
       </div>
 
       <Reveal delay={320} className="relative mx-auto w-full max-w-[1320px] px-[20px] pb-[34px]">
-        <div className="rounded-[20px] bg-cream p-[8px] shadow-[0_24px_60px_rgba(20,18,26,.32)]">
-          <div className="flex gap-[4px] px-[6px] pt-[6px] pb-0">
+        <div className="rounded-[20px] border border-line bg-cream p-[8px] shadow-[0_24px_60px_rgba(20,18,26,.32)]">
+          <div className="flex gap-[4px] rounded-[16px] border border-line bg-white p-[6px]">
             {TABS.map((tab) => {
               const active = heroTab === tab.key;
               return (
@@ -84,7 +84,7 @@ export default function Hero() {
                   key={tab.key}
                   onClick={() => setHeroTab(tab.key)}
                   className={`min-h-[44px] flex-1 cursor-pointer rounded-[14px] border-0 px-[8px] py-[12px] text-[13px] font-bold ${
-                    active ? 'bg-ink text-white' : 'bg-transparent text-muted'
+                    active ? 'bg-blue text-white' : 'bg-transparent text-muted'
                   }`}
                 >
                   {tab.label}
@@ -105,7 +105,7 @@ export default function Hero() {
             ))}
             <a
               href="/contact"
-              className="flex min-h-[52px] items-center justify-center rounded-[14px] bg-ink px-[20px] py-[14px] text-[14px] font-bold text-white hover:bg-brand"
+              className="flex min-h-[52px] items-center justify-center rounded-[14px] bg-blue px-[20px] py-[14px] text-[14px] font-bold text-white hover:bg-brand"
             >
               Get matched
             </a>

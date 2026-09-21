@@ -79,8 +79,8 @@ export default function Testimonials() {
             <div className="mb-[10px] font-mono text-[10px] uppercase tracking-[.16em] text-muted-2">Talk to our experts</div>
             <p className="mb-[16px] text-[14.5px] leading-[1.6] text-muted">Our team can walk you through the whole setup process, start to finish.</p>
             <div className="flex flex-wrap gap-[10px]">
-              <a href="tel:+971522149086" className="flex min-h-[44px] items-center rounded-full bg-ink px-[20px] py-[11px] text-[13.5px] font-bold text-white hover:bg-brand">Call now</a>
-              <a href="mailto:manager@timemachine.ae?subject=TMFS%20Website" className="flex min-h-[44px] items-center rounded-full border border-line px-[20px] py-[11px] text-[13.5px] font-semibold text-ink hover:border-ink">Email us</a>
+              <a href="tel:+971522149086" className="flex min-h-[44px] items-center rounded-full bg-blue px-[20px] py-[11px] text-[13.5px] font-bold text-white hover:bg-brand">Call now</a>
+              <a href="mailto:manager@timemachine.ae?subject=TMFS%20Website" className="flex min-h-[44px] items-center rounded-full border border-line px-[20px] py-[11px] text-[13.5px] font-semibold text-ink hover:border-blue hover:text-blue">Email us</a>
             </div>
           </div>
         </div>

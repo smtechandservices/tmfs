@@ -2,8 +2,9 @@
 
 @theme {
   --color-ink: #14121a;
-  --color-brand: #d8262c;
-  --color-blue: #1b12e0;
+  --color-brand: #db141c;
+  /* --color-blue: #1800ad; */
+  --color-blue: #09013d;
   --color-cream: #faf9f7;
   --color-cream-2: #f4f1eb;
   --color-line: #e5e0d8;
@@ -15,8 +16,13 @@
   --color-fog-2: #c9c4cf;
   --color-brand-tint: #fbf1f0;
 
-  --font-sans: "Archivo", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  /* Brand guide calls for Mont (display/caption) and Helvetica Now (body).
+     Both are commercial and unavailable without a license, so Poppins and
+     Inter stand in as the closest free equivalents until real font files
+     are supplied. */
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "Poppins", system-ui, sans-serif;
 
   --breakpoint-navd: 940px;
   --breakpoint-navp: 620px;
@@ -110,7 +116,7 @@
     scroll-behavior: smooth;
   }
   body {
-    background: var(--color-cream);
+    background: #fff;
     color: var(--color-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -122,6 +128,17 @@
   }
   a:hover {
     color: var(--color-brand);
+  }
+  h1,
+  h2,
+  h3 {
+    color: var(--color-blue);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
   }
   h1,
   h2,
@@ -168,7 +185,7 @@
   filter: grayscale(1) contrast(1.02) brightness(1.06);
 }
 #tmmap.leaflet-container {
-  font-family: "Archivo", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 #tmrail::-webkit-scrollbar {
   display: none;
@@ -183,5 +200,5 @@
 }
 .leaflet-control-attribution {
   font-size: 10px;
-  background: rgba(250, 249, 247, 0.85) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
 }

@@ -9,7 +9,7 @@ import L from 'leaflet';
 // strings handed to Leaflet (divIcon / bindPopup), not JSX.
 const CATS = {
   free: { label: 'Free zone', dot: 'bg-blue', text: 'text-blue' },
-  office: { label: 'Our office', dot: 'bg-ink', text: 'text-ink' },
+  office: { label: 'Our office', dot: 'bg-brand', text: 'text-brand' },
 };
 
 // Every free zone TMFS files in directly, plus DMCC and DIFC, which we
@@ -30,8 +30,8 @@ const PLACES = [
 
 const CHIP_BASE =
   'min-h-[40px] flex-none cursor-pointer whitespace-nowrap rounded-full border px-[15px] py-[9px] text-[13px] font-semibold transition-[background,color,border-color,transform] duration-[180ms] ease hover:-translate-y-[1px]';
-const CHIP_ON = 'border-ink bg-ink text-white';
-const CHIP_OFF = 'border-line-3 bg-white text-ink hover:border-ink';
+const CHIP_ON = 'border-blue bg-blue text-white';
+const CHIP_OFF = 'border-line-3 bg-white text-ink hover:border-blue';
 
 export default function DubaiMap() {
   const mapElRef = useRef(null);

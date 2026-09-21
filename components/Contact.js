@@ -75,7 +75,7 @@ export default function Contact() {
                 <span className="font-mono text-[10px] uppercase tracking-[.16em] text-muted-2">Anything we should know</span>
                 <textarea rows={3} placeholder="Activity, nationality, timeline…" className={`${FIELD_CLASS} resize-y font-sans`} />
               </label>
-              <button type="submit" className="relative mt-[4px] min-h-[56px] cursor-pointer overflow-hidden rounded-[14px] border-0 bg-brand px-[24px] py-[17px] text-[15.5px] font-bold text-white hover:bg-ink">
+              <button type="submit" className="relative mt-[4px] min-h-[56px] cursor-pointer overflow-hidden rounded-[14px] border-0 bg-brand px-[24px] py-[17px] text-[15.5px] font-bold text-white hover:bg-blue">
                 Request my free consultation
               </button>
               <p className="text-[12.5px] leading-[1.55] text-muted-2">We reply within one working day. Your details go to our CRM only, never to third parties.</p>

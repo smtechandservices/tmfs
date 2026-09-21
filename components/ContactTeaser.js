@@ -22,8 +22,8 @@ export default function ContactTeaser() {
           <h2 className="mb-[18px] max-w-[18ch] text-pretty text-[clamp(30px,4.6vw,54px)] font-extrabold leading-[1.04] tracking-[-.03em]">Tell us what you're building</h2>
           <p className="mb-[32px] max-w-[42ch] text-[16px] leading-[1.65] text-muted">Two fields and we'll call you back, or skip straight to the phone.</p>
           <div className="flex flex-wrap gap-[10px]">
-            <a href="tel:+971522149086" className="flex min-h-[48px] items-center rounded-full bg-ink px-[22px] py-[12px] text-[14px] font-bold text-white hover:bg-brand">Call now</a>
-            <a href="mailto:manager@timemachine.ae?subject=TMFS%20Website" className="flex min-h-[48px] items-center rounded-full border border-line px-[22px] py-[12px] text-[14px] font-semibold text-ink hover:border-ink">Email us</a>
+            <a href="tel:+971522149086" className="flex min-h-[48px] items-center rounded-full bg-blue px-[22px] py-[12px] text-[14px] font-bold text-white hover:bg-brand">Call now</a>
+            <a href="mailto:manager@timemachine.ae?subject=TMFS%20Website" className="flex min-h-[48px] items-center rounded-full border border-line px-[22px] py-[12px] text-[14px] font-semibold text-ink hover:border-blue hover:text-blue">Email us</a>
           </div>
         </Reveal>
 
@@ -46,7 +46,7 @@ export default function ContactTeaser() {
                   <input type="tel" required placeholder="+971 50 000 0000" className={FIELD_CLASS} />
                 </label>
               </div>
-              <button type="submit" className="relative mt-[4px] min-h-[56px] cursor-pointer overflow-hidden rounded-[14px] border-0 bg-brand px-[24px] py-[17px] text-[15.5px] font-bold text-white hover:bg-ink">
+              <button type="submit" className="relative mt-[4px] min-h-[56px] cursor-pointer overflow-hidden rounded-[14px] border-0 bg-brand px-[24px] py-[17px] text-[15.5px] font-bold text-white hover:bg-blue">
                 Request my free consultation
               </button>
               <p className="text-[12.5px] leading-[1.55] text-muted-2">

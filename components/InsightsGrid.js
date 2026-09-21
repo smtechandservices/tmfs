@@ -90,7 +90,7 @@ export default function InsightsGrid() {
               type="button"
               onClick={() => setActive(cat)}
               className={`min-h-[40px] cursor-pointer rounded-full border px-[16px] py-[9px] text-[13px] font-semibold transition-colors duration-150 ${
-                active === cat ? 'border-ink bg-ink text-white' : 'border-line-3 bg-white text-ink hover:border-ink'
+                active === cat ? 'border-blue bg-blue text-white' : 'border-line-3 bg-white text-ink hover:border-blue'
               }`}
             >
               {cat}
@@ -113,7 +113,7 @@ export default function InsightsGrid() {
                     <span>·</span>
                     <span>{a.date}</span>
                   </div>
-                  <h3 className="mb-[8px] text-[19px] font-bold leading-[1.25] tracking-[-.01em] text-ink">{a.title}</h3>
+                  <h3 className="mb-[8px] text-[19px] font-bold leading-[1.25] tracking-[-.01em] text-blue">{a.title}</h3>
                   <p className="text-[14.5px] leading-[1.6] text-muted">{a.desc}</p>
                 </div>
               </div>
