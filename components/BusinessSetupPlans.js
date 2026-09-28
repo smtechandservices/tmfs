@@ -74,9 +74,9 @@ function TierCard({ tier }) {
       <span className="mb-[14px] inline-block w-fit rounded-full bg-brand-tint px-[13px] py-[5px] font-mono text-[10px] font-bold uppercase tracking-[.1em] text-brand">
         {tier.tag}
       </span>
-      <h3 className="mb-[10px] text-[22px] font-extrabold tracking-[-.02em] text-blue">{tier.title}</h3>
+      <h3 className="mb-[10px] text-[22px] font-semibold tracking-[-.02em] text-blue">{tier.title}</h3>
       <p className="mb-[18px] text-[14.5px] leading-[1.6] text-muted">{tier.desc}</p>
-      <a href="/contact" className="mt-auto text-[14px] font-bold text-ink hover:text-brand">
+      <a href="/contact" className="mt-auto text-[14px] font-bold text-blue hover:text-brand">
         Get started →
       </a>
     </div>
@@ -89,7 +89,7 @@ function PackageCard({ pkg, dup }) {
       aria-hidden={dup || undefined}
       className="flex w-[270px] shrink-0 flex-col rounded-[18px] border border-line bg-white p-[22px]"
     >
-      <h3 className="mb-[8px] text-[18px] font-bold tracking-[-.01em] text-blue">{pkg.name}</h3>
+      <h3 className="mb-[8px] text-[18px] font-semibold tracking-[-.01em] text-blue">{pkg.name}</h3>
       <p className="mb-[16px] text-[13.5px] leading-[1.55] text-muted">{pkg.desc}</p>
       <ul className="mb-[20px] flex flex-1 flex-col gap-[7px]">
         {pkg.points.map((point) => (
@@ -102,7 +102,7 @@ function PackageCard({ pkg, dup }) {
       <a
         href="/contact"
         tabIndex={dup ? -1 : undefined}
-        className="flex min-h-[44px] items-center justify-center rounded-full bg-blue px-[18px] py-[11px] text-[13.5px] font-bold text-white hover:bg-brand"
+        className="flex min-h-[44px] items-center justify-center rounded-full bg-blue px-[18px] py-[11px] text-[13.5px] font-bold text-white hover:bg-brand hover:text-white"
       >
         Get a quote
       </a>
@@ -210,7 +210,7 @@ export default function BusinessSetupPlans() {
       <section className="mx-auto max-w-[1320px] px-[20px] pt-4 pb-12">
         <Reveal className="mb-[28px]">
           <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">Packages</div>
-          <h2 className="max-w-[24ch] text-pretty text-[clamp(26px,3.6vw,40px)] font-extrabold leading-[1.08] tracking-[-.03em]">
+          <h2 className="max-w-[24ch] text-pretty text-[clamp(26px,3.6vw,40px)] font-bold leading-[1.08] tracking-[-.03em]">
             A licence package for every zone we file in
           </h2>
         </Reveal>
@@ -222,16 +222,16 @@ export default function BusinessSetupPlans() {
 
       <section className="border-t border-line bg-white">
         <div className="mx-auto flex max-w-[1320px] flex-wrap items-center justify-between gap-[20px] px-[20px] py-[clamp(40px,6vw,64px)]">
-          <h3 className="max-w-[28ch] text-pretty text-[24px] font-extrabold tracking-[-.02em]">Still weighing jurisdictions?</h3>
+          <h3 className="max-w-[28ch] text-pretty text-[24px] font-semibold tracking-[-.02em]">Still weighing jurisdictions?</h3>
           <div className="flex flex-wrap gap-[12px]">
-            <a href="/contact" className="flex min-h-[52px] items-center rounded-full bg-brand px-[28px] py-[15px] text-[15px] font-bold text-white hover:bg-blue">
+            <a href="/contact" className="flex min-h-[52px] items-center rounded-full bg-brand px-[28px] py-[15px] text-[15px] font-bold text-white hover:bg-blue hover:text-white">
               Book a free consultation
             </a>
             <a
               href="https://wa.me/971522149086"
               target="_blank"
               rel="noopener"
-              className="flex min-h-[52px] items-center rounded-full border border-line px-[28px] py-[15px] text-[15px] font-semibold text-ink hover:border-blue hover:text-blue"
+              className="flex min-h-[52px] items-center rounded-full bg-blue px-[28px] py-[15px] text-[15px] font-bold text-white hover:bg-brand hover:text-white"
             >
               Chat on WhatsApp
             </a>

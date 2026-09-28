@@ -59,7 +59,7 @@ export default function Hero() {
         <Reveal delay={240} className="flex flex-wrap gap-[12px]">
           <a
             href="/contact"
-            className="relative flex min-h-[52px] items-center overflow-hidden rounded-full bg-brand px-[28px] py-[15px] text-[15px] font-bold text-white hover:bg-white hover:text-ink"
+            className="relative flex min-h-[52px] items-center overflow-hidden rounded-full bg-brand px-[28px] py-[15px] text-[15px] font-bold text-white hover:bg-blue hover:text-white"
           >
             <span className="relative z-[2]">Book a free consultation</span>
           </a>
@@ -67,7 +67,7 @@ export default function Hero() {
             href="https://wa.me/971522149086"
             target="_blank"
             rel="noopener"
-            className="flex min-h-[52px] items-center rounded-full border border-[rgba(255,255,255,.45)] bg-[rgba(255,255,255,.1)] px-[28px] py-[15px] text-[15px] font-semibold text-white backdrop-blur-[6px] hover:border-white hover:bg-white hover:text-ink"
+            className="flex min-h-[52px] items-center rounded-full bg-blue px-[28px] py-[15px] text-[15px] font-bold text-white hover:bg-brand hover:text-white"
           >
             Chat on WhatsApp
           </a>
@@ -84,7 +84,7 @@ export default function Hero() {
                   key={tab.key}
                   onClick={() => setHeroTab(tab.key)}
                   className={`min-h-[44px] flex-1 cursor-pointer rounded-[14px] border-0 px-[8px] py-[12px] text-[13px] font-bold ${
-                    active ? 'bg-blue text-white' : 'bg-transparent text-muted'
+                    active ? 'bg-blue text-white' : 'bg-transparent text-blue hover:bg-cream-2'
                   }`}
                 >
                   {tab.label}
@@ -105,7 +105,7 @@ export default function Hero() {
             ))}
             <a
               href="/contact"
-              className="flex min-h-[52px] items-center justify-center rounded-[14px] bg-blue px-[20px] py-[14px] text-[14px] font-bold text-white hover:bg-brand"
+              className="flex min-h-[52px] items-center justify-center rounded-[14px] bg-blue px-[20px] py-[14px] text-[14px] font-bold text-white hover:bg-brand hover:text-white"
             >
               Get matched
             </a>

@@ -59,7 +59,7 @@ export default function About() {
     <section id="about" className="mx-auto max-w-[1320px] px-[20px] py-12">
       <Reveal className="mb-[48px]">
         <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">About us</div>
-        <h2 className="max-w-[20ch] text-pretty text-[clamp(30px,4.6vw,54px)] font-extrabold leading-[1.05] tracking-[-.03em]">Time Machine Financial Services</h2>
+        <h2 className="max-w-[20ch] text-pretty text-[clamp(30px,4.6vw,54px)] font-bold leading-[1.05] tracking-[-.03em]">Time Machine Financial Services</h2>
       </Reveal>
 
       <div className="mb-[56px] grid grid-cols-1 gap-[24px] navp:grid-cols-2">
@@ -82,7 +82,7 @@ export default function About() {
       </div>
 
       <Reveal className="mb-[56px] rounded-[20px] border border-blue bg-blue px-[28px] py-[clamp(36px,6vw,56px)] text-center">
-        <p className="text-pretty text-[clamp(22px,3.6vw,34px)] font-extrabold leading-[1.15] tracking-[-.02em] text-white">
+        <p className="text-pretty font-display text-[clamp(22px,3.6vw,34px)] font-extrabold leading-[1.15] tracking-[-.02em] text-white">
           Your vision, <span className="text-brand">our</span> expertise.
         </p>
       </Reveal>
@@ -90,7 +90,7 @@ export default function About() {
       <div className="mb-[56px]">
         <Reveal className="mb-[20px]">
           <div className="mb-[10px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">What we stand for</div>
-          <h3 className="text-[22px] font-extrabold tracking-[-.01em] text-blue">Brand values</h3>
+          <h3 className="text-[22px] font-semibold tracking-[-.01em] text-blue">Brand values</h3>
         </Reveal>
         <div className="grid grid-cols-1 gap-[16px] navp:grid-cols-2 navd:grid-cols-3">
           {VALUES.map((v, i) => (
@@ -103,7 +103,7 @@ export default function About() {
       </div>
 
       <div>
-        <Reveal as="h3" className="mb-[20px] text-[22px] font-extrabold tracking-[-.01em] text-blue">
+        <Reveal as="h3" className="mb-[20px] text-[22px] font-semibold tracking-[-.01em] text-blue">
           Meet our team
         </Reveal>
         <div className="grid grid-cols-1 gap-[16px] navp:grid-cols-2 navd:grid-cols-3">

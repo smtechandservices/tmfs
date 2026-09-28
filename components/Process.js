@@ -62,7 +62,7 @@ export default function Process() {
           <div className="navd:sticky navd:top-[88px]">
             <Reveal>
               <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">How it goes</div>
-              <h2 className="mb-[18px] text-pretty text-[clamp(28px,4.2vw,48px)] font-extrabold leading-[1.06] tracking-[-.03em]">Four steps, one point of contact</h2>
+              <h2 className="mb-[18px] text-pretty text-[clamp(28px,4.2vw,48px)] font-bold leading-[1.06] tracking-[-.03em]">Four steps, one point of contact</h2>
               <p className="mb-[32px] max-w-[42ch] text-[16px] leading-[1.65] text-muted">No handoffs between departments. The consultant on your first call stays with you through licence, bank and renewal.</p>
             </Reveal>
             <ul className="flex flex-col gap-[6px]">
@@ -104,7 +104,7 @@ export default function Process() {
                 <div className="mb-[14px] inline-block rounded-full bg-cream-2 px-[12px] py-[5px] text-[11px] font-bold tracking-[.04em] text-ink">
                   STEP {step.n}
                 </div>
-                <h3 className="mb-[8px] text-[21px] font-extrabold tracking-[-.02em] text-blue">{step.title}</h3>
+                <h3 className="mb-[8px] text-[21px] font-semibold tracking-[-.02em] text-blue">{step.title}</h3>
                 <p className="mb-[16px] max-w-[52ch] text-[15px] leading-[1.55] text-muted">{step.desc}</p>
                 <div className="flex flex-wrap items-center gap-x-[16px] gap-y-[6px]">
                   {step.highlights.map((h) => (

@@ -1,7 +1,9 @@
+import Logo from './Logo';
+
 const SERVICE_LINKS = [
   { href: '/services#business-setup', label: 'Business setup' },
   { href: '/services#banking', label: 'Banking services' },
-  { href: '/services#accounting', label: 'Accounting & audit' },
+  { href: '/services#accounting', label: 'Accounting & Audit' },
   { href: '/services#vat', label: 'VAT consultancy' },
   { href: '/services#compliance', label: 'Corporate & compliance' },
 ];
@@ -51,20 +53,16 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-blue text-white">
+    <footer className="border-t border-line bg-cream text-ink">
       <div className="mx-auto grid max-w-[1320px] grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-[clamp(28px,4vw,48px)] px-[20px] pt-[clamp(48px,7vw,84px)] pb-[28px]">
         <div>
-          <div className="mb-[18px] flex items-center gap-[11px]">
-            <img src="/logo.png" alt="Time Machine Financial Services" className="block h-[44px] w-[44px] rounded-full" />
-            <span className="flex flex-col leading-[1.05]">
-              <span className="text-[15px] font-extrabold tracking-[-.01em] text-white">TIME MACHINE</span>
-              <span className="font-mono text-[9px] tracking-[.18em] text-brand">FINANCIAL SERVICES</span>
-            </span>
-          </div>
-          <p className="mb-[18px] max-w-[34ch] text-[14.5px] leading-[1.65] text-fog-2">Our prime focus is to be the preferred, leading and easily approachable partner for personalized financial broker services.</p>
+          <a href="/" className="mb-[22px] inline-block">
+            <Logo className="block h-[52px] w-auto" />
+          </a>
+          <p className="mb-[18px] max-w-[34ch] text-[14.5px] leading-[1.65] text-muted">Our prime focus is to be the preferred, leading and easily approachable partner for personalized financial broker services.</p>
           <ul className="mb-4 flex gap-[16px]">
             {LEGAL_LINKS.map((l) => (
-              <li key={l.label}><a href={l.href} className="text-[14.5px] text-fog hover:text-brand">{l.label}</a></li>
+              <li key={l.label}><a href={l.href} className="text-[14.5px] text-ink hover:text-brand">{l.label}</a></li>
             ))}
           </ul>
           <div className="flex gap-[8px]">
@@ -75,7 +73,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener"
                 aria-label={s.label}
-                className="flex h-[38px] w-[38px] items-center justify-center rounded-[10px] bg-white text-blue hover:bg-brand hover:text-white"
+                className="flex h-[38px] w-[38px] items-center justify-center rounded-[10px] bg-blue text-white hover:bg-brand hover:text-white"
               >
                 {ICONS[s.icon]}
               </a>
@@ -84,39 +82,39 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="mb-[16px] font-mono text-[10px] uppercase tracking-[.16em] text-fog-2">Services</h4>
+          <h4 className="mb-[16px] font-mono text-[10px] font-medium uppercase tracking-[.16em] text-muted-2">Services</h4>
           <ul className="flex flex-col gap-[11px]">
             {SERVICE_LINKS.map((l) => (
-              <li key={l.label}><a href={l.href} className="text-[14.5px] text-fog hover:text-brand">{l.label}</a></li>
+              <li key={l.label}><a href={l.href} className="text-[14.5px] text-ink hover:text-brand">{l.label}</a></li>
             ))}
           </ul>
         </div>
 
         <div>
-          <h4 className="mb-[16px] font-mono text-[10px] uppercase tracking-[.16em] text-fog-2">Business setup</h4>
+          <h4 className="mb-[16px] font-mono text-[10px] font-medium uppercase tracking-[.16em] text-muted-2">Business setup</h4>
           <ul className="flex flex-col gap-[11px]">
             {BUSINESS_SETUP_LINKS.map((l) => (
-              <li key={l.label}><a href={l.href} className="text-[14.5px] text-fog hover:text-brand">{l.label}</a></li>
+              <li key={l.label}><a href={l.href} className="text-[14.5px] text-ink hover:text-brand">{l.label}</a></li>
             ))}
           </ul>
         </div>
 
         <div>
-          <h4 className="mb-[16px] font-mono text-[10px] uppercase tracking-[.16em] text-fog-2">Get in touch</h4>
+          <h4 className="mb-[16px] font-mono text-[10px] font-medium uppercase tracking-[.16em] text-muted-2">Get in touch</h4>
           <ul className="flex flex-col gap-[11px]">
-            <li className="text-[14.5px] leading-[1.6] text-fog-2">Millennium Central Hotel, Al Asayel Street, next to Dubai Mall</li>
-            <li><a href="tel:+971522149086" className="text-[15px] font-bold text-white hover:text-brand">+971 52 214 9086</a></li>
-            <li><a href="mailto:manager@timemachine.ae?subject=TMFS%20Website" className="text-[14.5px] text-fog hover:text-brand">manager@timemachine.ae</a></li>
+            <li className="text-[14.5px] leading-[1.6] text-muted">Millennium Central Hotel, Al Asayel Street, next to Dubai Mall</li>
+            <li><a href="tel:+971522149086" className="text-[15px] font-bold text-blue hover:text-brand">+971 52 214 9086</a></li>
+            <li><a href="mailto:manager@timemachine.ae?subject=TMFS%20Website" className="text-[14.5px] text-ink hover:text-brand">manager@timemachine.ae</a></li>
           </ul>
           <ul className="mt-4 flex gap-[11px]">
             {COMPANY_LINKS.map((l) => (
-              <li key={l.label}><a href={l.href} className="text-[14.5px] text-fog hover:text-brand">{l.label}</a></li>
+              <li key={l.label}><a href={l.href} className="text-[14.5px] text-ink hover:text-brand">{l.label}</a></li>
             ))}
           </ul>
         </div>
       </div>
-      <div className="mx-auto flex max-w-[1320px] flex-wrap items-center border-t border-[rgba(255,255,255,.16)] px-[20px] pt-[22px] pb-[34px]">
-        <span className="text-[13px] text-fog-2">© Time Machine Group | All rights reserved</span>
+      <div className="mx-auto flex max-w-[1320px] flex-wrap items-center border-t border-line px-[20px] pt-[22px] pb-[34px]">
+        <span className="text-[13px] text-muted-2">© Time Machine Group | All rights reserved</span>
       </div>
     </footer>
   );

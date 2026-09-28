@@ -19,11 +19,11 @@ export default function ContactTeaser() {
       <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[clamp(28px,4vw,56px)]">
         <Reveal>
           <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">Get started</div>
-          <h2 className="mb-[18px] max-w-[18ch] text-pretty text-[clamp(30px,4.6vw,54px)] font-extrabold leading-[1.04] tracking-[-.03em]">Tell us what you're building</h2>
+          <h2 className="mb-[18px] max-w-[18ch] text-pretty text-[clamp(30px,4.6vw,54px)] font-bold leading-[1.04] tracking-[-.03em]">Tell us what you're building</h2>
           <p className="mb-[32px] max-w-[42ch] text-[16px] leading-[1.65] text-muted">Two fields and we'll call you back, or skip straight to the phone.</p>
           <div className="flex flex-wrap gap-[10px]">
-            <a href="tel:+971522149086" className="flex min-h-[48px] items-center rounded-full bg-blue px-[22px] py-[12px] text-[14px] font-bold text-white hover:bg-brand">Call now</a>
-            <a href="mailto:manager@timemachine.ae?subject=TMFS%20Website" className="flex min-h-[48px] items-center rounded-full border border-line px-[22px] py-[12px] text-[14px] font-semibold text-ink hover:border-blue hover:text-blue">Email us</a>
+            <a href="tel:+971522149086" className="flex min-h-[48px] items-center rounded-full bg-blue px-[22px] py-[12px] text-[14px] font-bold text-white hover:bg-brand hover:text-white">Call now</a>
+            <a href="mailto:manager@timemachine.ae?subject=TMFS%20Website" className="flex min-h-[48px] items-center rounded-full bg-brand px-[22px] py-[12px] text-[14px] font-bold text-white hover:bg-blue hover:text-white">Email us</a>
           </div>
         </Reveal>
 
@@ -31,7 +31,7 @@ export default function ContactTeaser() {
           {sent ? (
             <div className="flex animate-tm-slide-down-med flex-col items-start gap-[14px] py-[28px]">
               <span className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-brand-tint text-[24px] font-extrabold text-brand">✓</span>
-              <h3 className="text-[24px] font-extrabold tracking-[-.02em]">Thanks, we have it</h3>
+              <h3 className="text-[24px] font-semibold tracking-[-.02em]">Thanks, we have it</h3>
               <p className="text-[15px] leading-[1.6] text-muted">A consultant will call you within one working day.</p>
             </div>
           ) : (

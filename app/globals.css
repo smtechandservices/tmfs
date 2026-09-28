@@ -2,9 +2,9 @@
 
 @theme {
   --color-ink: #14121a;
+  /* Brand palette: Royal Blue (primary), Signal Red (accent), Pure White. */
   --color-brand: #db141c;
-  /* --color-blue: #1800ad; */
-  --color-blue: #09013d;
+  --color-blue: #1800ad;
   --color-cream: #faf9f7;
   --color-cream-2: #f4f1eb;
   --color-line: #e5e0d8;
@@ -16,13 +16,14 @@
   --color-fog-2: #c9c4cf;
   --color-brand-tint: #fbf1f0;
 
-  /* Brand guide calls for Mont (display/caption) and Helvetica Now (body).
-     Both are commercial and unavailable without a license, so Poppins and
-     Inter stand in as the closest free equivalents until real font files
-     are supplied. */
-  --font-display: "Poppins", system-ui, sans-serif;
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-mono: "Poppins", system-ui, sans-serif;
+  /* Brand guide: Mont for display, headings and captions; Helvetica Now for
+     body. Both are commercial, so each stack names the licensed face first
+     (picked up automatically once installed or self-hosted via @font-face),
+     then the closest free match: Montserrat for Mont, and Helvetica Neue /
+     Inter for Helvetica Now. */
+  --font-display: "Mont", "Montserrat", system-ui, sans-serif;
+  --font-sans: "Helvetica Now Text", "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif;
+  --font-mono: "Mont", "Montserrat", system-ui, sans-serif;
 
   --breakpoint-navd: 940px;
   --breakpoint-navp: 620px;
@@ -185,7 +186,7 @@
   filter: grayscale(1) contrast(1.02) brightness(1.06);
 }
 #tmmap.leaflet-container {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-sans);
 }
 #tmrail::-webkit-scrollbar {
   display: none;

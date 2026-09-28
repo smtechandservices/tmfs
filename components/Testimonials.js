@@ -43,7 +43,7 @@ export default function Testimonials() {
       <Reveal delay={100} className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] items-center gap-[clamp(28px,4vw,56px)]">
         <div className="flex min-h-[280px] flex-col justify-center">
           <blockquote key={ti} className="animate-tm-slide-down">
-            <p className="mb-[24px] text-pretty text-[clamp(21px,2.9vw,34px)] font-semibold leading-[1.32] tracking-[-.02em]">
+            <p className="mb-[24px] text-pretty font-display text-[clamp(21px,2.9vw,34px)] font-semibold leading-[1.32] tracking-[-.02em]">
               &ldquo;{active.quote}&rdquo;
             </p>
             <footer className="flex items-center gap-[14px]">
@@ -68,19 +68,19 @@ export default function Testimonials() {
 
         <div className="grid grid-cols-2 gap-[12px]">
           <div className="rounded-[18px] border border-line bg-white p-[24px]">
-            <div className="text-[34px] font-extrabold tracking-[-.03em] text-brand">4.9</div>
+            <div className="font-display text-[34px] font-extrabold tracking-[-.03em] text-brand">4.9</div>
             <div className="mt-[6px] text-[13.5px] font-medium text-muted">Average client rating</div>
           </div>
           <div className="rounded-[18px] border border-line bg-white p-[24px]">
-            <div className="text-[34px] font-extrabold tracking-[-.03em] text-brand">94%</div>
+            <div className="font-display text-[34px] font-extrabold tracking-[-.03em] text-brand">94%</div>
             <div className="mt-[6px] text-[13.5px] font-medium text-muted">Clients who renew with us</div>
           </div>
           <div className="col-span-full rounded-[18px] border border-line bg-white p-[24px]">
             <div className="mb-[10px] font-mono text-[10px] uppercase tracking-[.16em] text-muted-2">Talk to our experts</div>
             <p className="mb-[16px] text-[14.5px] leading-[1.6] text-muted">Our team can walk you through the whole setup process, start to finish.</p>
             <div className="flex flex-wrap gap-[10px]">
-              <a href="tel:+971522149086" className="flex min-h-[44px] items-center rounded-full bg-blue px-[20px] py-[11px] text-[13.5px] font-bold text-white hover:bg-brand">Call now</a>
-              <a href="mailto:manager@timemachine.ae?subject=TMFS%20Website" className="flex min-h-[44px] items-center rounded-full border border-line px-[20px] py-[11px] text-[13.5px] font-semibold text-ink hover:border-blue hover:text-blue">Email us</a>
+              <a href="tel:+971522149086" className="flex min-h-[44px] items-center rounded-full bg-blue px-[20px] py-[11px] text-[13.5px] font-bold text-white hover:bg-brand hover:text-white">Call now</a>
+              <a href="mailto:manager@timemachine.ae?subject=TMFS%20Website" className="flex min-h-[44px] items-center rounded-full bg-brand px-[20px] py-[11px] text-[13.5px] font-bold text-white hover:bg-blue hover:text-white">Email us</a>
             </div>
           </div>
         </div>

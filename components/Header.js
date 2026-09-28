@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Logo from './Logo';
 
 /** Closes an open dropdown when the user clicks anywhere outside `ref`. */
 function useClickOutside(ref, onOutside) {
@@ -16,7 +17,7 @@ function useClickOutside(ref, onOutside) {
 const SERVICES_MENU = [
   { href: '/services#business-setup', label: 'Business setup' },
   { href: '/services#banking', label: 'Banking' },
-  { href: '/services#accounting', label: 'Accounting & audit' },
+  { href: '/services#accounting', label: 'Accounting & Audit' },
   { href: '/services#vat', label: 'VAT consultancy' },
   { href: '/services#compliance', label: 'Corporate & compliance' },
 ];
@@ -110,12 +111,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-[80] border-b border-line bg-[rgba(255,255,255,.88)] backdrop-blur-[14px]">
       <div className="mx-auto flex max-w-[1320px] items-center gap-[20px] px-[20px] py-[12px]">
-        <a href="/" className="flex flex-none items-center gap-[11px]">
-          <img src="/logo.png" alt="Time Machine Financial Services" className="block h-[44px] w-[44px] rounded-full" />
-          <span className="flex flex-col leading-[1.05]">
-            <span className="text-[15px] font-extrabold tracking-[-.01em] text-blue">TIME MACHINE</span>
-            <span className="font-mono text-[9px] tracking-[.18em] text-brand">FINANCIAL SERVICES</span>
-          </span>
+        <a href="/" className="flex flex-none items-center">
+          <Logo className="block h-[40px] w-auto navp:h-[44px]" />
         </a>
 
         <nav className="ml-auto hidden items-center gap-[26px] navd:flex">
@@ -147,17 +144,17 @@ export default function Header() {
           className="group ml-auto -mr-4 flex h-[46px] w-[46px] flex-none flex-col items-center justify-center gap-[5px] cursor-pointer transition-colors duration-200 navd:hidden"
         >
           <span
-            className={`block h-[2px] w-[18px] rounded-full bg-ink transition-all duration-300 ease-[cubic-bezier(.22,.7,.2,1)] group-hover:bg-white ${
+            className={`block h-[2px] w-[18px] rounded-full bg-blue transition-all duration-300 ease-[cubic-bezier(.22,.7,.2,1)] group-hover:bg-brand ${
               menuOpen ? 'translate-y-[7px] rotate-45' : ''
             }`}
           ></span>
           <span
-            className={`block h-[2px] w-[18px] rounded-full bg-ink transition-all duration-200 group-hover:bg-white ${
+            className={`block h-[2px] w-[18px] rounded-full bg-blue transition-all duration-200 group-hover:bg-brand ${
               menuOpen ? 'scale-x-0 opacity-0' : ''
             }`}
           ></span>
           <span
-            className={`block h-[2px] w-[18px] rounded-full bg-ink transition-all duration-300 ease-[cubic-bezier(.22,.7,.2,1)] group-hover:bg-white ${
+            className={`block h-[2px] w-[18px] rounded-full bg-blue transition-all duration-300 ease-[cubic-bezier(.22,.7,.2,1)] group-hover:bg-brand ${
               menuOpen ? '-translate-y-[7px] -rotate-45' : ''
             }`}
           ></span>
@@ -178,7 +175,7 @@ export default function Header() {
             <a
               href="/contact"
               onClick={closeMenu}
-              className="mt-[16px] rounded-full bg-brand px-[20px] py-[15px] text-center text-[15px] font-bold text-white"
+              className="mt-[16px] rounded-full bg-brand px-[20px] py-[15px] text-center text-[15px] font-bold text-white hover:bg-blue hover:text-white"
             >
               Book a free consultation
             </a>

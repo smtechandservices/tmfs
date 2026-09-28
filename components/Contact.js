@@ -19,7 +19,7 @@ export default function Contact() {
       <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[clamp(28px,4vw,56px)]">
         <Reveal>
           <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">Get started</div>
-          <h2 className="mb-[18px] max-w-[20ch] text-pretty text-[clamp(30px,4.6vw,54px)] font-extrabold leading-[1.04] tracking-[-.03em]">Fill in your details and our team will connect with you</h2>
+          <h2 className="mb-[18px] max-w-[20ch] text-pretty text-[clamp(30px,4.6vw,54px)] font-bold leading-[1.04] tracking-[-.03em]">Fill in your details and our team will connect with you</h2>
           <p className="mb-[32px] max-w-[44ch] text-[16px] leading-[1.65] text-muted">Or skip the form. Call, WhatsApp or walk into the office next to Dubai Mall.</p>
           <ul className="flex flex-col gap-[20px]">
             <li>
@@ -41,7 +41,7 @@ export default function Contact() {
           {sent ? (
             <div className="flex animate-tm-slide-down-med flex-col items-start gap-[14px] py-[28px]">
               <span className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-brand-tint text-[24px] font-extrabold text-brand">✓</span>
-              <h3 className="text-[24px] font-extrabold tracking-[-.02em]">Thanks, we have it</h3>
+              <h3 className="text-[24px] font-semibold tracking-[-.02em]">Thanks, we have it</h3>
               <p className="text-[15px] leading-[1.6] text-muted">A consultant will call you within one working day. If it is urgent, WhatsApp us on +971 52 214 9086.</p>
             </div>
           ) : (

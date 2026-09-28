@@ -31,7 +31,7 @@ const PLACES = [
 const CHIP_BASE =
   'min-h-[40px] flex-none cursor-pointer whitespace-nowrap rounded-full border px-[15px] py-[9px] text-[13px] font-semibold transition-[background,color,border-color,transform] duration-[180ms] ease hover:-translate-y-[1px]';
 const CHIP_ON = 'border-blue bg-blue text-white';
-const CHIP_OFF = 'border-line-3 bg-white text-ink hover:border-blue';
+const CHIP_OFF = 'border-blue bg-white text-blue hover:bg-blue hover:text-white';
 
 export default function DubaiMap() {
   const mapElRef = useRef(null);

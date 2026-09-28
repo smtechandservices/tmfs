@@ -124,7 +124,7 @@ function JurisdictionPicker() {
         ))}
         <a
           href="/contact"
-          className="flex min-h-[52px] items-center justify-center rounded-[14px] bg-blue px-[20px] py-[14px] text-[14px] font-bold text-white hover:bg-brand"
+          className="flex min-h-[52px] items-center justify-center rounded-[14px] bg-blue px-[20px] py-[14px] text-[14px] font-bold text-white hover:bg-brand hover:text-white"
         >
           Get matched
         </a>
@@ -137,7 +137,7 @@ function ItemCard({ item, large }) {
   return (
     <div className={`rounded-[18px] border border-line bg-white ${large ? 'p-[30px]' : 'p-[22px]'}`}>
       <div className="mb-[8px] flex items-center gap-[8px]">
-        <h3 className={`font-bold tracking-[-.01em] text-blue ${large ? 'text-[20px]' : 'text-[17px]'}`}>{item.title}</h3>
+        <h3 className={`font-semibold tracking-[-.01em] text-blue ${large ? 'text-[20px]' : 'text-[17px]'}`}>{item.title}</h3>
         {item.badge && (
           <span className="rounded-full bg-brand-tint px-[9px] py-[2px] font-mono text-[9px] font-bold uppercase tracking-[.1em] text-brand">
             {item.badge}
@@ -176,7 +176,7 @@ function Section({ section }) {
       )}
       <Reveal className="mb-[28px]">
         <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">{section.eyebrow}</div>
-        <h2 className="max-w-[24ch] text-pretty text-[clamp(26px,3.6vw,42px)] font-extrabold leading-[1.08] tracking-[-.03em]">{section.title}</h2>
+        <h2 className="max-w-[24ch] text-pretty text-[clamp(26px,3.6vw,42px)] font-bold leading-[1.08] tracking-[-.03em]">{section.title}</h2>
       </Reveal>
 
       {section.aside ? (
@@ -233,16 +233,16 @@ export default function ServicesDetail() {
 
       <section className="border-t border-line bg-white">
         <div className="mx-auto flex max-w-[1320px] flex-wrap items-center justify-between gap-[20px] px-[20px] py-[clamp(40px,6vw,64px)]">
-          <h3 className="max-w-[28ch] text-pretty text-[24px] font-extrabold tracking-[-.02em]">Not sure which service you need?</h3>
+          <h3 className="max-w-[28ch] text-pretty text-[24px] font-semibold tracking-[-.02em]">Not sure which service you need?</h3>
           <div className="flex flex-wrap gap-[12px]">
-            <a href="/contact" className="flex min-h-[52px] items-center rounded-full bg-brand px-[28px] py-[15px] text-[15px] font-bold text-white hover:bg-blue">
+            <a href="/contact" className="flex min-h-[52px] items-center rounded-full bg-brand px-[28px] py-[15px] text-[15px] font-bold text-white hover:bg-blue hover:text-white">
               Book a free consultation
             </a>
             <a
               href="https://wa.me/971522149086"
               target="_blank"
               rel="noopener"
-              className="flex min-h-[52px] items-center rounded-full border border-line px-[28px] py-[15px] text-[15px] font-semibold text-ink hover:border-blue hover:text-blue"
+              className="flex min-h-[52px] items-center rounded-full bg-blue px-[28px] py-[15px] text-[15px] font-bold text-white hover:bg-brand hover:text-white"
             >
               Chat on WhatsApp
             </a>

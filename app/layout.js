@@ -46,9 +46,10 @@ export const metadata = {
     description,
     images: [ogImage],
   },
+  // Guidelines call for the pinwheel sub mark at small sizes.
   icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+    icon: '/pinwheel.svg',
+    apple: '/apple-icon.png',
   },
   robots: {
     index: true,
@@ -57,7 +58,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: '#14121a',
+  themeColor: '#1800ad',
 };
 
 export default function RootLayout({ children }) {
@@ -68,7 +69,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;700&display=swap"
         />
       </head>
       <body>{children}</body>

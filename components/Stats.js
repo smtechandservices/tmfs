@@ -14,7 +14,7 @@ export default function Stats() {
       <div className="mx-auto grid max-w-[1320px] grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-[26px] px-[20px] py-[34px]">
         {STATS.map((stat) => (
           <Reveal key={stat.label} delay={stat.delay}>
-            <div className="text-[clamp(32px,4.4vw,50px)] font-extrabold leading-none tracking-[-.03em]">
+            <div className="font-display text-[clamp(32px,4.4vw,50px)] font-extrabold leading-none tracking-[-.03em]">
               <Counter to={stat.to} />
               &nbsp;<span className="text-brand">{stat.suffix}</span>
             </div>

@@ -15,7 +15,7 @@ const CARDS = [
   },
   {
     n: '03',
-    title: 'Accounting & audit',
+    title: 'Accounting & Audit',
     desc: 'Bookkeeping, payroll, financial statements, internal and external audit, and FTA tax audit assistance for SMEs and corporates.',
     href: '/services#accounting',
   },
@@ -53,10 +53,10 @@ function Card({ c, dup, horizontal }) {
       className={`block shrink-0 rounded-[18px] border p-[22px] transition-colors duration-200 ${horizontal ? 'w-[260px]' : ''} ${
         c.dark
           ? 'border-blue bg-blue hover:border-brand'
-          : 'border-line bg-white hover:border-ink'
+          : 'border-line bg-white hover:border-blue'
       }`}
     >
-      <h3 className={`mb-[6px] text-[17px] font-bold tracking-[-.01em] ${c.dark ? 'text-white' : 'text-blue'}`}>{c.title}</h3>
+      <h3 className={`mb-[6px] text-[17px] font-semibold tracking-[-.01em] ${c.dark ? 'text-white' : 'text-blue'}`}>{c.title}</h3>
       <p className={`text-[13.5px] leading-[1.55] ${c.dark ? 'text-fog-2' : 'text-muted'}`}>{c.desc}</p>
       <span className={`mt-[12px] inline-block text-[15px] ${c.dark ? 'text-brand' : 'text-muted-2'}`}>›</span>
     </a>
@@ -115,17 +115,17 @@ export default function Services() {
           <span className="mb-[24px] inline-block rounded-full bg-brand-tint px-[14px] py-[6px] text-[11px] font-bold uppercase tracking-[.1em] text-brand">
             What we do
           </span>
-          <h2 className="mb-[18px] max-w-[16ch] text-pretty text-[clamp(30px,4.6vw,54px)] font-extrabold leading-[1.05] tracking-[-.03em]">One team for the whole UAE stack</h2>
+          <h2 className="mb-[18px] max-w-[16ch] text-pretty text-[clamp(30px,4.6vw,54px)] font-bold leading-[1.05] tracking-[-.03em]">One team for the whole UAE stack</h2>
           <p className="mb-[32px] max-w-[42ch] text-[16px] leading-[1.6] text-muted">
             Five services that most businesses need in their first two years here. Take one, or hand us all of it.
           </p>
           <div className="flex flex-wrap gap-[32px]">
             <div className="border-l-2 border-brand pl-[16px]">
-              <div className="text-[28px] font-extrabold tracking-[-.02em] text-ink">5</div>
+              <div className="font-display text-[28px] font-extrabold tracking-[-.02em] text-ink">5</div>
               <div className="text-[13px] text-muted">Services under one roof</div>
             </div>
             <div className="border-l-2 border-brand pl-[16px]">
-              <div className="text-[28px] font-extrabold tracking-[-.02em] text-ink">3–7 days</div>
+              <div className="font-display text-[28px] font-extrabold tracking-[-.02em] text-ink">3–7 days</div>
               <div className="text-[13px] text-muted">Typical licence turnaround</div>
             </div>
           </div>

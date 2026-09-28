@@ -28,7 +28,7 @@ export default function FreeZoneMap() {
       <div className="mb-[36px] flex flex-wrap items-end justify-between gap-[22px]">
         <Reveal>
           <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">Where we file</div>
-          <h2 className="max-w-[22ch] text-pretty text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.05] tracking-[-.03em]">Every free zone we file in, mapped</h2>
+          <h2 className="max-w-[22ch] text-pretty text-[clamp(28px,4vw,44px)] font-bold leading-[1.05] tracking-[-.03em]">Every free zone we file in, mapped</h2>
         </Reveal>
         <Reveal as="p" delay={120} className="max-w-[38ch] text-[16px] leading-[1.6] text-muted">
           Free zones in blue, our office in black. Tap a pin for the short version of what it suits.
@@ -43,7 +43,7 @@ export default function FreeZoneMap() {
         {HIGHLIGHTS.map((h) => (
           <Reveal key={h.title} delay={h.delay} className="rounded-[18px] border border-line bg-white p-[22px]">
             <div className="mb-[10px] font-mono text-[10px] uppercase tracking-[.16em] text-blue">{h.eyebrow}</div>
-            <h3 className="mb-[7px] text-[17px] font-bold">{h.title}</h3>
+            <h3 className="mb-[7px] text-[17px] font-semibold">{h.title}</h3>
             <p className="text-[14px] leading-[1.6] text-muted">{h.desc}</p>
           </Reveal>
         ))}
