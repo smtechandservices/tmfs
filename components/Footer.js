@@ -46,9 +46,9 @@ const ICONS = {
 };
 
 const SOCIALS = [
-  { href: 'https://www.facebook.com/profile.php?id=61560742015182', label: 'Facebook', icon: 'facebook' },
-  { href: 'https://www.linkedin.com/in/tmfs-financial-services-64763a330/', label: 'LinkedIn', icon: 'linkedin' },
-  { href: 'https://www.instagram.com/timemachinefinancialservices/', label: 'Instagram', icon: 'instagram' },
+  { href: 'https://www.facebook.com/profile.php?id=61560742015182', label: 'Facebook', icon: 'facebook', bg: '#1877F2' },
+  { href: 'https://www.linkedin.com/in/tmfs-financial-services-64763a330/', label: 'LinkedIn', icon: 'linkedin', bg: '#0A66C2' },
+  { href: 'https://www.instagram.com/timemachinefinancialservices/', label: 'Instagram', icon: 'instagram', bg: 'radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%)' },
 ];
 
 export default function Footer() {
@@ -73,7 +73,8 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener"
                 aria-label={s.label}
-                className="flex h-[38px] w-[38px] items-center justify-center rounded-[10px] bg-blue text-white hover:bg-brand hover:text-white"
+                style={{ background: s.bg }}
+                className="flex h-[38px] w-[38px] items-center justify-center rounded-[10px] text-white hover:text-white hover:opacity-90 hover:-translate-y-[2px]"
               >
                 {ICONS[s.icon]}
               </a>
