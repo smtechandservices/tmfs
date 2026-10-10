@@ -164,7 +164,6 @@ export const LEADERSHIP = {
   eyebrow: 'Leadership',
   title: ['The people ', { em: 'on your file.' }],
   intro: 'You will meet the team below, not a call centre. They stay with your company from the first call to the annual renewal.',
-  action: { label: 'Meet the team', href: '/about#team' },
 };
 
 export const DIFFERENTIATORS = {

@@ -3,7 +3,7 @@ import Button, { Eyebrow, Rich } from '../ui/Button';
 import { LEADERSHIP } from '@/content/home';
 import { TEAM } from '@/content/people';
 
-/** Team cards. Also used on the About page (`id="team"`, no action button). */
+/** "The people on your file" team cards, shown on the About page (#team). */
 export default function Leadership({ content = LEADERSHIP, people = TEAM, id }) {
   return (
     <section id={id} className="relative scroll-mt-[92px] bg-soft py-[160px] max-[1100px]:py-[100px] max-md:py-[56px]">
