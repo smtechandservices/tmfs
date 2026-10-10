@@ -27,10 +27,10 @@ export const SITE = {
 };
 
 export const STATS = [
-  { to: 1200, suffix: '+', label: 'Licences & renewals processed' },
-  { to: 18, suffix: '', label: 'UAE banking partners' },
-  { to: 8, suffix: '', label: 'Free zones we file in directly' },
-  { to: 20, suffix: 'yrs', label: 'Group experience in UAE business setup' },
+  { value: '1,200', sup: '+', label: 'Licences & renewals', sub: 'Mainland · Free zone · Offshore' },
+  { value: '18', label: 'Partner banks', sub: 'Corporate, personal & non-resident' },
+  { value: '8', label: 'Jurisdictions filed directly', sub: 'IFZA · Meydan · RAKEZ · SHAMS · SPC' },
+  { value: '20', label: 'Years of group experience', sub: 'Time Machine Group, UAE' },
 ];
 
 export const FOOTER_BLURB =

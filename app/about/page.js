@@ -1,4 +1,5 @@
 import About from '@/components/About';
+import LicencePackages from '@/components/LicencePackages';
 
 export const metadata = {
   title: 'About Us',
@@ -11,6 +12,7 @@ export default function AboutPage() {
   return (
     <div className="w-full">
       <About />
+      <LicencePackages />
     </div>
   );
 }

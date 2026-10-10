@@ -1,0 +1,386 @@
+// Tax service pages, section by section in page order (Avyanco service layout).
+import { servicePage, cta, SRC, IMG } from './shared';
+
+const CORPORATE_TAX = servicePage({
+  href: '/tax/corporate-tax',
+  topic: 'Corporate Tax',
+  authority: 'the Federal Tax Authority',
+  changes: 'Corporate Tax rates, reliefs, free zone conditions and deadlines',
+  meta: {
+    title: 'UAE Corporate Tax Registration & Filing',
+    description: 'UAE Corporate Tax registration, computation and returns with TMFS: 9% above AED 375,000, Small Business Relief, free zone 0% qualifying income and transfer pricing disclosures.',
+  },
+  hero: {
+    title: ['UAE Corporate Tax', 'Registration & Filing'],
+    lead: 'Corporate Tax registration, tax computation and annual returns for mainland, free zone and offshore companies, including Small Business Relief and free zone 0% qualifying income.',
+    chips: ['9% Above AED 375k', 'Registration & Returns', 'Small Business Relief', 'Free Zone QFZP', 'Transfer Pricing'],
+  },
+  intro: {
+    title: 'Corporate Tax Handled from Registration to Return',
+    summary: 'UAE Corporate Tax applies to financial years starting on or after 1 June 2023 under Federal Decree-Law No. 47 of 2022. Taxable income above AED 375,000 is taxed at 9%, every company must register, and returns are due within nine months of the financial year end.',
+    body: 'The headline rate is simple. The work is in the detail: which reliefs apply, how free zone income is split, which expenses are deductible, and how related-party dealings are priced and disclosed. We register your company, keep the books in a shape that supports the return, compute the tax and file on time, alongside your VAT so both regimes tell the same story.',
+    image: IMG.planning,
+  },
+  process: {
+    title: 'How Corporate Tax Compliance Works',
+    body: 'Six steps across the Corporate Tax year.',
+    steps: [
+      { title: 'Registration', body: 'We register the company with the FTA on EmaraTax and obtain its Corporate Tax registration number, within the deadline that applies to your licence.' },
+      { title: 'Position Review', body: 'We confirm your tax period, whether Small Business Relief or free zone 0% treatment applies, and any related-party or group issues.' },
+      { title: 'Books & Records', body: 'Accounts kept to IFRS standards, with the records the FTA expects retained for at least seven years.' },
+      { title: 'Tax Computation', body: 'Accounting profit adjusted for non-deductible expenses, exempt income, reliefs and losses carried forward.' },
+      { title: 'Return Filing', body: 'The Corporate Tax return filed on EmaraTax within nine months of the financial year end, with any tax paid by the same date.' },
+      { title: 'Ongoing Review', body: 'Changes to your structure, revenue or free zone income reviewed before they affect next year’s return.' },
+    ],
+  },
+  documents: {
+    title: 'What You Need to Provide',
+    body: 'Documents for Corporate Tax registration and the first return.',
+    items: [
+      'Trade licence copy',
+      'Memorandum and Articles of Association',
+      'Passport and Emirates ID of owners and authorised signatory',
+      'Financial year end and accounting records',
+      'Details of related parties and group companies',
+      'Free zone lease and substance details, if applicable',
+      'Prior-year financial statements, if any',
+    ],
+  },
+  benefits: {
+    title: 'Why Use TMFS for Corporate Tax',
+    body: 'Most Corporate Tax risk comes from missed deadlines and unexamined assumptions, not the 9% rate.',
+    items: [
+      'Registration filed within your deadline',
+      'Small Business Relief checked and claimed where it applies',
+      'Free zone qualifying income tested every year',
+      'Non-deductible expenses identified before year end',
+      'Related-party transactions documented and disclosed',
+      'Books kept so the return can be supported',
+      'VAT and Corporate Tax reconciled together',
+      'Reminders well ahead of each filing date',
+    ],
+  },
+  advantage: {
+    title: 'The TMFS Advantage',
+    body: 'What sets our Corporate Tax work apart.',
+    items: [
+      { icon: 'receipt-tax', title: 'One View of Your Tax', body: 'Corporate Tax and VAT handled by the same team, so revenue, expenses and related-party flows match across both.' },
+      { icon: 'building-skyscraper', title: 'Free Zone Expertise', body: 'Qualifying income and the de minimis test reviewed for free zone clients, so 0% status isn’t lost by accident.' },
+      { icon: 'book', title: 'Books That Support the Return', body: 'Bookkeeping set up with the tax computation in mind, not tidied up after year end.' },
+      { icon: 'scale', title: 'Transfer Pricing Basics', body: 'Related-party dealings priced at arm’s length and disclosed in the return.' },
+      { icon: 'shield-check', title: 'Deadline Tracking', body: 'Registration and filing dates tracked for you, with reminders well before they fall due.' },
+      { icon: 'briefcase', title: 'Setup to Filing', body: 'Companies we form are registered for Corporate Tax as part of setup, not months later.' },
+    ],
+  },
+  pillars: {
+    title: 'Why Founders Choose TMFS for Corporate Tax',
+    body: 'Three things clients mention most.',
+    items: [
+      { icon: 'award', title: 'Plain answers', body: 'What you owe, why, and what would change it, explained without jargon.' },
+      { icon: 'shield-check', title: 'No missed deadlines', body: 'Registration and returns filed on time, every year.' },
+      { icon: 'bulb', title: 'Planning, not just filing', body: 'Structure and free zone questions raised before year end, while they can still be acted on.' },
+    ],
+  },
+  faq: {
+    title: 'UAE Corporate Tax: Frequently Asked Questions',
+    body: 'Common questions about UAE Corporate Tax.',
+    items: [
+      { q: 'What is the UAE Corporate Tax rate?', a: '0% on taxable income up to AED 375,000 and 9% above it. Qualifying income of a Qualifying Free Zone Person is taxed at 0%. Large multinational groups may also be subject to a 15% domestic minimum top-up tax.' },
+      { q: 'Does every company need to register?', a: 'Yes. Every UAE company must register for Corporate Tax, even if it expects to pay no tax, including free zone companies and offshore companies incorporated in the UAE.' },
+      { q: 'When is the Corporate Tax return due?', a: 'Within nine months of the end of the financial year. Any tax due must be paid by the same date.' },
+      { q: 'What is Small Business Relief?', a: 'Resident businesses with revenue up to AED 3 million can elect to be treated as having no taxable income, for tax periods ending on or before 31 December 2026. They must still register and file a return.' },
+      { q: 'Do free zone companies pay Corporate Tax?', a: 'A free zone company that meets the Qualifying Free Zone Person conditions pays 0% on qualifying income and 9% on other taxable income. If it fails the conditions, it is taxed at the standard rates.' },
+      { q: 'What records do I need to keep?', a: 'Accounting records and supporting documents for at least seven years after the end of the tax period they relate to.' },
+    ],
+  },
+  sources: [SRC.fta, SRC.ct, SRC.sbr, SRC.qfzp],
+  cta: cta('Need Corporate Tax Handled?', 'Talk to a TMFS consultant about registration, returns or free zone 0% treatment, handled alongside your VAT and books.'),
+});
+
+const VAT_REGISTRATION = servicePage({
+  href: '/tax/vat-registration',
+  topic: 'VAT',
+  authority: 'the Federal Tax Authority',
+  changes: 'VAT rates, thresholds, return cycles and registration rules',
+  meta: {
+    title: 'UAE VAT Registration: Threshold, TRN & FTA Filing',
+    description: 'UAE VAT registration with TMFS: mandatory above AED 375,000, voluntary from AED 187,500, TRN obtained through the FTA’s EmaraTax portal and invoicing set up for compliance.',
+  },
+  hero: {
+    title: ['UAE VAT Registration', '& Compliance'],
+    lead: 'VAT registration above the AED 375,000 mandatory threshold or voluntarily from AED 187,500, with your Tax Registration Number, invoicing and first return set up correctly.',
+    chips: ['5% Standard Rate', 'AED 375k Threshold', 'TRN via EmaraTax', 'Voluntary Registration', 'Invoice Setup'],
+  },
+  intro: {
+    title: 'VAT Done Right from Registration to First Return',
+    summary: 'UAE VAT has applied since 1 January 2018 under Federal Decree-Law No. 8 of 2017, at a standard rate of 5%. Registration is mandatory once taxable supplies pass AED 375,000 in 12 months and voluntary from AED 187,500.',
+    body: 'Registering is straightforward when the application is right first time. We check whether you have crossed the threshold, prepare and submit the application on EmaraTax, answer any FTA queries and set up your invoices and accounting codes so the first return is clean. If you are not yet over the threshold, we tell you whether voluntary registration would let you recover VAT on your costs.',
+    image: IMG.district,
+  },
+  process: {
+    title: 'How VAT Registration Works',
+    body: 'Six steps from threshold check to your first return.',
+    steps: [
+      { title: 'Threshold Assessment', body: 'We review your last 12 months of taxable supplies and the next 30 days’ expected sales to confirm whether registration is mandatory or voluntary.' },
+      { title: 'Application Preparation', body: 'Business details, activities, turnover evidence and customs information prepared for the EmaraTax application.' },
+      { title: 'FTA Submission', body: 'The application submitted on EmaraTax, with any FTA clarification requests answered promptly.' },
+      { title: 'TRN Issued', body: 'Once approved, your Tax Registration Number and VAT certificate are issued.' },
+      { title: 'Invoice & System Setup', body: 'Tax invoice templates, VAT codes and pricing updated to meet FTA requirements.' },
+      { title: 'First Return', body: 'Your first VAT return prepared and filed within 28 days of the end of the first tax period.' },
+    ],
+  },
+  documents: {
+    title: 'What You Need to Provide',
+    body: 'Documentation required for FTA VAT registration.',
+    items: [
+      'Trade licence copy',
+      'Memorandum and Articles of Association',
+      'Owner and partner passport copies and Emirates IDs',
+      'Customs registration details, if you import or export',
+      'Bank account details for VAT refunds',
+      'Last 12 months’ revenue evidence',
+      'Authorised signatory documents',
+    ],
+  },
+  benefits: {
+    title: 'Why Use TMFS for VAT Registration',
+    body: 'A clean registration avoids penalties and makes every later return easier.',
+    items: [
+      'Threshold tracked so you register on time',
+      'Voluntary registration assessed for input tax recovery',
+      'Applications prepared to avoid FTA queries',
+      'Tax invoice format set up correctly from day one',
+      'Zero-rated and exempt supplies identified early',
+      'Imports and reverse charge treatment explained',
+      'First return reviewed before filing',
+      'Registration linked to your Corporate Tax position',
+    ],
+  },
+  advantage: {
+    title: 'The TMFS Advantage',
+    body: 'What sets our VAT work apart.',
+    items: [
+      { icon: 'receipt-tax', title: 'Cross-Tax View', body: 'VAT and Corporate Tax handled together, so turnover and expenses match across both.' },
+      { icon: 'file-text', title: 'Clean Applications', body: 'Applications prepared with the evidence the FTA asks for, to reduce back-and-forth.' },
+      { icon: 'book', title: 'Invoice Setup', body: 'Templates and accounting codes set up so every invoice meets FTA requirements.' },
+      { icon: 'shield-check', title: 'Penalty Avoidance', body: 'Threshold monitoring so you never miss the registration deadline.' },
+      { icon: 'building-bank', title: 'Refund Ready', body: 'Bank details and records set up so refund claims can be made smoothly.' },
+      { icon: 'briefcase', title: 'Ongoing Returns', body: 'Quarterly returns and health checks available once you are registered.' },
+    ],
+  },
+  pillars: {
+    title: 'Why Founders Choose TMFS for VAT',
+    body: 'Three things clients mention most.',
+    items: [
+      { icon: 'award', title: 'Registered right first time', body: 'Applications prepared properly, so your TRN arrives without delays.' },
+      { icon: 'shield-check', title: 'No surprise penalties', body: 'We watch your threshold and deadlines so you don’t have to.' },
+      { icon: 'bulb', title: 'Practical advice', body: 'Clear guidance on invoicing, imports and pricing once you are registered.' },
+    ],
+  },
+  faq: {
+    title: 'UAE VAT Registration: Frequently Asked Questions',
+    body: 'Common questions about registering for UAE VAT.',
+    items: [
+      { q: 'When do I need to register for UAE VAT?', a: 'When taxable supplies in the previous 12 months exceeded AED 375,000, or are expected to exceed it in the next 30 days. You must apply within 30 days of crossing the threshold.' },
+      { q: 'Can I register voluntarily?', a: 'Yes, once taxable supplies or taxable expenses pass AED 187,500 in 12 months. It can make sense for start-ups with large costs, because it lets you recover VAT on those costs.' },
+      { q: 'What is the UAE VAT rate?', a: 'The standard rate is 5%. Some supplies are zero-rated, such as certain exports and international transport, and some are exempt, such as certain financial services and residential property.' },
+      { q: 'How long does registration take?', a: 'Once a complete application is submitted on EmaraTax, a TRN is usually issued within a few working days. It can take longer if the FTA asks for more information.' },
+      { q: 'What happens if I register late?', a: 'The FTA can impose a late registration penalty, and you may owe VAT from the date you should have registered. Registering on time avoids both.' },
+      { q: 'How often will I file returns?', a: 'Most businesses file quarterly, within 28 days of the end of each tax period. The FTA can assign monthly returns to larger businesses.' },
+    ],
+  },
+  sources: [SRC.fta, SRC.vat],
+  cta: cta('Need UAE VAT Registration?', 'Talk to a TMFS consultant about your threshold, registration and invoicing, with Corporate Tax kept in step.'),
+});
+
+const VAT_RETURNS = servicePage({
+  href: '/tax/vat-returns',
+  topic: 'VAT',
+  authority: 'the Federal Tax Authority',
+  changes: 'VAT return rules, deadlines and refund procedures',
+  meta: {
+    title: 'UAE VAT Return Filing & VAT Refunds',
+    description: 'Quarterly UAE VAT return preparation and filing on EmaraTax with TMFS, including input tax review, reconciliation to your books and VAT refund claims.',
+  },
+  hero: {
+    title: ['UAE VAT Returns', '& Refunds'],
+    lead: 'Quarterly VAT returns prepared from your books, reconciled and filed on EmaraTax on time, with refund claims raised and tracked when you are owed VAT.',
+    chips: ['Quarterly Returns', '28-Day Deadline', 'Input Tax Review', 'Refund Claims', 'EmaraTax Filing'],
+  },
+  intro: {
+    title: 'Returns Filed on Time, Every Period',
+    summary: 'UAE VAT returns are filed on EmaraTax within 28 days of the end of each tax period, usually quarterly. Output tax on sales is set against recoverable input tax on costs, and any balance is paid or claimed back.',
+    body: 'A return is only as good as the records behind it. We take your sales and purchase records, check that VAT has been charged and recovered correctly, reconcile the figures to your accounts and file before the deadline. Where you are in a refund position, we prepare the claim and follow it through with the FTA.',
+    image: IMG.dusk,
+  },
+  process: {
+    title: 'How VAT Return Filing Works',
+    body: 'Six steps each tax period.',
+    steps: [
+      { title: 'Records Collected', body: 'Sales and purchase invoices, import documents and bank statements gathered for the period.' },
+      { title: 'Output Tax Review', body: 'Sales classified as standard-rated, zero-rated, exempt or out of scope, with VAT checked on each.' },
+      { title: 'Input Tax Review', body: 'VAT on costs checked for valid tax invoices and recoverability, with blocked items excluded.' },
+      { title: 'Reconciliation', body: 'Return figures reconciled to your accounting records before anything is filed.' },
+      { title: 'Filing & Payment', body: 'Return filed on EmaraTax within 28 days of the period end, and payment made by the same date.' },
+      { title: 'Refund Claims', body: 'Where input tax exceeds output tax, a refund claim is prepared and tracked to settlement.' },
+    ],
+  },
+  documents: {
+    title: 'What You Need to Provide',
+    body: 'Records needed for each VAT return.',
+    items: [
+      'Sales invoices and credit notes for the period',
+      'Purchase invoices and supplier credit notes',
+      'Import and customs declarations',
+      'Bank statements for the period',
+      'Details of any goods or services imported from abroad',
+      'Access to your accounting system, if used',
+    ],
+  },
+  benefits: {
+    title: 'Why Use TMFS for VAT Returns',
+    body: 'Regular returns are where small errors become expensive.',
+    items: [
+      'Every return filed before the 28-day deadline',
+      'Input tax recovered wherever it is allowed',
+      'Blocked input tax kept out of claims',
+      'Reverse charge on imports applied correctly',
+      'Returns reconciled to your books every period',
+      'Refund claims prepared and tracked',
+      'Errors caught before the FTA finds them',
+      'Corporate Tax figures kept consistent',
+    ],
+  },
+  advantage: {
+    title: 'The TMFS Advantage',
+    body: 'What sets our VAT return work apart.',
+    items: [
+      { icon: 'book', title: 'Books First', body: 'Returns built from properly kept books, not from a spreadsheet assembled at the deadline.' },
+      { icon: 'receipt-tax', title: 'Input Tax Recovery', body: 'Every eligible input tax claim captured, and ineligible ones kept out.' },
+      { icon: 'shield-check', title: 'On-Time Filing', body: 'Deadlines tracked for you, every period.' },
+      { icon: 'building-bank', title: 'Refund Support', body: 'Refund claims prepared and followed up until the money arrives.' },
+      { icon: 'file-text', title: 'Clear Workpapers', body: 'Each return backed by workpapers that show how the figures were reached.' },
+      { icon: 'scale', title: 'Error Correction', body: 'Past errors corrected through voluntary disclosure where needed.' },
+    ],
+  },
+  pillars: {
+    title: 'Why Businesses Choose TMFS for VAT Returns',
+    body: 'Three things clients mention most.',
+    items: [
+      { icon: 'award', title: 'Accurate returns', body: 'Figures checked and reconciled before every filing.' },
+      { icon: 'shield-check', title: 'Never late', body: 'Returns and payments made before the deadline, every quarter.' },
+      { icon: 'bulb', title: 'Money back where due', body: 'Input tax recovered properly and refunds chased to the end.' },
+    ],
+  },
+  faq: {
+    title: 'UAE VAT Returns: Frequently Asked Questions',
+    body: 'Common questions about filing UAE VAT returns.',
+    items: [
+      { q: 'How often do I file VAT returns?', a: 'Most businesses file quarterly. The FTA can assign a monthly cycle to larger businesses. Returns are due within 28 days of the end of each tax period.' },
+      { q: 'Can I claim back VAT on business expenses?', a: 'Yes, where the costs relate to taxable supplies and you hold a valid tax invoice. VAT on some items, such as certain entertainment and personal-use costs, is blocked.' },
+      { q: 'What if I make a mistake in a return?', a: 'Errors can be corrected. Small errors may be fixed in a later return; others need a voluntary disclosure. Correcting errors yourself usually attracts lower penalties than errors the FTA finds.' },
+      { q: 'How do VAT refunds work?', a: 'If your input tax is more than your output tax, you can carry the credit forward or apply for a refund. We prepare the claim and track it with the FTA.' },
+      { q: 'What happens if I file or pay late?', a: 'The FTA charges administrative penalties for late returns and late payment. We track every deadline so this doesn’t happen.' },
+      { q: 'Do I need accounting software?', a: 'Not necessarily, but your records must be complete and kept for at least five years. Software makes returns faster and more reliable.' },
+    ],
+  },
+  sources: [SRC.fta, SRC.vat, SRC.taxProcedures],
+  cta: cta('Need VAT Returns Handled?', 'Talk to a TMFS consultant about quarterly returns, input tax recovery and refunds, filed on time from properly kept books.'),
+});
+
+const VAT_HEALTH_CHECK = servicePage({
+  href: '/tax/vat-health-check',
+  topic: 'VAT',
+  authority: 'the Federal Tax Authority',
+  changes: 'VAT rules, penalties and voluntary disclosure procedures',
+  meta: {
+    title: 'UAE VAT Health Check & Review',
+    description: 'A UAE VAT health check by TMFS: a review of your past returns, invoices and treatments that finds errors before the FTA does, with voluntary disclosure support where needed.',
+  },
+  hero: {
+    title: ['UAE VAT', 'Health Check'],
+    lead: 'A review of your past VAT returns, invoices and treatments that catches reverse-charge, credit-note and TRN errors before an FTA audit does, with a plan to fix them.',
+    chips: ['Past Returns Review', 'Invoice Checks', 'Error Report', 'Voluntary Disclosure', 'Audit Readiness'],
+  },
+  intro: {
+    title: 'Find VAT Errors Before the FTA Does',
+    summary: 'A VAT health check reviews a sample of your past returns and transactions against UAE VAT law. Errors found and corrected through voluntary disclosure generally attract lower penalties than errors found by the FTA in an audit.',
+    body: 'Most VAT errors are not deliberate: a missing reverse charge on an imported service, input tax claimed on a non-compliant invoice, a credit note issued wrongly or a zero-rating without the right evidence. We review your returns and records, list what we find in plain language, and help you correct it before it compounds.',
+    image: IMG.advisors,
+  },
+  process: {
+    title: 'How the VAT Health Check Works',
+    body: 'Six steps from scoping to fixes.',
+    steps: [
+      { title: 'Scoping', body: 'We agree which tax periods and areas to review, based on your business and risk.' },
+      { title: 'Records Review', body: 'Returns, sales and purchase records, contracts and customs documents reviewed for the chosen periods.' },
+      { title: 'Transaction Testing', body: 'A sample of transactions checked for rate, place of supply, invoicing and input tax recovery.' },
+      { title: 'Findings Report', body: 'A clear report of errors, their likely value and the risk each one carries.' },
+      { title: 'Corrections', body: 'Errors fixed through later returns or voluntary disclosure, depending on their size and nature.' },
+      { title: 'Process Fixes', body: 'Invoicing, coding and review steps changed so the same errors don’t recur.' },
+    ],
+  },
+  documents: {
+    title: 'What You Need to Provide',
+    body: 'Records needed for the review.',
+    items: [
+      'VAT returns filed for the review periods',
+      'Sales and purchase listings',
+      'A sample of tax invoices and credit notes',
+      'Customs declarations for imports and exports',
+      'Key customer and supplier contracts',
+      'Your VAT registration certificate',
+    ],
+  },
+  benefits: {
+    title: 'Why Get a VAT Health Check',
+    body: 'Small errors repeated every quarter add up to large exposures.',
+    items: [
+      'Errors found before an FTA audit',
+      'Lower penalties through voluntary disclosure',
+      'Missed input tax identified and recovered',
+      'Reverse charge on imports checked',
+      'Zero-rating evidence reviewed',
+      'Invoice and credit note compliance tested',
+      'Clear report written in plain language',
+      'Processes fixed so errors don’t recur',
+    ],
+  },
+  advantage: {
+    title: 'The TMFS Advantage',
+    body: 'What sets our VAT reviews apart.',
+    items: [
+      { icon: 'scale', title: 'Risk-Based Review', body: 'Time spent on the areas most likely to hold errors in your type of business.' },
+      { icon: 'file-text', title: 'Plain-Language Report', body: 'Findings explained clearly, with the value and risk of each issue.' },
+      { icon: 'shield-check', title: 'Disclosure Support', body: 'Voluntary disclosures prepared and filed where they are needed.' },
+      { icon: 'receipt-tax', title: 'Recovery Opportunities', body: 'Under-claimed input tax identified, not just errors against you.' },
+      { icon: 'bulb', title: 'Process Changes', body: 'Practical fixes to invoicing and coding so problems stay fixed.' },
+      { icon: 'briefcase', title: 'Audit Readiness', body: 'Records organised so you are ready if the FTA calls.' },
+    ],
+  },
+  pillars: {
+    title: 'Why Businesses Choose TMFS for VAT Reviews',
+    body: 'Three things clients mention most.',
+    items: [
+      { icon: 'award', title: 'Practical findings', body: 'A short list of real issues, not a long list of theory.' },
+      { icon: 'shield-check', title: 'Lower exposure', body: 'Errors corrected on your terms, before an audit.' },
+      { icon: 'bulb', title: 'Lasting fixes', body: 'Changes to how you invoice and record VAT, so the same issues don’t return.' },
+    ],
+  },
+  faq: {
+    title: 'VAT Health Check: Frequently Asked Questions',
+    body: 'Common questions about reviewing your VAT position.',
+    items: [
+      { q: 'Who needs a VAT health check?', a: 'Any VAT-registered business that hasn’t had its returns reviewed, has grown quickly, imports services, has mixed supplies or has changed systems or accountants.' },
+      { q: 'What periods do you review?', a: 'Usually the most recent returns and any periods with unusual transactions. We agree the scope with you before starting.' },
+      { q: 'What is a voluntary disclosure?', a: 'A filing that corrects errors in returns already submitted. Correcting errors yourself generally attracts lower penalties than errors the FTA finds in an audit.' },
+      { q: 'Will a health check trigger an FTA audit?', a: 'No. The review is private between you and us. Disclosures are made only where corrections are required.' },
+      { q: 'What are the most common errors?', a: 'Missing reverse charge on imported services, input tax claimed without a valid tax invoice, wrong credit note treatment and zero-rating without proper evidence.' },
+      { q: 'How long does it take?', a: 'It depends on the number of periods and transactions. We give you a timeline when we agree the scope.' },
+    ],
+  },
+  sources: [SRC.fta, SRC.vat, SRC.taxProcedures],
+  cta: cta('Want Your VAT Checked?', 'Talk to a TMFS consultant about a VAT health check that finds and fixes errors before the FTA does.'),
+});
+
+export default [CORPORATE_TAX, VAT_REGISTRATION, VAT_RETURNS, VAT_HEALTH_CHECK];

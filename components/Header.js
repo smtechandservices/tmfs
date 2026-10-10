@@ -1,257 +1,257 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Logo from './Logo';
-import { NAV } from '@/content/nav';
+import Icon from './ui/Icon';
+import { BUTTON } from './ui/Button';
+import { NAV, MOBILE_NAV } from '@/content/nav';
 import { SITE } from '@/content/site';
 
-function Chevron({ className = '' }) {
+const EASE = 'ease-[cubic-bezier(.22,.61,.36,1)]';
+
+// Pages whose dark hero sits under a transparent header: the homepage and the
+// jurisdiction pages (mainland emirates, free zones, offshore).
+const hasDarkHero = (path) =>
+  path === '/' || /^\/(company-setup\/(mainland|free-zones|offshore)|banking|tax|accounting-audit|corporate-services)\/[^/]+$/.test(path);
+
+// Dropdowns open on hover (or keyboard focus) of their nav item, like the
+// reference design. The `before:` strip bridges the gap so the pointer can
+// travel from the link into the panel without it closing.
+const PANEL = `invisible absolute top-full left-1/2 z-50 min-w-[340px] -translate-x-1/2 -translate-y-[4px] border border-rule-soft bg-white px-[8px] pt-[14px] pb-[8px] opacity-0 shadow-[0_20px_48px_rgba(10,37,64,.14),0_4px_10px_rgba(10,37,64,.06)] transition-[opacity,transform,visibility] duration-[220ms] ${EASE} before:absolute before:inset-x-0 before:-top-[10px] before:h-[10px] before:content-[''] group-hover/nav:visible group-hover/nav:translate-y-0 group-hover/nav:opacity-100 group-focus-within/nav:visible group-focus-within/nav:translate-y-0 group-focus-within/nav:opacity-100`;
+
+const SUB_PANEL = `invisible absolute top-[-14px] left-full z-[51] ml-[8px] -translate-x-[6px] rounded-[14px] border border-rule-soft bg-white opacity-0 shadow-[0_20px_48px_rgba(10,37,64,.14),0_4px_10px_rgba(10,37,64,.06)] transition-[opacity,transform,visibility] duration-[220ms] ${EASE} before:absolute before:inset-y-0 before:-left-[10px] before:w-[10px] before:content-[''] group-hover/sub:visible group-hover/sub:translate-x-0 group-hover/sub:opacity-100 group-focus-within/sub:visible group-focus-within/sub:translate-x-0 group-focus-within/sub:opacity-100`;
+
+const HEAD = 'mb-[4px] border-b border-brand-light px-[14px] pt-[6px] pb-[10px] text-[10.5px] font-bold uppercase tracking-[.16em] text-brand';
+
+function MenuLink({ item, small = false, chevron = false }) {
   return (
-    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" className={`shrink-0 transition-transform duration-200 ${className}`}>
-      <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
+    <a href={item.href} className={`block rounded-[8px] px-[14px] transition-colors duration-150 hover:bg-soft ${chevron ? 'group-hover/sub:bg-soft' : ''} ${small ? 'py-[9px]' : 'py-[11px]'}`}>
+      <span className={`mb-[2px] flex items-center font-medium leading-[1.3] text-blue ${small ? 'text-[13.5px]' : 'text-[14px]'}`}>
+        {item.title}
+        {chevron && (
+          <Icon name="chevron-right" size={14} className="ml-[6px] text-brand opacity-55 transition-[transform,opacity] duration-200 group-hover/sub:translate-x-[2px] group-hover/sub:opacity-100" />
+        )}
+      </span>
+      {item.desc && <span className={`block leading-[1.4] text-slate-2 ${small ? 'text-[11.5px]' : 'text-[12px]'}`}>{item.desc}</span>}
+    </a>
   );
 }
 
-function AdvisoryTag() {
+function SubColumn({ col }) {
   return (
-    <span className="rounded-full bg-cream-2 px-[7px] py-[1px] font-mono text-[8.5px] uppercase tracking-[.1em] text-muted-2">Advisory</span>
-  );
-}
-
-/** Full-width dropdown panel, anchored to the header container rather than the trigger. */
-function MegaPanel({ item, onNavigate }) {
-  return (
-    <div className="animate-tm-slide-down-fast absolute inset-x-[20px] top-full z-[90] pt-[10px]">
-      <div className="flex gap-[clamp(20px,3vw,40px)] rounded-[20px] border border-line bg-white p-[clamp(20px,2.4vw,30px)] shadow-[0_24px_60px_rgba(20,18,26,.14)]">
-        <div className="grid flex-1 grid-cols-[repeat(auto-fit,minmax(190px,1fr))] gap-[clamp(20px,3vw,36px)]">
-          {item.columns.map((col) => (
-            <div key={col.title}>
-              {col.href ? (
-                <a
-                  href={col.href}
-                  onClick={onNavigate}
-                  className="mb-[12px] block font-mono text-[10px] uppercase tracking-[.16em] text-brand hover:text-blue"
-                >
-                  {col.title} →
-                </a>
-              ) : (
-                <div className="mb-[12px] font-mono text-[10px] uppercase tracking-[.16em] text-muted-2">{col.title}</div>
-              )}
-              <ul className="flex flex-col">
-                {col.items.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      onClick={onNavigate}
-                      className="flex items-center gap-[8px] rounded-[8px] py-[6px] text-[13.5px] font-medium text-ink hover:text-brand"
-                    >
-                      {link.title}
-                      {link.advisory && <AdvisoryTag />}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div className="hidden w-[250px] flex-none flex-col justify-between rounded-[16px] bg-blue p-[22px] navd:flex">
-          <div>
-            <div className="mb-[10px] font-mono text-[10px] uppercase tracking-[.16em] text-brand">Not sure where to start?</div>
-            <p className="text-[14px] leading-[1.6] text-fog-2">A free 20-minute call maps the right path for your business, with a written cost breakdown.</p>
-          </div>
-          <a
-            href="/contact"
-            onClick={onNavigate}
-            className="mt-[18px] flex min-h-[44px] items-center justify-center rounded-full bg-brand px-[18px] py-[11px] text-[13px] font-bold text-white hover:bg-white hover:text-blue"
-          >
-            Book a consultation
-          </a>
-        </div>
-      </div>
+    <div className="relative flex flex-col gap-[1px] px-[6px] [&:not(:last-child)]:after:absolute [&:not(:last-child)]:after:inset-y-[14px] [&:not(:last-child)]:after:right-0 [&:not(:last-child)]:after:w-[1px] [&:not(:last-child)]:after:bg-rule-soft [&:not(:last-child)]:after:content-['']">
+      <div className={`${HEAD} px-[10px]! pt-[4px]! pb-[8px]!`}>{col.head}</div>
+      {col.items.map((item) => (
+        <MenuLink key={item.href} item={item} small />
+      ))}
     </div>
   );
 }
 
-function MobileAccordion({ item, onNavigate }) {
-  const [open, setOpen] = useState(false);
+function Flyout({ rows }) {
   return (
-    <div className="border-b border-line-2">
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        className="flex w-full cursor-pointer items-center justify-between px-[2px] py-[14px] text-[17px] font-semibold text-ink"
-      >
-        {item.label}
-        <Chevron className={open ? 'rotate-180' : ''} />
-      </button>
-      {open && (
-        <div className="flex flex-col gap-[14px] pb-[16px]">
-          {item.columns.map((col) => (
-            <div key={col.title}>
-              <div className="mb-[4px] px-[14px] font-mono text-[10px] uppercase tracking-[.16em] text-muted-2">
-                {col.href ? (
-                  <a href={col.href} onClick={onNavigate} className="text-brand">
-                    {col.title} →
-                  </a>
-                ) : (
-                  col.title
-                )}
+    <div className={`${PANEL} rounded-[14px]`}>
+      {rows.map((row) =>
+        row.sub ? (
+          <div key={row.href} className="group/sub relative">
+            <MenuLink item={row} chevron />
+            {row.sub.cols ? (
+              <div className={`${SUB_PANEL} grid min-w-[540px] grid-cols-2 gap-x-[12px] gap-y-[4px] px-[12px] pt-[16px] pb-[12px]`}>
+                {row.sub.cols.map((col) => (
+                  <SubColumn key={col.head} col={col} />
+                ))}
               </div>
-              {col.items.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={onNavigate}
-                  className="flex items-center gap-[8px] rounded-[10px] px-[14px] py-[9px] text-[15px] font-medium text-muted hover:bg-cream-2 hover:text-ink"
-                >
-                  {link.title}
-                  {link.advisory && <AdvisoryTag />}
-                </a>
-              ))}
-            </div>
-          ))}
-        </div>
+            ) : (
+              <div className={`${SUB_PANEL} min-w-[320px] px-[8px] pt-[14px] pb-[8px]`}>
+                <div className={HEAD}>{row.sub.head}</div>
+                {row.sub.items.map((item) => (
+                  <MenuLink key={item.href} item={item} small />
+                ))}
+              </div>
+            )}
+          </div>
+        ) : (
+          <MenuLink key={row.href} item={row} />
+        )
       )}
     </div>
+  );
+}
+
+function Dropdown({ entry }) {
+  return (
+    <div className={`${PANEL} rounded-t-[14px]`}>
+      {entry.columns
+        ? entry.columns.map((col, i) => (
+            <div key={col.head} className={i > 0 ? 'mt-[10px]' : ''}>
+              <div className={HEAD}>{col.head}</div>
+              {col.items.map((item) => (
+                <MenuLink key={item.href} item={item} />
+              ))}
+            </div>
+          ))
+        : entry.items.map((item) => <MenuLink key={item.href} item={item} />)}
+    </div>
+  );
+}
+
+function MobileMenu({ open, onClose }) {
+  const [section, setSection] = useState(-1);
+  const groups = [...MOBILE_NAV, { label: 'More', items: [{ title: 'Contact', href: '/contact' }] }];
+
+  return (
+    <>
+      <div
+        onClick={onClose}
+        className={`fixed inset-0 z-[10000] bg-[rgba(10,31,68,.45)] transition-[opacity,visibility] duration-300 ${open ? 'visible opacity-100' : 'invisible opacity-0'}`}
+      />
+      <aside
+        aria-hidden={!open}
+        inert={open ? undefined : true}
+        className={`fixed inset-y-0 right-0 z-[10001] flex w-full max-w-[400px] flex-col overflow-hidden bg-white transition-transform duration-[380ms] ${EASE} ${open ? 'translate-x-0' : 'translate-x-full'}`}
+      >
+        <div className="flex flex-none items-center justify-between border-b border-rule-soft px-[24px] py-[20px]">
+          <a href="/" aria-label={`${SITE.name}, home`}>
+            <Logo className="block h-[38px] w-auto" />
+          </a>
+          <button type="button" onClick={onClose} aria-label="Close menu" className="flex h-[38px] w-[38px] cursor-pointer items-center justify-center rounded-[8px] bg-grey text-blue hover:bg-rule">
+            <Icon name="x" size={20} />
+          </button>
+        </div>
+
+        <div className="flex-1 overflow-y-auto px-[20px] pt-[8px] pb-[20px]">
+          {groups.map((g, i) => {
+            const isOpen = section === i;
+            return (
+              <div key={g.label} className="border-b border-rule-soft">
+                <button
+                  type="button"
+                  aria-expanded={isOpen}
+                  onClick={() => setSection(isOpen ? -1 : i)}
+                  className="flex w-full cursor-pointer items-center justify-between gap-[12px] px-[2px] py-[15px] text-left font-display text-[15.5px] font-semibold tracking-[-.01em] text-blue hover:text-brand"
+                >
+                  <span>{g.label}</span>
+                  <Icon name="chevron-down" size={18} className={`text-brand transition-transform duration-[280ms] ${isOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <div className={`grid transition-[grid-template-rows] duration-[320ms] ${EASE} ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                  <div className="overflow-hidden">
+                    {g.items.map((item) => (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        className="flex items-center justify-between border-t border-rule-soft py-[11px] pr-[2px] pl-[14px] text-[14px] text-blue last:pb-[14px] hover:text-brand"
+                      >
+                        {item.title}
+                        <Icon name="chevron-right" size={16} className="text-slate-2" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="flex-none border-t border-rule-soft bg-soft px-[24px] py-[20px]">
+          <a href="/contact" className={`${BUTTON.navy} w-full`}>
+            Contact Us <Icon name="arrow-right" size={16} />
+          </a>
+          <div className="mt-[16px] flex flex-col gap-[8px] text-[13px]">
+            <a href={`tel:${SITE.phone}`} className="flex items-center gap-[8px] text-slate hover:text-blue">
+              <Icon name="phone" size={14} /> {SITE.phoneDisplay}
+            </a>
+            <a href={SITE.emailHref} className="flex items-center gap-[8px] text-slate hover:text-blue">
+              <Icon name="mail" size={14} /> {SITE.email}
+            </a>
+          </div>
+        </div>
+      </aside>
+    </>
   );
 }
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [openPanel, setOpenPanel] = useState(null);
-  const navRef = useRef(null);
   const pathname = usePathname();
+  const overHero = hasDarkHero(pathname);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  const closeAll = () => {
-    setOpenPanel(null);
-    setMenuOpen(false);
-  };
-
-  // Close menus on route change, outside click and Escape.
-  useEffect(closeAll, [pathname]);
   useEffect(() => {
-    function onDown(e) {
-      if (navRef.current && !navRef.current.contains(e.target)) setOpenPanel(null);
-    }
-    function onKey(e) {
-      if (e.key === 'Escape') closeAll();
-    }
-    document.addEventListener('mousedown', onDown);
-    document.addEventListener('keydown', onKey);
-    return () => {
-      document.removeEventListener('mousedown', onDown);
-      document.removeEventListener('keydown', onKey);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const toggle = (label) => setOpenPanel((cur) => (cur === label ? null : label));
-  const active = NAV.find((n) => n.label === openPanel);
+  useEffect(() => setMobileOpen(false), [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileOpen]);
+
+  // Transparent over a dark hero until the page scrolls; solid everywhere else.
+  const solid = !overHero || scrolled;
+  const linkColor = solid ? 'text-blue group-hover/nav:text-brand' : 'text-white group-hover/nav:text-white';
+  const iconColor = solid ? 'text-blue hover:bg-grey' : 'text-white hover:bg-white/[.12]';
 
   return (
-    <header className="sticky top-0 z-[80] border-b border-line bg-[rgba(255,255,255,.88)] backdrop-blur-[14px]">
-      <div ref={navRef} className="relative mx-auto flex max-w-[1320px] items-center gap-[20px] px-[20px] py-[12px]">
-        <a href="/" className="flex flex-none items-center">
-          <Logo className="block h-[40px] w-auto navp:h-[44px]" />
-        </a>
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-[100] border-b border-transparent transition-[background,box-shadow] duration-[350ms] ${EASE} ${
+          solid ? 'bg-white/[.96] shadow-[0_6px_20px_rgba(10,37,64,.06)]' : 'bg-transparent'
+        }`}
+      >
+        <div className="relative mx-auto flex h-[76px] max-w-[1320px] items-center gap-[16px] px-[40px] max-md:h-[64px] max-md:gap-[12px] max-md:px-[20px] max-[480px]:px-[14px]">
+          <button
+            type="button"
+            aria-label="Menu"
+            onClick={() => setMobileOpen(true)}
+            className={`flex h-[44px] w-[44px] flex-none cursor-pointer flex-col items-center justify-center gap-[5px] rounded-[8px] xl:hidden ${solid ? 'hover:bg-grey' : 'hover:bg-white/10'}`}
+          >
+            {[0, 1, 2].map((i) => (
+              <span key={i} className={`block h-[1.5px] w-[22px] rounded-[2px] ${solid ? 'bg-blue' : 'bg-white'}`} />
+            ))}
+          </button>
 
-        <nav className="ml-auto hidden items-center gap-[22px] navd:flex">
-          {NAV.map((item) => {
-            const isOpen = openPanel === item.label;
-            return (
-              <div key={item.label} className="flex items-center gap-[2px]">
-                {item.href ? (
-                  <a href={item.href} className={`text-[14px] font-semibold hover:text-brand ${isOpen ? 'text-brand' : 'text-ink'}`}>
-                    {item.label}
-                  </a>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={() => toggle(item.label)}
-                    className={`cursor-pointer text-[14px] font-semibold hover:text-brand ${isOpen ? 'text-brand' : 'text-ink'}`}
-                  >
-                    {item.label}
-                  </button>
-                )}
+          <a href="/" aria-label={`${SITE.name}, home`} className="flex flex-none items-center">
+            <Logo variant={solid ? 'primary' : 'reversed'} className="block h-[44px] w-auto max-md:h-[36px] max-[480px]:h-[30px]" />
+          </a>
+
+          <nav aria-label="Main navigation" className="hidden flex-1 items-center justify-center xl:flex">
+            {NAV.map((entry) => (
+              <div key={entry.label} className="group/nav relative">
                 <button
                   type="button"
-                  aria-label={`Toggle ${item.label} menu`}
-                  aria-expanded={isOpen}
-                  onClick={() => toggle(item.label)}
-                  className={`cursor-pointer p-[4px] hover:text-brand ${isOpen ? 'text-brand' : 'text-ink'}`}
+                  className={`relative flex cursor-pointer items-center gap-[4px] whitespace-nowrap px-[8px] py-[22px] text-[13px] font-bold tracking-[-.005em] transition-colors duration-200 after:absolute after:inset-x-[9px] after:bottom-[14px] after:h-[2px] after:origin-left after:scale-x-0 after:rounded-[1px] after:bg-brand after:transition-transform after:duration-[220ms] after:content-[''] group-hover/nav:after:scale-x-100 ${linkColor}`}
                 >
-                  <Chevron className={isOpen ? 'rotate-180' : ''} />
+                  {entry.label}
+                  <Icon name="chevron-down" size={13} className="opacity-60 transition-transform duration-[220ms] group-hover/nav:rotate-180" />
                 </button>
+                {entry.flyout ? <Flyout rows={entry.flyout} /> : <Dropdown entry={entry} />}
               </div>
-            );
-          })}
-        </nav>
-
-        <a
-          href={`tel:${SITE.phone}`}
-          className="ml-auto hidden flex-none items-center gap-[8px] font-mono text-[12px] font-medium text-ink hover:text-brand navp:flex navd:ml-0"
-        >
-          {SITE.phone}
-        </a>
-
-        <a
-          href="/contact"
-          className="relative hidden min-h-[44px] flex-none items-center overflow-hidden rounded-full bg-brand px-[20px] py-[12px] text-[13px] font-bold tracking-[.01em] text-white hover:bg-blue hover:text-white navd:flex"
-        >
-          Book a consultation
-        </a>
-
-        <button
-          onClick={() => setMenuOpen((v) => !v)}
-          aria-label="Menu"
-          aria-expanded={menuOpen}
-          className="group ml-auto -mr-4 flex h-[46px] w-[46px] flex-none flex-col items-center justify-center gap-[5px] cursor-pointer transition-colors duration-200 navp:ml-0 navd:hidden"
-        >
-          <span
-            className={`block h-[2px] w-[18px] rounded-full bg-blue transition-all duration-300 ease-[cubic-bezier(.22,.7,.2,1)] group-hover:bg-brand ${
-              menuOpen ? 'translate-y-[7px] rotate-45' : ''
-            }`}
-          ></span>
-          <span
-            className={`block h-[2px] w-[18px] rounded-full bg-blue transition-all duration-200 group-hover:bg-brand ${
-              menuOpen ? 'scale-x-0 opacity-0' : ''
-            }`}
-          ></span>
-          <span
-            className={`block h-[2px] w-[18px] rounded-full bg-blue transition-all duration-300 ease-[cubic-bezier(.22,.7,.2,1)] group-hover:bg-brand ${
-              menuOpen ? '-translate-y-[7px] -rotate-45' : ''
-            }`}
-          ></span>
-        </button>
-
-        {active && (
-          <div className="hidden navd:block">
-            <MegaPanel item={active} onNavigate={() => setOpenPanel(null)} />
-          </div>
-        )}
-      </div>
-
-      {menuOpen && (
-        <div className="animate-tm-slide-down-fast max-h-[calc(100dvh-70px)] overflow-y-auto border-t border-line bg-cream">
-          <div className="mx-auto flex max-w-[1320px] flex-col px-[20px] pt-[10px] pb-[20px]">
-            {NAV.map((item) => (
-              <MobileAccordion key={item.label} item={item} onNavigate={closeAll} />
             ))}
-            <a href={`tel:${SITE.phone}`} className="mt-[16px] text-center font-mono text-[13px] font-medium text-ink">
-              {SITE.phoneDisplay}
+          </nav>
+
+          <div className="ml-auto flex flex-none items-center gap-[4px]">
+            <a href={`tel:${SITE.phone}`} aria-label={`Call ${SITE.short}`} className={`inline-flex h-[38px] w-[38px] items-center justify-center rounded-full transition-colors max-md:hidden ${iconColor} hover:text-brand`}>
+              <Icon name="phone" size={18} stroke={1.9} />
             </a>
-            <a
-              href="/contact"
-              onClick={closeAll}
-              className="mt-[12px] rounded-full bg-brand px-[20px] py-[15px] text-center text-[15px] font-bold text-white hover:bg-blue hover:text-white"
-            >
-              Book a free consultation
+            <a href={SITE.whatsapp} target="_blank" rel="noopener" aria-label={`WhatsApp ${SITE.short}`} className={`inline-flex h-[38px] w-[38px] items-center justify-center rounded-full transition-colors max-md:hidden ${iconColor} hover:text-[#25d366]`}>
+              <Icon name="whatsapp" size={18} stroke={1.9} />
+            </a>
+            <a href="/contact" className={`${BUTTON.accent} ml-[2px] min-h-[38px]! px-[18px]! py-[9px]! text-[13px]! max-md:min-h-[36px]! max-md:px-[14px]! max-md:text-[12px]!`}>
+              Contact Us
             </a>
           </div>
         </div>
-      )}
-    </header>
+      </header>
+      {/* Pages without a dark hero start below the fixed header. */}
+      {!overHero && <div aria-hidden="true" className="h-[76px] max-md:h-[64px]" />}
+      <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
+    </>
   );
 }

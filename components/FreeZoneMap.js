@@ -31,7 +31,7 @@ export default function FreeZoneMap() {
           <h2 className="max-w-[22ch] text-pretty text-[clamp(28px,4vw,44px)] font-bold leading-[1.05] tracking-[-.03em]">Every free zone we file in, mapped</h2>
         </Reveal>
         <Reveal as="p" delay={120} className="max-w-[38ch] text-[16px] leading-[1.6] text-muted">
-          Free zones in blue, our office in black. Tap a pin for the short version of what it suits.
+          Free zones in blue, our office in red. Tap a pin for the short version of what it suits.
         </Reveal>
       </div>
 

@@ -16,6 +16,22 @@
   --color-fog-2: #c9c4cf;
   --color-brand-tint: #fbf1f0;
 
+  /* Homepage + header system (Avyanco layout). Same roles as their navy /
+     accent tokens, mapped onto the TMFS blue and red. */
+  --color-brand-bright: #f03a41;
+  --color-brand-deep: #b3101a;
+  --color-brand-pale: #fff5f5;
+  --color-brand-light: #ffe5e5;
+  --color-blue-deep: #0b0652;
+  --color-blue-mid: #2c20cf;
+  --color-soft: #f7f8fa;
+  --color-grey: #eef1f5;
+  --color-rule: #e5e7eb;
+  --color-rule-soft: #f1f3f5;
+  --color-slate: #5a6471;
+  --color-slate-2: #646b76;
+  --color-gold: #fbbf24;
+
   /* Brand guide: Mont for display, headings and captions; Helvetica Now for
      body. Both are commercial, so each stack names the licensed face first
      (picked up automatically once installed or self-hosted via @font-face),
@@ -39,6 +55,18 @@
   --animate-tm-slide-down: tmSlideDown 0.5s ease both;
   --animate-tm-slide-down-fast: tmSlideDown 0.28s ease both;
   --animate-tm-slide-down-med: tmSlideDown 0.45s ease both;
+  --animate-wa-pulse: waPulse 2s ease-out infinite;
+
+  @keyframes waPulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.4;
+    }
+    100% {
+      transform: scale(1.6);
+      opacity: 0;
+    }
+  }
 
   @keyframes tmKen {
     0% {

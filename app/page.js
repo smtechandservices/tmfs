@@ -1,36 +1,38 @@
-import Hero from '@/components/Hero';
-import Stats from '@/components/Stats';
-import Marquee from '@/components/Marquee';
-import Services from '@/components/Services';
-import Process from '@/components/Process';
-import Testimonials from '@/components/Testimonials';
-import Contact from '@/components/Contact';
-import Story from '@/components/sections/Story';
-import WhereWeFile from '@/components/sections/WhereWeFile';
-import Industries from '@/components/sections/Industries';
-import TeamGrid from '@/components/sections/TeamGrid';
-import Differentiators from '@/components/sections/Differentiators';
-import InsightsRail from '@/components/sections/InsightsRail';
-import FAQ from '@/components/sections/FAQ';
-import { STORY, WHERE_WE_FILE, INDUSTRIES, LEADERSHIP, DIFFERENTIATORS, INSIGHTS, FAQS } from '@/content/home';
+import Hero from '@/components/home/Hero';
+import StatsStrip from '@/components/home/StatsStrip';
+import AsFeaturedIn from '@/components/home/AsFeaturedIn';
+import Story from '@/components/home/Story';
+import Solutions from '@/components/home/Solutions';
+import Process from '@/components/home/Process';
+import FreeZoneMap from '@/components/FreeZoneMap';
+import Industries from '@/components/home/Industries';
+import Leadership from '@/components/home/Leadership';
+import WhyUs from '@/components/home/WhyUs';
+import VideoSection from '@/components/home/VideoSection';
+import Insights from '@/components/home/Insights';
+import Testimonials from '@/components/home/Testimonials';
+import HomeFAQ from '@/components/home/HomeFAQ';
+import HomeCTA from '@/components/home/HomeCTA';
 
+// Section order mirrors the Avyanco homepage. Copy lives in content/home.js.
 export default function Home() {
   return (
     <div className="w-full">
       <Hero />
-      <Stats />
-      <Marquee />
-      <Story content={STORY} />
-      <Services />
+      <StatsStrip />
+      <AsFeaturedIn />
+      <Story />
+      <Solutions />
       <Process />
-      <WhereWeFile content={WHERE_WE_FILE} />
-      <Industries content={INDUSTRIES} />
-      <TeamGrid content={LEADERSHIP} />
-      <Differentiators content={DIFFERENTIATORS} />
-      <InsightsRail content={INSIGHTS} />
+      <FreeZoneMap />
+      <Industries />
+      <Leadership />
+      <WhyUs />
+      <VideoSection />
+      <Insights />
       <Testimonials />
-      <FAQ content={FAQS} />
-      <Contact />
+      <HomeFAQ />
+      <HomeCTA />
     </div>
   );
 }
