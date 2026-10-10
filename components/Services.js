@@ -1,36 +1,8 @@
 import Reveal from './Reveal';
+import { PRACTICES } from '@/content/catalog';
 
 const CARDS = [
-  {
-    n: '01',
-    title: 'Business setup',
-    desc: 'Mainland, free zone and offshore formation across Dubai, Abu Dhabi and Sharjah, trade licence, MOA, visas and Emirates ID.',
-    href: '/services#business-setup',
-  },
-  {
-    n: '02',
-    title: 'Banking',
-    desc: 'Corporate, personal, offshore and non-resident account opening, plus business and personal loans compared across our bank network.',
-    href: '/services#banking',
-  },
-  {
-    n: '03',
-    title: 'Accounting & Audit',
-    desc: 'Bookkeeping, payroll, financial statements, internal and external audit, and FTA tax audit assistance for SMEs and corporates.',
-    href: '/services#accounting',
-  },
-  {
-    n: '04',
-    title: 'VAT consultancy',
-    desc: 'Registration and TRN, return filing, refunds, health checks and compliance audits, kept accurate and on time with the FTA.',
-    href: '/services#vat',
-  },
-  {
-    n: '05',
-    title: 'Corporate & compliance',
-    desc: 'PRO work, document clearing, attestation, AML and ESR obligations, and ongoing governance support so nothing lapses.',
-    href: '/services#compliance',
-  },
+  ...PRACTICES.map((p, i) => ({ n: String(i + 1).padStart(2, '0'), title: p.title, desc: p.summary, href: p.href })),
   {
     n: '06',
     title: 'Not sure where to start?',
@@ -113,16 +85,16 @@ export default function Services() {
       <div className="grid grid-cols-1 items-center gap-[48px] navd:grid-cols-[minmax(280px,420px)_1fr]">
         <Reveal>
           <span className="mb-[24px] inline-block rounded-full bg-brand-tint px-[14px] py-[6px] text-[11px] font-bold uppercase tracking-[.1em] text-brand">
-            What we do
+            Practice areas
           </span>
-          <h2 className="mb-[18px] max-w-[16ch] text-pretty text-[clamp(30px,4.6vw,54px)] font-bold leading-[1.05] tracking-[-.03em]">One team for the whole UAE stack</h2>
+          <h2 className="mb-[18px] max-w-[16ch] text-pretty text-[clamp(30px,4.6vw,54px)] font-bold leading-[1.05] tracking-[-.03em]">Five practices, one point of contact</h2>
           <p className="mb-[32px] max-w-[42ch] text-[16px] leading-[1.6] text-muted">
-            Five services that most businesses need in their first two years here. Take one, or hand us all of it.
+            Everything a UAE company needs in its first years, from licence to bank account to tax return. Take one, or hand us all of it.
           </p>
           <div className="flex flex-wrap gap-[32px]">
             <div className="border-l-2 border-brand pl-[16px]">
               <div className="font-display text-[28px] font-extrabold tracking-[-.02em] text-ink">5</div>
-              <div className="text-[13px] text-muted">Services under one roof</div>
+              <div className="text-[13px] text-muted">Practices under one roof</div>
             </div>
             <div className="border-l-2 border-brand pl-[16px]">
               <div className="font-display text-[28px] font-extrabold tracking-[-.02em] text-ink">3–7 days</div>

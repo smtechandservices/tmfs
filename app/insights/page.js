@@ -1,7 +1,4 @@
-import WhatsAppButton from '@/components/WhatsAppButton';
-import Header from '@/components/Header';
 import InsightsGrid from '@/components/InsightsGrid';
-import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'Insights',
@@ -13,10 +10,7 @@ export const metadata = {
 export default function InsightsPage() {
   return (
     <div className="w-full">
-      <WhatsAppButton />
-      <Header />
       <InsightsGrid />
-      <Footer />
     </div>
   );
 }

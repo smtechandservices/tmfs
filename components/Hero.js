@@ -22,6 +22,12 @@ const HERO_FIELDS = {
   },
 };
 
+const QUICK_LINKS = [
+  { label: 'Compare free zones', href: '/company-setup/free-zones' },
+  { label: 'Open a corporate bank account', href: '/banking/corporate-account' },
+  { label: 'Golden Visa', href: '/corporate-services/golden-visa' },
+];
+
 const TABS = [
   { key: 'setup', label: 'Start a company' },
   { key: 'fin', label: 'Finance & tax' },
@@ -53,7 +59,7 @@ export default function Hero() {
         </Reveal>
 
         <Reveal as="p" delay={160} className="max-w-[58ch] text-pretty text-[clamp(16px,2.1vw,21px)] leading-[1.55] text-fog">
-          Company formation, banking and tax in the UAE, handled end to end by one approachable team. Licence to bank account, without the runaround.
+          Company formation, banking, tax and visas in the UAE, handled end to end by one approachable team. Licence to bank account, without the runaround.
         </Reveal>
 
         <Reveal delay={240} className="flex flex-wrap gap-[12px]">
@@ -71,6 +77,14 @@ export default function Hero() {
           >
             Chat on WhatsApp
           </a>
+        </Reveal>
+
+        <Reveal delay={300} className="flex flex-wrap gap-x-[22px] gap-y-[8px]">
+          {QUICK_LINKS.map((l) => (
+            <a key={l.href} href={l.href} className="text-[14px] font-semibold text-white underline decoration-brand decoration-2 underline-offset-[6px] hover:text-brand">
+              {l.label} →
+            </a>
+          ))}
         </Reveal>
       </div>
 

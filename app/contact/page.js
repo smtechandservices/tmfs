@@ -1,7 +1,4 @@
-import WhatsAppButton from '@/components/WhatsAppButton';
-import Header from '@/components/Header';
 import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'Contact',
@@ -13,10 +10,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <div className="w-full">
-      <WhatsAppButton />
-      <Header />
       <Contact />
-      <Footer />
     </div>
   );
 }

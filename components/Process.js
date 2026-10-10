@@ -2,35 +2,11 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Reveal from './Reveal';
+import { PROCESS } from '@/content/home';
 
-const STEPS = [
-  {
-    n: '01',
-    title: 'Free consultation',
-    desc: 'Twenty minutes on your activity, ownership and budget. You leave with a written cost breakdown.',
-    highlights: ['20-minute call', 'Written cost estimate', 'No obligation'],
-  },
-  {
-    n: '02',
-    title: 'Jurisdiction & licence',
-    desc: 'We pick the zone that fits your activity and banking needs, then file it. Typically 3–7 working days.',
-    highlights: ['Zone matched to activity', '3–7 working days', 'Trade licence filed'],
-  },
-  {
-    n: '03',
-    title: 'Visas & bank account',
-    desc: 'Medical, Emirates ID and residence visa, alongside a compliance-ready bank application.',
-    highlights: ['Emirates ID & residency', 'Bank application prepped', 'Compliance-ready'],
-  },
-  {
-    n: '04',
-    title: 'Stay compliant',
-    desc: 'Bookkeeping, VAT returns and renewal reminders so the second year is quieter than the first.',
-    highlights: ['Bookkeeping & VAT', 'Renewal reminders', 'Ongoing support'],
-  },
-];
 
-export default function Process() {
+export default function Process({ content = PROCESS }) {
+  const { eyebrow, title, intro, steps: STEPS } = content;
   const [active, setActive] = useState(0);
   const panelRefs = useRef([]);
 
@@ -61,9 +37,9 @@ export default function Process() {
         <div>
           <div className="navd:sticky navd:top-[88px]">
             <Reveal>
-              <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">How it goes</div>
-              <h2 className="mb-[18px] text-pretty text-[clamp(28px,4.2vw,48px)] font-bold leading-[1.06] tracking-[-.03em]">Four steps, one point of contact</h2>
-              <p className="mb-[32px] max-w-[42ch] text-[16px] leading-[1.65] text-muted">No handoffs between departments. The consultant on your first call stays with you through licence, bank and renewal.</p>
+              <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">{eyebrow}</div>
+              <h2 className="mb-[18px] text-pretty text-[clamp(28px,4.2vw,48px)] font-bold leading-[1.06] tracking-[-.03em]">{title}</h2>
+              <p className="mb-[32px] max-w-[42ch] text-[16px] leading-[1.65] text-muted">{intro}</p>
             </Reveal>
             <ul className="flex flex-col gap-[6px]">
               {STEPS.map((step, i) => (

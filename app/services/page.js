@@ -1,7 +1,4 @@
-import WhatsAppButton from '@/components/WhatsAppButton';
-import Header from '@/components/Header';
 import ServicesDetail from '@/components/ServicesDetail';
-import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'Services',
@@ -13,10 +10,7 @@ export const metadata = {
 export default function ServicesPage() {
   return (
     <div className="w-full">
-      <WhatsAppButton />
-      <Header />
       <ServicesDetail />
-      <Footer />
     </div>
   );
 }

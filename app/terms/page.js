@@ -1,6 +1,3 @@
-import WhatsAppButton from '@/components/WhatsAppButton';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'Terms of Service',
@@ -46,8 +43,6 @@ const SECTIONS = [
 export default function TermsPage() {
   return (
     <div className="w-full">
-      <WhatsAppButton />
-      <Header />
       <section className="mx-auto px-8 md:px-24 py-[clamp(56px,8vw,96px)]">
         <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">Legal</div>
         <h1 className="mb-[8px] text-[clamp(28px,4vw,44px)] font-extrabold tracking-[-.03em]">Terms of Service</h1>
@@ -63,7 +58,6 @@ export default function TermsPage() {
           ))}
         </div>
       </section>
-      <Footer />
     </div>
   );
 }
