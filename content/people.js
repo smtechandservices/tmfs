@@ -44,4 +44,22 @@ export const TESTIMONIALS = [
     name: 'Priya Nair',
     role: 'Sales',
   },
+  {
+    initials: 'RM',
+    quote: 'Space for a client review about setting up their free zone company and opening the business bank account with TMFS.',
+    name: 'Rahul Menon',
+    role: 'Founder, E-commerce Start-up',
+  },
+  {
+    initials: 'SW',
+    quote: 'Space for a client review about VAT registration, Corporate Tax filing or bookkeeping handled by TMFS.',
+    name: 'Sarah Whitfield',
+    role: 'Director, Trading Company',
+  },
+  {
+    initials: 'OH',
+    quote: 'Space for a client review about investor, employee or family visas processed by TMFS.',
+    name: 'Omar Haddad',
+    role: 'Managing Partner, Consultancy',
+  },
 ];

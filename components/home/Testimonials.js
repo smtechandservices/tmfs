@@ -37,12 +37,16 @@ export function ReviewCarousel({ quotes = TESTIMONIALS, fits = 4 }) {
       )}
       <div ref={track} className="flex snap-x snap-proximity gap-[20px] overflow-x-auto px-[2px] pt-[4px] pb-[10px] [scrollbar-width:none] max-md:snap-mandatory [&::-webkit-scrollbar]:hidden">
         {quotes.map((q, i) => (
-          <div key={q.name} className="flex max-w-[300px] flex-[0_0_300px] snap-start flex-col max-md:max-w-full max-md:basis-full max-md:snap-center">
+          <div key={`${q.name}-${i}`} className="flex max-w-[300px] flex-[0_0_300px] snap-start flex-col max-md:max-w-full max-md:basis-full max-md:snap-center">
             <article className="flex min-h-[224px] flex-col rounded-[16px] border border-rule-soft bg-white px-[22px] pt-[22px] pb-[20px] shadow-[0_4px_16px_rgba(10,37,64,.05)]">
               <div className="mb-[14px] flex items-center gap-[7px]">
-                <Stars size={15} />
+                {q.placeholder ? (
+                  <span className="rounded-full border border-dashed border-slate-2 px-[10px] py-[3px] text-[10.5px] font-bold uppercase tracking-[.12em] text-slate-2">Placeholder</span>
+                ) : (
+                  <Stars size={15} />
+                )}
               </div>
-              <p className="mb-[14px] line-clamp-5 text-[14px] leading-[1.65] text-blue">{q.quote}</p>
+              <p className={`mb-[14px] line-clamp-5 text-[14px] leading-[1.65] ${q.placeholder ? 'text-slate-2 italic' : 'text-blue'}`}>{q.quote}</p>
             </article>
             <div className="flex items-center gap-[12px] px-[6px] pt-[16px]">
               <span className={`flex h-[44px] w-[44px] flex-none items-center justify-center rounded-full font-display text-[17px] font-bold tracking-[-.01em] text-white shadow-[0_4px_12px_rgba(10,37,64,.18)] ${AVATARS[i % 3]}`}>
