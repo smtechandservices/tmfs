@@ -1,6 +1,6 @@
 // Ajman mainland page, section by section in page order (Avyanco jurisdiction
 // layout). Shared blocks come from ./shared.
-import { mainlandTax, mainlandStructures, mainlandProcess, documents, advantage, specialists, pillars, TESTIMONIALS, MAINLAND_PILLAR, disclaimer } from './shared';
+import { mainlandTax, mainlandStructures, mainlandProcess, documents, advantage, pillars, TESTIMONIALS, MAINLAND_PILLAR, disclaimer } from './shared';
 
 const AJMAN_MAINLAND = {
   href: '/company-setup/mainland/ajman',
@@ -108,7 +108,6 @@ const AJMAN_MAINLAND = {
   },
 
   advantage: advantage({ place: 'Ajman mainland', authority: 'Ajman DED' }),
-  specialists: specialists('Ajman'),
   pillars: pillars({ place: 'Ajman', first: MAINLAND_PILLAR }),
 
   related: {

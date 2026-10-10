@@ -35,8 +35,7 @@ export const IMG = {
 };
 
 /**
- * Fills in the blocks every service page shares. `topic` names the service in
- * the team heading; `authority` (e.g. 'the Federal Tax Authority') and
+ * Fills in the blocks every service page shares. `authority` (e.g. 'the Federal Tax Authority') and
  * `changes` feed the disclaimer.
  */
 export function servicePage({ topic, authority, changes, pillars, ...page }) {
@@ -44,7 +43,6 @@ export function servicePage({ topic, authority, changes, pillars, ...page }) {
     published: '2026-10-10',
     updated: '2026-10-10',
     sidebar: { ...SIDEBAR, sub: 'Tell us where you are and what you need. We’ll map the steps, timeline and cost, with our fee and any government charges shown separately.' },
-    specialists: { title: 'Meet Our Team', body: `The people who handle your ${topic} work, from first call to delivery.` },
     pillars: { ...pillars, image: IMG.advisors },
     testimonials: TESTIMONIALS,
     disclaimer: [

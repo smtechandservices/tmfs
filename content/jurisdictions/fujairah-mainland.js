@@ -1,6 +1,6 @@
 // Fujairah mainland page, section by section in page order (Avyanco
 // jurisdiction layout). Shared blocks come from ./shared.
-import { mainlandTax, mainlandStructures, mainlandProcess, documents, advantage, specialists, pillars, TESTIMONIALS, MAINLAND_PILLAR, disclaimer } from './shared';
+import { mainlandTax, mainlandStructures, mainlandProcess, documents, advantage, pillars, TESTIMONIALS, MAINLAND_PILLAR, disclaimer } from './shared';
 
 // Sources disagree on the exact name of Fujairah's mainland licensing body
 // (DED, municipality, Department of Industry and Economy), so it is described
@@ -114,7 +114,6 @@ const FUJAIRAH_MAINLAND = {
   },
 
   advantage: advantage({ place: 'Fujairah mainland', authority: 'Fujairah' }),
-  specialists: specialists('Fujairah'),
   pillars: pillars({ place: 'Fujairah', first: MAINLAND_PILLAR }),
 
   related: {

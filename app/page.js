@@ -6,9 +6,7 @@ import Solutions from '@/components/home/Solutions';
 import Process from '@/components/home/Process';
 import FreeZoneMap from '@/components/FreeZoneMap';
 import Industries from '@/components/home/Industries';
-import Leadership from '@/components/home/Leadership';
 import WhyUs from '@/components/home/WhyUs';
-import VideoSection from '@/components/home/VideoSection';
 import Insights from '@/components/home/Insights';
 import Testimonials from '@/components/home/Testimonials';
 import HomeFAQ from '@/components/home/HomeFAQ';
@@ -26,9 +24,7 @@ export default function Home() {
       <Process />
       <FreeZoneMap />
       <Industries />
-      <Leadership />
       <WhyUs />
-      <VideoSection />
       <Insights />
       <Testimonials />
       <HomeFAQ />

@@ -1,6 +1,6 @@
 // Abu Dhabi mainland page, section by section in page order (Avyanco
 // jurisdiction layout). Shared blocks come from ./shared.
-import { mainlandTax, mainlandStructures, mainlandProcess, documents, advantage, specialists, pillars, TESTIMONIALS, MAINLAND_PILLAR, disclaimer } from './shared';
+import { mainlandTax, mainlandStructures, mainlandProcess, documents, advantage, pillars, TESTIMONIALS, MAINLAND_PILLAR, disclaimer } from './shared';
 
 const ABU_DHABI_MAINLAND = {
   href: '/company-setup/mainland/abu-dhabi',
@@ -108,7 +108,6 @@ const ABU_DHABI_MAINLAND = {
   },
 
   advantage: advantage({ place: 'Abu Dhabi mainland', authority: 'ADDED' }),
-  specialists: specialists('Abu Dhabi'),
   pillars: pillars({ place: 'Abu Dhabi', first: MAINLAND_PILLAR }),
 
   related: {

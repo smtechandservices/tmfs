@@ -1,6 +1,6 @@
 // IFZA free zone page, section by section in page order (Avyanco jurisdiction
 // layout). Shared blocks come from ./shared.
-import { freeZoneTax, freeZoneStructures, freeZoneProcess, documents, advantage, specialists, pillars, TESTIMONIALS, FREE_ZONE_PILLAR, disclaimer } from './shared';
+import { freeZoneTax, freeZoneStructures, freeZoneProcess, documents, advantage, pillars, TESTIMONIALS, FREE_ZONE_PILLAR, disclaimer } from './shared';
 
 const IFZA = {
   href: '/company-setup/free-zones/ifza',
@@ -102,7 +102,6 @@ const IFZA = {
   },
 
   advantage: advantage({ place: 'IFZA', authority: 'IFZA', kind: 'free zone' }),
-  specialists: specialists('IFZA'),
   pillars: pillars({ place: 'IFZA', first: FREE_ZONE_PILLAR }),
 
   related: {

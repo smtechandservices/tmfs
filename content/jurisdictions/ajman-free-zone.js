@@ -1,6 +1,6 @@
 // Ajman Free Zone page, section by section in page order (Avyanco
 // jurisdiction layout). Shared blocks come from ./shared.
-import { freeZoneTax, freeZoneStructures, freeZoneProcess, documents, advantage, specialists, pillars, TESTIMONIALS, FREE_ZONE_PILLAR, disclaimer } from './shared';
+import { freeZoneTax, freeZoneStructures, freeZoneProcess, documents, advantage, pillars, TESTIMONIALS, FREE_ZONE_PILLAR, disclaimer } from './shared';
 
 const AJMAN_FREE_ZONE = {
   href: '/company-setup/free-zones/ajman-free-zone',
@@ -102,7 +102,6 @@ const AJMAN_FREE_ZONE = {
   },
 
   advantage: advantage({ place: 'Ajman Free Zone', authority: 'Ajman Free Zone', kind: 'free zone' }),
-  specialists: specialists('Ajman Free Zone'),
   pillars: pillars({ place: 'Ajman Free Zone', first: FREE_ZONE_PILLAR }),
 
   related: {

@@ -1,7 +1,5 @@
 import Reveal from './Reveal';
 import AboutTrustStats from './AboutTrustStats';
-import { TeamCard } from './sections/TeamGrid';
-import { TEAM } from '@/content/people';
 
 
 const VALUES = [
@@ -57,17 +55,6 @@ export default function About() {
               <h4 className="mb-[7px] text-[17px] font-bold tracking-[-.01em] text-blue">{v.title}</h4>
               <p className="text-[13.5px] leading-[1.6] text-muted">{v.desc}</p>
             </Reveal>
-          ))}
-        </div>
-      </div>
-
-      <div id="team" className="scroll-mt-[112px]">
-        <Reveal as="h3" className="mb-[20px] text-[22px] font-semibold tracking-[-.01em] text-blue">
-          Meet our team
-        </Reveal>
-        <div className="grid grid-cols-1 gap-[16px] navp:grid-cols-2 navd:grid-cols-3">
-          {TEAM.map((person, i) => (
-            <TeamCard key={person.name} person={person} delay={i * 80} />
           ))}
         </div>
       </div>

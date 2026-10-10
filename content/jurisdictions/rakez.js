@@ -1,6 +1,6 @@
 // RAKEZ page, section by section in page order (Avyanco jurisdiction layout).
 // Shared blocks come from ./shared.
-import { freeZoneTax, freeZoneStructures, freeZoneProcess, documents, advantage, specialists, pillars, TESTIMONIALS, FREE_ZONE_PILLAR, disclaimer } from './shared';
+import { freeZoneTax, freeZoneStructures, freeZoneProcess, documents, advantage, pillars, TESTIMONIALS, FREE_ZONE_PILLAR, disclaimer } from './shared';
 
 const RAKEZ = {
   href: '/company-setup/free-zones/rakez',
@@ -102,7 +102,6 @@ const RAKEZ = {
   },
 
   advantage: advantage({ place: 'RAKEZ', authority: 'RAKEZ', kind: 'free zone' }),
-  specialists: specialists('RAKEZ'),
   pillars: pillars({ place: 'RAKEZ', first: FREE_ZONE_PILLAR }),
 
   related: {

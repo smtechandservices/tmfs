@@ -189,10 +189,6 @@ const SHARJAH_MAINLAND = {
     ],
   },
 
-  specialists: {
-    title: 'Meet Our Team',
-    body: 'The people who will handle your Sharjah setup, from first call to renewal.',
-  },
 
   pillars: {
     title: 'Why Founders Choose TMFS in Sharjah',

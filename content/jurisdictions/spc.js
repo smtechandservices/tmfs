@@ -1,6 +1,6 @@
 // SPC Free Zone page, section by section in page order (Avyanco jurisdiction
 // layout). Shared blocks come from ./shared.
-import { freeZoneTax, freeZoneStructures, freeZoneProcess, documents, advantage, specialists, pillars, TESTIMONIALS, FREE_ZONE_PILLAR, disclaimer } from './shared';
+import { freeZoneTax, freeZoneStructures, freeZoneProcess, documents, advantage, pillars, TESTIMONIALS, FREE_ZONE_PILLAR, disclaimer } from './shared';
 
 const SPC = {
   href: '/company-setup/free-zones/spc',
@@ -102,7 +102,6 @@ const SPC = {
   },
 
   advantage: advantage({ place: 'SPC Free Zone', authority: 'SPC', kind: 'free zone' }),
-  specialists: specialists('SPC Free Zone'),
   pillars: pillars({ place: 'SPC', first: FREE_ZONE_PILLAR }),
 
   related: {

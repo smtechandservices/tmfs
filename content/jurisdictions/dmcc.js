@@ -1,7 +1,7 @@
 // DMCC page, section by section in page order (Avyanco jurisdiction layout).
 // DMCC is an advisory jurisdiction for TMFS (we advise and coordinate, we
 // don't file there directly), so the copy says "advise" rather than "file".
-import { freeZoneTax, freeZoneStructures, documents, advantage, specialists, pillars, TESTIMONIALS, disclaimer } from './shared';
+import { freeZoneTax, freeZoneStructures, documents, advantage, pillars, TESTIMONIALS, disclaimer } from './shared';
 
 const DMCC = {
   href: '/company-setup/free-zones/dmcc',
@@ -116,7 +116,6 @@ const DMCC = {
     kind: 'free zone',
     first: { icon: 'scale', title: 'Independent Zone Advice', body: 'An honest comparison of DMCC against lower-cost zones before you commit.' },
   }),
-  specialists: specialists('DMCC'),
   pillars: pillars({ place: 'DMCC', first: { icon: 'award', title: 'Advice before you apply', body: 'We plan structure, banking and tax first, so your DMCC application goes in complete and your company is usable from day one.' } }),
 
   related: {

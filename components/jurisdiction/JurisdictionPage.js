@@ -10,7 +10,6 @@ import {
   TaxBlock,
   IndustryGrid,
   Advantage,
-  Specialists,
   Pillars,
   Related,
   Reviews,
@@ -53,7 +52,6 @@ export default function JurisdictionPage({ page, group, crumbs, overview }) {
           {page.tax && <TaxBlock content={page.tax} />}
           {page.industries && <IndustryGrid content={page.industries} />}
           {page.advantage && <Advantage content={page.advantage} />}
-          {page.specialists && <Specialists content={page.specialists} />}
           {page.pillars && <Pillars content={page.pillars} />}
           {page.related && <Related content={page.related} cards={related} />}
           {page.testimonials && <Reviews content={page.testimonials} />}

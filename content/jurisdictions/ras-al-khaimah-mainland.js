@@ -1,6 +1,6 @@
 // Ras Al Khaimah mainland page, section by section in page order (Avyanco
 // jurisdiction layout). Shared blocks come from ./shared.
-import { mainlandTax, mainlandStructures, mainlandProcess, documents, advantage, specialists, pillars, TESTIMONIALS, MAINLAND_PILLAR, disclaimer } from './shared';
+import { mainlandTax, mainlandStructures, mainlandProcess, documents, advantage, pillars, TESTIMONIALS, MAINLAND_PILLAR, disclaimer } from './shared';
 
 const RAK_MAINLAND = {
   href: '/company-setup/mainland/ras-al-khaimah',
@@ -108,7 +108,6 @@ const RAK_MAINLAND = {
   },
 
   advantage: advantage({ place: 'Ras Al Khaimah mainland', authority: 'RAK DED' }),
-  specialists: specialists('Ras Al Khaimah'),
   pillars: pillars({ place: 'Ras Al Khaimah', first: MAINLAND_PILLAR }),
 
   related: {

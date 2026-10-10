@@ -2,7 +2,7 @@
 // jurisdiction layout). Offshore companies can't trade in the UAE or sponsor
 // visas, so the licence, process, advantage and tax copy is written here
 // rather than taken from the mainland and free zone helpers.
-import { SOURCES, specialists, pillars, TESTIMONIALS, disclaimer } from './shared';
+import { SOURCES, pillars, TESTIMONIALS, disclaimer } from './shared';
 
 const RAK_ICC = {
   href: '/company-setup/offshore/rak-icc',
@@ -187,7 +187,6 @@ const RAK_ICC = {
     ],
   },
 
-  specialists: specialists('RAK ICC'),
   pillars: pillars({ place: 'RAK ICC', first: { icon: 'award', title: 'Honest about what offshore can’t do', body: 'If you need to trade in the UAE or want a visa, we’ll tell you upfront and suggest a free zone or mainland company instead.' } }),
 
   related: {

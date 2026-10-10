@@ -3,9 +3,10 @@ import Button, { Eyebrow, Rich } from '../ui/Button';
 import { LEADERSHIP } from '@/content/home';
 import { TEAM } from '@/content/people';
 
-export default function Leadership({ content = LEADERSHIP, people = TEAM }) {
+/** Team cards. Also used on the About page (`id="team"`, no action button). */
+export default function Leadership({ content = LEADERSHIP, people = TEAM, id }) {
   return (
-    <section className="relative bg-soft py-[160px] max-[1100px]:py-[100px] max-md:py-[56px]">
+    <section id={id} className="relative scroll-mt-[92px] bg-soft py-[160px] max-[1100px]:py-[100px] max-md:py-[56px]">
       <div className="mx-auto max-w-[1320px] px-[24px]">
         <Reveal className="mb-[72px] text-center max-md:mb-[36px]">
           <Eyebrow className="mb-[24px]">{content.eyebrow}</Eyebrow>
@@ -15,7 +16,7 @@ export default function Leadership({ content = LEADERSHIP, people = TEAM }) {
           <p className="mx-auto max-w-[640px] text-[17px] leading-[1.7] text-slate max-md:text-[15px]">{content.intro}</p>
         </Reveal>
 
-        <div className="mx-auto mb-[48px] grid max-w-[1000px] grid-cols-3 gap-[24px] max-[1100px]:grid-cols-2 max-md:mb-[28px] max-md:gap-[12px]">
+        <div className="mb-[48px] grid grid-cols-3 gap-[32px] max-[1100px]:grid-cols-2 max-[1100px]:gap-[24px] max-md:mb-[28px] max-md:gap-[12px]">
           {people.map((p, i) => (
             <Reveal
               key={p.name}
@@ -33,11 +34,13 @@ export default function Leadership({ content = LEADERSHIP, people = TEAM }) {
           ))}
         </div>
 
-        <Reveal className="text-center">
-          <Button href={content.action.href} variant="line">
-            {content.action.label}
-          </Button>
-        </Reveal>
+        {content.action && (
+          <Reveal className="text-center">
+            <Button href={content.action.href} variant="line">
+              {content.action.label}
+            </Button>
+          </Reveal>
+        )}
       </div>
     </section>
   );

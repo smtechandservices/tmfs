@@ -1,6 +1,6 @@
 // SRTIP page, section by section in page order (Avyanco jurisdiction layout).
 // Shared blocks come from ./shared.
-import { freeZoneTax, freeZoneStructures, freeZoneProcess, documents, advantage, specialists, pillars, TESTIMONIALS, FREE_ZONE_PILLAR, disclaimer } from './shared';
+import { freeZoneTax, freeZoneStructures, freeZoneProcess, documents, advantage, pillars, TESTIMONIALS, FREE_ZONE_PILLAR, disclaimer } from './shared';
 
 const SRTIP = {
   href: '/company-setup/free-zones/srtip',
@@ -102,7 +102,6 @@ const SRTIP = {
   },
 
   advantage: advantage({ place: 'SRTIP', authority: 'SRTIP', kind: 'free zone' }),
-  specialists: specialists('SRTIP'),
   pillars: pillars({ place: 'SRTIP', first: FREE_ZONE_PILLAR }),
 
   related: {

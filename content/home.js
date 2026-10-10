@@ -179,15 +179,6 @@ export const DIFFERENTIATORS = {
   ],
 };
 
-// Brand film. Shows a "coming soon" panel until a YouTube video ID is set.
-export const FILM = {
-  eyebrow: 'Brand film',
-  title: ['Why founders ', { em: 'choose TMFS.' }],
-  body: 'A short film on how we work: one team that takes a founder from first call to licence, bank account and every renewal after.',
-  youtubeId: '',
-  speaker: null, // { name, title }
-};
-
 export const INSIGHTS = {
   eyebrow: 'Insights',
   title: ['Notes from ', { em: 'the filing' }, ' desk.'],

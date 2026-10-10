@@ -4,7 +4,6 @@ import Reveal from '../Reveal';
 import Icon from '../ui/Icon';
 import RelatedCarousel from './RelatedCarousel';
 import { ReviewCarousel } from '../home/Testimonials';
-import { TEAM } from '@/content/people';
 
 const H2 = 'text-[40px] leading-[44px] font-semibold tracking-[-.5px] text-blue max-[900px]:text-[32px] max-[900px]:leading-[38px] max-[480px]:text-[26px] max-[480px]:leading-[32px]';
 const BODY = 'text-[14px] leading-[24px] text-[#333]';
@@ -294,31 +293,6 @@ export function Advantage({ content }) {
             </span>
             <h3 className="font-sans text-[16px] leading-[1.35] font-semibold tracking-[-.2px] text-blue">{item.title}</h3>
             <p className="text-[13.5px] leading-[22px] text-[#555]">{item.body}</p>
-          </Reveal>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-export function Specialists({ content, people = TEAM }) {
-  return (
-    <Section>
-      <Head title={content.title} body={content.body} />
-      <div className="grid grid-cols-3 gap-[18px] max-[760px]:grid-cols-2 max-[640px]:gap-[12px]">
-        {people.map((p, i) => (
-          <Reveal
-            key={p.name}
-            delay={i * 80}
-            className="group/lead relative aspect-[3/4] overflow-hidden rounded-t-[24px] bg-[linear-gradient(#f8fafd_0%,#e8eef6_50%,#d8e2ee_100%)] shadow-[0_4px_16px_rgba(10,37,64,.06),0_1px_3px_rgba(10,37,64,.04)] transition-[transform,box-shadow] duration-500 hover:-translate-y-[8px] hover:shadow-[0_24px_48px_rgba(10,37,64,.18)]"
-          >
-            <div className="absolute inset-0 overflow-hidden after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-[55%] after:bg-[linear-gradient(transparent_0%,rgba(11,6,82,.25)_25%,rgba(11,6,82,.75)_55%,rgba(8,4,50,.96)_100%)] after:content-['']">
-              <img src={p.img} alt={`${p.name}, ${p.title} at TMFS`} className="h-full w-full object-cover object-[center_18%] transition-transform duration-700 group-hover/lead:scale-105" />
-            </div>
-            <div className="absolute inset-x-[16px] bottom-[16px] z-[2] rounded-t-[16px] border border-white/[.18] bg-[rgba(16,9,110,.42)] px-[16px] pt-[14px] pb-[16px] text-white backdrop-blur-[18px] max-[640px]:inset-x-[10px] max-[640px]:bottom-[10px] max-[640px]:px-[10px]">
-              <h3 className="mb-[6px] text-center text-[16.5px] leading-[1.18] font-bold tracking-[-.02em] text-white [text-shadow:0_2px_8px_rgba(0,0,0,.3)] max-[640px]:text-[14px]">{p.name}</h3>
-              <p className="text-center text-[11.5px] leading-[1.4] text-white max-[640px]:text-[10.5px]">{p.title}</p>
-            </div>
           </Reveal>
         ))}
       </div>

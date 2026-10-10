@@ -1,7 +1,7 @@
 // DIFC page, section by section in page order (Avyanco jurisdiction layout).
 // DIFC is an advisory jurisdiction for TMFS (we advise and coordinate, we
 // don't file there directly), so the copy says "advise" rather than "file".
-import { freeZoneTax, documents, advantage, specialists, pillars, TESTIMONIALS, disclaimer } from './shared';
+import { freeZoneTax, documents, advantage, pillars, TESTIMONIALS, disclaimer } from './shared';
 
 const DIFC = {
   href: '/company-setup/free-zones/difc',
@@ -124,7 +124,6 @@ const DIFC = {
     kind: 'free zone',
     first: { icon: 'scale', title: 'Structure Advice', body: 'The right DIFC entity, or a cheaper alternative, for what you actually need it to do.' },
   }),
-  specialists: specialists('DIFC'),
   pillars: pillars({ place: 'DIFC', first: { icon: 'award', title: 'Advice before you apply', body: 'We plan structure, banking and tax first, so your DIFC vehicle does what you need from day one.' } }),
 
   related: {

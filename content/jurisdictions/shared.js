@@ -182,11 +182,6 @@ export function advantage({ place, authority, kind = 'mainland', first }) {
   };
 }
 
-export const specialists = (place) => ({
-  title: 'Meet Our Team',
-  body: `The people who will handle your ${place} setup, from first call to renewal.`,
-});
-
 export const TESTIMONIALS = {
   title: 'What Clients Say',
   body: 'Feedback from founders who set up with TMFS.',

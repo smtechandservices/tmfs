@@ -1,5 +1,7 @@
 import About from '@/components/About';
 import LicencePackages from '@/components/LicencePackages';
+import Leadership from '@/components/home/Leadership';
+import { LEADERSHIP } from '@/content/home';
 
 export const metadata = {
   title: 'About Us',
@@ -12,6 +14,8 @@ export default function AboutPage() {
   return (
     <div className="w-full">
       <About />
+      {/* Same team section as the homepage, minus its link back to this page. */}
+      <Leadership id="team" content={{ ...LEADERSHIP, action: null }} />
       <LicencePackages />
     </div>
   );

@@ -1,6 +1,6 @@
 // Meydan Free Zone page, section by section in page order (Avyanco
 // jurisdiction layout). Shared blocks come from ./shared.
-import { freeZoneTax, freeZoneStructures, freeZoneProcess, documents, advantage, specialists, pillars, TESTIMONIALS, FREE_ZONE_PILLAR, disclaimer } from './shared';
+import { freeZoneTax, freeZoneStructures, freeZoneProcess, documents, advantage, pillars, TESTIMONIALS, FREE_ZONE_PILLAR, disclaimer } from './shared';
 
 const MEYDAN = {
   href: '/company-setup/free-zones/meydan',
@@ -102,7 +102,6 @@ const MEYDAN = {
   },
 
   advantage: advantage({ place: 'Meydan Free Zone', authority: 'Meydan', kind: 'free zone' }),
-  specialists: specialists('Meydan Free Zone'),
   pillars: pillars({ place: 'Meydan', first: FREE_ZONE_PILLAR }),
 
   related: {

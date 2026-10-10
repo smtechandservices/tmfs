@@ -1,6 +1,6 @@
 // Umm Al Quwain mainland page, section by section in page order (Avyanco
 // jurisdiction layout). Shared blocks come from ./shared.
-import { mainlandTax, mainlandStructures, mainlandProcess, documents, advantage, specialists, pillars, TESTIMONIALS, MAINLAND_PILLAR, disclaimer } from './shared';
+import { mainlandTax, mainlandStructures, mainlandProcess, documents, advantage, pillars, TESTIMONIALS, MAINLAND_PILLAR, disclaimer } from './shared';
 
 const UAQ_MAINLAND = {
   href: '/company-setup/mainland/umm-al-quwain',
@@ -108,7 +108,6 @@ const UAQ_MAINLAND = {
   },
 
   advantage: advantage({ place: 'Umm Al Quwain mainland', authority: 'UAQ DED' }),
-  specialists: specialists('Umm Al Quwain'),
   pillars: pillars({ place: 'Umm Al Quwain', first: MAINLAND_PILLAR }),
 
   related: {

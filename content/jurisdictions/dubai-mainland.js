@@ -1,6 +1,6 @@
 // Dubai mainland page, section by section in page order (Avyanco jurisdiction
 // layout). Shared blocks come from ./shared; this file holds what is unique.
-import { mainlandTax, mainlandStructures, mainlandProcess, documents, advantage, specialists, pillars, TESTIMONIALS, disclaimer } from './shared';
+import { mainlandTax, mainlandStructures, mainlandProcess, documents, advantage, pillars, TESTIMONIALS, disclaimer } from './shared';
 
 const DUBAI_MAINLAND = {
   href: '/company-setup/mainland/dubai',
@@ -108,7 +108,6 @@ const DUBAI_MAINLAND = {
   },
 
   advantage: advantage({ place: 'Dubai mainland', authority: 'DET' }),
-  specialists: specialists('Dubai'),
   pillars: pillars({ place: 'Dubai', first: { icon: 'map-pin', title: 'Next door, not a call centre', body: 'Our office is next to Dubai Mall. Walk in, meet the consultant handling your file and sign in person when you need to.' } }),
 
   related: {
