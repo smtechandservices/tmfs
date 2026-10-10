@@ -35,7 +35,7 @@ export default function Process({ content = PROCESS }) {
       <div className="mx-auto grid max-w-[1320px] grid-cols-1 gap-[48px] px-[20px] py-[clamp(56px,8vw,100px)] navd:grid-cols-[minmax(280px,380px)_1fr]">
         {/* Left: sticks in place while the right column scrolls past it */}
         <div>
-          <div className="navd:sticky navd:top-[88px]">
+          <div className="navd:sticky navd:top-[108px]">
             <Reveal>
               <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">{eyebrow}</div>
               <h2 className="mb-[18px] text-pretty text-[clamp(28px,4.2vw,48px)] font-bold leading-[1.06] tracking-[-.03em]">{title}</h2>

@@ -13,15 +13,18 @@ export default function Hero({ content = HERO }) {
       </div>
 
       <div className="relative z-[3] mx-auto w-full max-w-[1320px] px-[48px] max-md:px-[20px]">
-        <div className="max-w-[600px] pt-[24px] max-[1100px]:pt-0">
+        <div className="max-w-[720px] pt-[24px] max-[1100px]:pt-0">
           <span className="mb-[32px] inline-flex items-center gap-[10px] rounded-full border border-white/[.28] bg-[rgba(219,20,28,.22)] px-[16px] py-[8px] text-[12px] font-semibold uppercase tracking-[.16em] before:h-[6px] before:w-[6px] before:rounded-full before:bg-brand-bright before:shadow-[0_0_12px_var(--color-brand-bright)] before:content-[''] max-md:hidden">
             {content.eyebrow}
           </span>
           <h1 className={`mb-[22px] text-[clamp(34px,4.2vw,54px)] leading-[1.1] font-bold tracking-[-.024em] text-white max-md:mb-[18px] max-md:text-[clamp(28px,6.6vw,40px)] ${SHADOW}`}>
             <Rich value={content.title} emClass="text-brand-bright" />
           </h1>
-          <p className={`mb-[14px] max-w-[620px] text-[clamp(16px,1.3vw,19px)] leading-[1.5] font-semibold max-md:mb-[24px] max-md:text-[14.5px] ${SHADOW}`}>{content.sub}</p>
-          <p className={`mb-[40px] max-w-[600px] text-[clamp(14px,1.05vw,15.5px)] leading-[1.6] text-white/[.92] max-md:hidden ${SHADOW}`}>{content.intro}</p>
+          <p className={`mb-[14px] max-w-[620px] text-[clamp(16px,1.3vw,19px)] leading-[1.5] font-semibold max-md:mb-[10px] max-md:text-[14.5px] ${SHADOW}`}>{content.sub}</p>
+          <p className={`max-w-[600px] text-[clamp(14px,1.05vw,15.5px)] leading-[1.6] text-white/[.92] max-md:hidden ${content.tagline ? 'mb-[14px]' : 'mb-[40px]'} ${SHADOW}`}>{content.intro}</p>
+          {content.tagline && (
+            <p className={`mb-[40px] text-[clamp(15px,1.15vw,17px)] font-semibold italic text-white max-md:mb-[24px] max-md:text-[14.5px] ${SHADOW}`}>{content.tagline}</p>
+          )}
 
           <div className="mb-[44px] flex flex-wrap items-center gap-[16px] max-md:mb-0 max-md:gap-[10px]">
             <Button href={content.primary.href}>{content.primary.label}</Button>

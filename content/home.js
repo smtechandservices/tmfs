@@ -4,10 +4,10 @@
 
 export const HERO = {
   eyebrow: 'Dubai · UAE · Since 2019',
-  title: ['Company setup, banking and tax in ', { em: 'the UAE, handled' }],
-  sub: 'Your vision, our expertise. One team from licence to bank account.',
-  intro:
-    'Time Machine Financial Services helps founders, SMEs and investors set up companies on the mainland, in free zones and offshore, open bank accounts, stay compliant with VAT and Corporate Tax, and get residence visas for themselves and their families.',
+  title: ['Company Setup in the ', { em: 'UAE Made Simple.' }],
+  sub: 'Start, structure and grow your business in the UAE with confidence.',
+  intro: 'We simplify UAE business setup for startups, investors, and established businesses with expert guidance and seamless support.',
+  tagline: 'Your vision, our expertise.',
   image: { src: '/images/image.png', alt: 'Business Bay, Dubai at dusk' },
   primary: { label: 'Start Your Business', href: '#contact' },
   secondary: { label: 'Talk to an Expert', href: '#contact' },

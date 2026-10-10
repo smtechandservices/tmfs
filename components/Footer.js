@@ -28,7 +28,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-[1320px] grid-cols-1 gap-[clamp(28px,4vw,48px)] px-[20px] pt-[clamp(48px,7vw,84px)] pb-[36px] navp:grid-cols-2 navd:grid-cols-[1.4fr_repeat(4,1fr)]">
         <div>
           <a href="/" className="mb-[22px] inline-block">
-            <Logo className="block h-[52px] w-auto" />
+            <Logo className="block h-[96px] w-[96px]" />
           </a>
           <p className="mb-[20px] max-w-[40ch] text-[14px] leading-[1.65] text-muted">{FOOTER_BLURB}</p>
           <ul className="mb-[20px] flex flex-col gap-[8px]">

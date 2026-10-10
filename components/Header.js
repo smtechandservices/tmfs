@@ -113,7 +113,7 @@ function MobileMenu({ open, onClose }) {
       >
         <div className="flex flex-none items-center justify-between border-b border-rule-soft px-[24px] py-[20px]">
           <a href="/" aria-label={`${SITE.name}, home`}>
-            <Logo className="block h-[38px] w-auto" />
+            <Logo title={SITE.name} className="block h-[60px] w-[60px]" />
           </a>
           <button type="button" onClick={onClose} aria-label="Close menu" className="flex h-[38px] w-[38px] cursor-pointer items-center justify-center rounded-[8px] bg-grey text-blue hover:bg-rule">
             <Icon name="x" size={20} />
@@ -205,7 +205,7 @@ export default function Header() {
           solid ? 'bg-white/[.96] shadow-[0_6px_20px_rgba(10,37,64,.06)]' : 'bg-transparent'
         }`}
       >
-        <div className="relative mx-auto flex h-[76px] max-w-[1320px] items-center gap-[16px] px-[40px] max-md:h-[64px] max-md:gap-[12px] max-md:px-[20px] max-[480px]:px-[14px]">
+        <div className="relative mx-auto flex h-[92px] max-w-[1320px] items-center gap-[16px] px-[40px] max-md:h-[72px] max-md:gap-[12px] max-md:px-[20px] max-[480px]:px-[14px]">
           <button
             type="button"
             aria-label="Menu"
@@ -218,7 +218,7 @@ export default function Header() {
           </button>
 
           <a href="/" aria-label={`${SITE.name}, home`} className="flex flex-none items-center">
-            <Logo variant={solid ? 'primary' : 'reversed'} className="block h-[44px] w-auto max-md:h-[36px] max-[480px]:h-[30px]" />
+            <Logo title={SITE.name} className="block h-[80px] w-[80px] max-md:h-[60px] max-md:w-[60px] max-[480px]:h-[52px] max-[480px]:w-[52px]" />
           </a>
 
           <nav aria-label="Main navigation" className="hidden flex-1 items-center justify-center xl:flex">
@@ -250,7 +250,7 @@ export default function Header() {
         </div>
       </header>
       {/* Pages without a dark hero start below the fixed header. */}
-      {!overHero && <div aria-hidden="true" className="h-[76px] max-md:h-[64px]" />}
+      {!overHero && <div aria-hidden="true" className="h-[92px] max-md:h-[72px]" />}
       <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
     </>
   );

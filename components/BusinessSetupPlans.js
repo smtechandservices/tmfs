@@ -27,7 +27,7 @@ const TIERS = [
 
 function TierCard({ tier }) {
   return (
-    <div id={tier.id} className="scroll-mt-[96px] flex h-full flex-col rounded-[20px] border border-line bg-white p-[26px]">
+    <div id={tier.id} className="scroll-mt-[112px] flex h-full flex-col rounded-[20px] border border-line bg-white p-[26px]">
       <span className="mb-[14px] inline-block w-fit rounded-full bg-brand-tint px-[13px] py-[5px] font-mono text-[10px] font-bold uppercase tracking-[.1em] text-brand">
         {tier.tag}
       </span>

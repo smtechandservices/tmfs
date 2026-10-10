@@ -50,10 +50,10 @@ export const metadata = {
     description,
     images: [ogImage],
   },
-  // Guidelines call for the pinwheel sub mark at small sizes.
+  // Favicon and home-screen icon use the same badge as the site logo.
   icons: {
-    icon: '/pinwheel.svg',
-    apple: '/apple-icon.png',
+    icon: '/logo.png',
+    apple: '/logo.png',
   },
   robots: {
     index: true,

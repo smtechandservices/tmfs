@@ -14,7 +14,7 @@ export default function HomeCTA({ content = CONSULTATION }) {
   return (
     <section
       id="contact"
-      className="relative scroll-mt-[76px] overflow-hidden bg-[linear-gradient(180deg,#fff_0%,var(--color-soft)_100%)] py-[120px] after:pointer-events-none after:absolute after:-top-[40%] after:-right-[10%] after:h-[600px] after:w-[600px] after:bg-[radial-gradient(circle,rgba(219,20,28,.06)_0%,transparent_60%)] after:content-[''] max-[1100px]:py-[80px] max-md:py-[56px]"
+      className="relative scroll-mt-[92px] overflow-hidden bg-[linear-gradient(180deg,#fff_0%,var(--color-soft)_100%)] py-[120px] after:pointer-events-none after:absolute after:-top-[40%] after:-right-[10%] after:h-[600px] after:w-[600px] after:bg-[radial-gradient(circle,rgba(219,20,28,.06)_0%,transparent_60%)] after:content-[''] max-[1100px]:py-[80px] max-md:py-[56px]"
     >
       <div className="relative z-[1] mx-auto grid max-w-[1320px] grid-cols-[1fr_1.1fr] items-start gap-[80px] px-[24px] max-[1100px]:gap-[56px] max-[900px]:grid-cols-1 max-[900px]:gap-[40px]">
         <Reveal>

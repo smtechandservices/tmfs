@@ -33,7 +33,7 @@ function Crumbs({ crumbs }) {
 
 export function Hero({ content, crumbs }) {
   return (
-    <section className="relative flex h-[625px] items-center overflow-hidden bg-blue-deep pt-[80px] max-[900px]:h-[460px] max-[480px]:h-[380px] max-[480px]:pt-[64px]">
+    <section className="relative flex h-[625px] items-center overflow-hidden bg-blue-deep pt-[92px] max-[900px]:h-[460px] max-[480px]:h-[380px] max-[480px]:pt-[72px]">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(at_75%_30%,rgba(219,20,28,.18)_0%,transparent_55%),radial-gradient(at_20%_80%,rgba(74,144,226,.12)_0%,transparent_50%),linear-gradient(135deg,#100a75_0%,#0b0652_50%,#060333_100%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] bg-[size:64px_64px] bg-[position:-1px_-1px] opacity-[.06] [mask-image:radial-gradient(at_60%,#000_0%,transparent_70%)] max-[900px]:opacity-0" />
@@ -83,7 +83,7 @@ const SIDE_CARD = 'rounded-[16px] border border-[#e6e9ee] bg-white p-[22px] shad
 
 export function Sidebar({ content }) {
   return (
-    <aside className="flex flex-col gap-[16px] min-[1025px]:sticky min-[1025px]:top-[88px] min-[1025px]:max-h-[calc(100vh-104px)] min-[1025px]:overflow-x-hidden min-[1025px]:overflow-y-auto max-[1024px]:mt-[12px]">
+    <aside className="flex flex-col gap-[16px] min-[1025px]:sticky min-[1025px]:top-[108px] min-[1025px]:max-h-[calc(100vh-124px)] min-[1025px]:overflow-x-hidden min-[1025px]:overflow-y-auto max-[1024px]:mt-[12px]">
       <div className={SIDE_CARD}>
         <p className="mb-[6px] text-[11px] font-extrabold uppercase tracking-[.09em] text-brand">{content.eyebrow}</p>
         <p className="mb-[8px] font-display text-[1.2rem] leading-[1.25] font-bold text-blue">{content.title}</p>
@@ -117,7 +117,7 @@ export function Sidebar({ content }) {
 
 export function LeadBand({ content }) {
   return (
-    <section id="consult" className="scroll-mt-[76px] border-t border-rule-soft bg-[radial-gradient(circle_at_0%_0%,#eef0fb_0%,transparent_55%),var(--color-soft)] py-[clamp(48px,6vw,80px)]">
+    <section id="consult" className="scroll-mt-[92px] border-t border-rule-soft bg-[radial-gradient(circle_at_0%_0%,#eef0fb_0%,transparent_55%),var(--color-soft)] py-[clamp(48px,6vw,80px)]">
       <div className="mx-auto grid max-w-[1320px] grid-cols-2 items-center gap-[clamp(32px,5vw,64px)] px-[24px] max-[900px]:grid-cols-1 max-[900px]:gap-[28px]">
         <div className="max-w-[520px] max-[900px]:max-w-none">
           <span className="mb-[14px] inline-block text-[11px] font-bold uppercase tracking-[.14em] text-blue-mid">{content.eyebrow}</span>

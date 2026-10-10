@@ -61,7 +61,7 @@ export default function About() {
         </div>
       </div>
 
-      <div id="team" className="scroll-mt-[100px]">
+      <div id="team" className="scroll-mt-[112px]">
         <Reveal as="h3" className="mb-[20px] text-[22px] font-semibold tracking-[-.01em] text-blue">
           Meet our team
         </Reveal>

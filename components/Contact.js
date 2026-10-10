@@ -5,7 +5,7 @@ import { CONSULTATION } from '@/content/home';
 
 export default function Contact({ content = CONSULTATION, defaultService }) {
   return (
-    <section id="contact" className="scroll-mt-[90px] mx-auto max-w-[1320px] px-[20px] py-[clamp(64px,9vw,116px)]">
+    <section id="contact" className="scroll-mt-[108px] mx-auto max-w-[1320px] px-[20px] py-[clamp(64px,9vw,116px)]">
       <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[clamp(28px,4vw,56px)]">
         <Reveal>
           <div className="mb-[14px] font-mono text-[11px] uppercase tracking-[.2em] text-brand">{content.eyebrow}</div>
