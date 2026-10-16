@@ -11,7 +11,7 @@ export default function StatsStrip({ head = STATS_HEAD, stats = STATS }) {
           <Eyebrow className="mb-[18px]">{head.eyebrow}</Eyebrow>
           <h2 className="text-[clamp(28px,3vw,42px)] leading-[1.14] font-bold tracking-[-.026em]">{head.title}</h2>
         </Reveal>
-        <div className="grid grid-cols-4 gap-[20px] max-[1100px]:grid-cols-2 max-[1100px]:gap-[16px] max-[480px]:gap-[12px]">
+        <div className="grid grid-cols-3 gap-[20px] max-[1100px]:gap-[16px] max-md:grid-cols-1 max-md:gap-[12px]">
           {stats.map((s, i) => (
             <Reveal
               key={s.label}

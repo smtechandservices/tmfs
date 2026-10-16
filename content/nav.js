@@ -34,7 +34,6 @@ export const NAV = [
         title: 'Offshore Company Formation',
         desc: 'RAK ICC holding companies',
         href: OFFSHORE.href,
-        sub: { head: 'Offshore, by jurisdiction', items: OFFSHORE.items.map(link) },
       },
       { title: 'Compare Setup Options', desc: 'Mainland, free zone or offshore, side by side', href: '/company-setup' },
     ],
@@ -66,10 +65,10 @@ export const NAV = [
 // Mobile menu accordions: flatten each menu into one list of links, with
 // Company Setup split per jurisdiction type like the desktop flyout.
 const flat = (entry) => entry.items ?? entry.columns.flatMap((c) => c.items);
-const sublinks = (row) => [{ title: row.title, href: row.href }, ...(row.sub.items ?? row.sub.cols.flatMap((c) => c.items))];
+const sublinks = (row) => [{ title: row.title, href: row.href }, ...(row.sub ? row.sub.items ?? row.sub.cols.flatMap((c) => c.items) : [])];
 
 export const MOBILE_NAV = [
-  ...NAV[0].flyout.filter((row) => row.sub).map((row) => ({ label: `Company Setup: ${row.title.replace(' Company Formation', '')}`, items: sublinks(row) })),
+  ...NAV[0].flyout.filter((row) => row.href !== '/company-setup').map((row) => ({ label: `Company Setup: ${row.title.replace(' Company Formation', '')}`, items: sublinks(row) })),
   ...NAV.slice(1).map((entry) => ({ label: entry.label, items: flat(entry) })),
 ];
 

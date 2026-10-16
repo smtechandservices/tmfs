@@ -2,15 +2,17 @@
 // Avyanco homepage; every fact here is TMFS's own. Headings written as arrays
 // render the `{ em }` pieces in red.
 
+import { SITE } from './site';
+
 export const HERO = {
   eyebrow: 'Dubai · UAE · Since 2019',
   title: ['Company Setup in the ', { em: 'UAE Made Simple.' }],
   sub: 'Start, structure and grow your business in the UAE with confidence.',
   intro: 'We simplify UAE business setup for startups, investors, and established businesses with expert guidance and seamless support.',
   tagline: 'Your vision, our expertise.',
-  image: { src: '/images/image.png', alt: 'Business Bay, Dubai at dusk' },
-  primary: { label: 'Start Your Business', href: '#contact' },
-  secondary: { label: 'Talk to an Expert', href: '#contact' },
+  image: { src: '/images/image2.png', alt: 'Business Bay, Dubai at dusk' },
+  primary: { label: 'Start Your Business', href: '/company-setup' },
+  secondary: { label: 'Talk to an Expert', href: '/contact' },
   tools: [
     { label: 'Business setup', title: 'Compare Setup Options', href: '/company-setup', icon: 'building-skyscraper' },
     { label: 'UAE residence', title: 'Golden Visa', href: '/corporate-services/golden-visa', icon: 'id-badge' },
@@ -28,14 +30,14 @@ export const PRESS = [];
 
 export const STORY = {
   eyebrow: 'Who we are',
-  title: 'Built so founders deal with one team, not five.',
-  pull: 'Setting up in the UAE usually means a formation agent, a bank relationship manager, an accountant, a PRO and a visa typist, none of whom talk to each other. TMFS was set up in Dubai to replace that chain with one team that owns the whole file.',
+  title: 'UAE Business Setup, Simplified.',
+  pull: 'One team. One point of contact. End-to-end business support.',
   paragraphs: [
-    'We start with what you are building: who you will invoice, where your customers are, which bank is likely to say yes, and what you will owe the FTA. Then we recommend the jurisdiction and structure that fit, and handle the licence, the visas, the bank account and the filings that follow.',
-    'Behind us is Time Machine Group’s 20 years in UAE business setup, and an office next to Dubai Mall you can walk into.',
+    'From company formation and corporate bank account assistance to visas, PRO services, accounting and tax compliance, TMFS simplifies every step of setting up a business in the UAE.',
+    'We understand your business goals before recommending the right structure and jurisdiction, providing tailored solutions backed by Time Machine Financial’s 7 years of UAE business setup experience.',
   ],
   facts: [
-    { label: 'Based', value: 'Dubai, next to Dubai Mall' },
+    { label: 'Based', value: `${SITE.address}, ${SITE.poBox}`, wide: true },
     { label: 'Since', value: '2019' },
     { label: 'Group', value: 'Time Machine Group' },
   ],
@@ -121,7 +123,7 @@ export const PROCESS = {
 export const MARKETS = {
   eyebrow: 'Where we file',
   title: ['Seven emirates, ', { em: 'one' }, ' coordinated team.'],
-  intro: 'From our office next to Dubai Mall we file on the mainland in every emirate, in seven free zones directly, and offshore through RAK ICC.',
+  intro: 'From our office next to Dubai Mall we file on the mainland in every emirate, in all free zones directly, and offshore through RAK ICC.',
   filters: [
     { key: 'all', label: 'All' },
     { key: 'mainland', label: 'Mainland' },

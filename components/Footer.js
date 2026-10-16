@@ -32,7 +32,11 @@ export default function Footer() {
           </a>
           <p className="mb-[20px] max-w-[40ch] text-[14px] leading-[1.65] text-muted">{FOOTER_BLURB}</p>
           <ul className="mb-[20px] flex flex-col gap-[8px]">
-            <li className="text-[14px] leading-[1.6] text-muted">{SITE.address}</li>
+            <li className="text-[14px] leading-[1.6] text-muted">
+              {SITE.address}
+              <br />
+              {SITE.poBox}
+            </li>
             <li>
               <a href={`tel:${SITE.phone}`} className="text-[15px] font-bold text-blue hover:text-brand">{SITE.phoneDisplay}</a>
             </li>

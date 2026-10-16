@@ -21,9 +21,9 @@ export default function Story({ content = STORY }) {
               {p}
             </p>
           ))}
-          <dl className="mt-[40px] mb-[36px] grid max-w-[560px] grid-cols-3 gap-[24px] max-md:my-[28px] max-md:gap-[12px]">
+          <dl className="mt-[40px] mb-[36px] grid max-w-[560px] grid-cols-2 gap-[24px] max-md:my-[28px] max-md:gap-[12px]">
             {facts.map((f) => (
-              <div key={f.label}>
+              <div key={f.label} className={f.wide ? 'col-span-2' : undefined}>
                 <dt className="mb-[8px] text-[11px] font-semibold uppercase tracking-[.14em] text-brand max-md:mb-[4px] max-md:text-[10px]">{f.label}</dt>
                 <dd className="font-display text-[17px] leading-[1.3] font-semibold tracking-[-.012em] text-blue max-md:text-[14px]">{f.value}</dd>
               </div>

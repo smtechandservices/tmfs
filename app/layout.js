@@ -72,6 +72,7 @@ const orgJsonLd = {
   address: {
     '@type': 'PostalAddress',
     streetAddress: SITE.address,
+    postOfficeBoxNumber: '8405',
     addressLocality: 'Dubai',
     addressCountry: 'AE',
   },

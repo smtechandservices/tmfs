@@ -9,7 +9,7 @@ export default function HomeCTA({ content = CONSULTATION }) {
   const contacts = [
     { icon: 'phone', label: SITE.phoneDisplay, href: `tel:${SITE.phone}` },
     { icon: 'mail', label: SITE.email, href: SITE.emailHref },
-    { icon: 'map-pin', label: SITE.address },
+    { icon: 'map-pin', label: `${SITE.address}, ${SITE.poBox}` },
   ];
   return (
     <section

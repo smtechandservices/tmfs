@@ -12,7 +12,7 @@ export const SITE = {
   whatsapp: 'https://wa.me/971522149086',
   email: 'manager@timemachine.ae',
   emailHref: 'mailto:manager@timemachine.ae?subject=TMFS%20Website',
-  address: 'Millennium Central Hotel, Al Asayel Street, next to Dubai Mall',
+  address: 'Millennium Central Hotel, Al Asayel Street, Next to Dubai Mall',
   poBox: 'PO Box 8405, Dubai Central Post Office',
   socials: [
     { href: 'https://www.facebook.com/profile.php?id=61560742015182', label: 'Facebook', icon: 'facebook', bg: '#1877F2' },
@@ -29,7 +29,6 @@ export const SITE = {
 export const STATS = [
   { value: '1,200', sup: '+', label: 'Licences & renewals', sub: 'Mainland · Free zone · Offshore' },
   { value: '18', label: 'Partner banks', sub: 'Corporate, personal & non-resident' },
-  { value: '8', label: 'Jurisdictions filed directly', sub: 'IFZA · Meydan · RAKEZ · SHAMS · SPC' },
   { value: '20', label: 'Years of group experience', sub: 'Time Machine Group, UAE' },
 ];
 

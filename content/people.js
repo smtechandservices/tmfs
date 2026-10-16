@@ -46,19 +46,19 @@ export const TESTIMONIALS = [
   },
   {
     initials: 'RM',
-    quote: 'Space for a client review about setting up their free zone company and opening the business bank account with TMFS.',
+    quote: 'I came to TMFS with a business idea and very little idea of how UAE setup worked. They recommended the right free zone for my activity, handled the licence paperwork, and had my company registered within a week. What impressed me most was the banking. They prepared my bank application alongside the licence, so my business account was opened soon after instead of dragging on for months. One team, one point of contact, and no surprises on cost.',
     name: 'Rahul Menon',
     role: 'Founder, E-commerce Start-up',
   },
   {
     initials: 'SW',
-    quote: 'Space for a client review about VAT registration, Corporate Tax filing or bookkeeping handled by TMFS.',
+    quote: 'Keeping up with VAT and the new Corporate Tax rules was taking time away from running the business. TMFS took over our bookkeeping, registered us for Corporate Tax and now files our VAT returns every quarter, always ahead of the deadline. Their team explains what is due and why in plain language, and our accounts are finally clean and audit-ready. It is one less thing I have to worry about.',
     name: 'Sarah Whitfield',
     role: 'Director, Trading Company',
   },
   {
     initials: 'OH',
-    quote: 'Space for a client review about investor, employee or family visas processed by TMFS.',
+    quote: 'TMFS handled my investor visa and then my wife\'s and children\'s family visas, and the whole process was far smoother than I expected. They told us exactly which documents we needed, booked the medicals and Emirates ID appointments, and kept us updated at every step. When we later hired our first two employees, they processed those visas just as quickly. I\'d trust them with any visa matter.',
     name: 'Omar Haddad',
     role: 'Managing Partner, Consultancy',
   },

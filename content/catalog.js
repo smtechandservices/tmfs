@@ -132,7 +132,7 @@ export const PRACTICES = [
     key: 'company-setup',
     title: 'Company Setup',
     href: '/company-setup',
-    summary: 'Mainland in all seven emirates, seven free zones filed directly, and RAK ICC offshore. Licence, MoA, visas and Emirates ID.',
+    summary: 'Mainland in all seven emirates, all free zones filed directly, and RAK ICC offshore. Licence, MoA, visas and Emirates ID.',
     groups: [MAINLAND, FREE_ZONES, OFFSHORE],
   },
   {
