@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import Reveal from './Reveal';
+import FreeZoneMarquee from './FreeZoneMarquee';
 
 const DubaiMap = dynamic(() => import('./DubaiMap'), { ssr: false });
 
@@ -18,19 +19,6 @@ const HIGHLIGHTS = [
     desc: 'Strongest acceptance rates with UAE banks. Worth the higher licence cost if you move real volume.',
     delay: 80,
   },
-];
-
-// Logos sit in equal tiles; stacked marks (RAKEZ) get more height so they
-// read at the same visual weight as the wide wordmarks.
-const FREE_ZONES = [
-  { name: 'IFZA', logo: '/logos/free-zones/ifza.png', h: 'h-[26px]' },
-  { name: 'Meydan Free Zone', logo: '/logos/free-zones/meydan.png', h: 'h-[34px]' },
-  { name: 'RAKEZ', logo: '/logos/free-zones/rakez.svg', h: 'h-[54px]' },
-  { name: 'SHAMS', logo: '/logos/free-zones/shams.png', h: 'h-[38px]' },
-  { name: 'SPC Free Zone', logo: '/logos/free-zones/spc.png', h: 'h-[40px]' },
-  { name: 'Ajman Free Zone', logo: '/logos/free-zones/ajman-free-zone.svg', h: 'h-[28px]' },
-  { name: 'SRTIP', logo: '/logos/free-zones/srtip.svg', h: 'h-[40px]' },
-  { name: 'Dubai Mainland', logo: '/logos/free-zones/dubai-mainland.png', h: 'h-[42px]' },
 ];
 
 export default function FreeZoneMap() {
@@ -62,16 +50,7 @@ export default function FreeZoneMap() {
 
       <Reveal delay={260} className="mt-[16px] rounded-[18px] border border-line-2 bg-cream-2 px-[22px] py-[18px]">
         <span className="font-mono text-[10px] uppercase tracking-[.16em] text-muted-2">Free zones we file in directly</span>
-        <ul className="mt-[14px] grid grid-cols-2 gap-[10px] sm:grid-cols-4">
-          {FREE_ZONES.map((z) => (
-            <li key={z.name} className="flex flex-col items-center justify-center gap-[10px] rounded-[12px] border border-line-2 bg-white px-[16px] pb-[14px] pt-[16px]">
-              <div className="flex h-[56px] items-center">
-                <img src={z.logo} alt="" loading="lazy" className={`${z.h} w-auto max-w-full object-contain`} />
-              </div>
-              <span className="text-center text-[13px] font-medium leading-[1.3] text-ink">{z.name}</span>
-            </li>
-          ))}
-        </ul>
+        <FreeZoneMarquee className="mt-[14px]" />
       </Reveal>
     </section>
   );

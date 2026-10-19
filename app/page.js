@@ -1,4 +1,5 @@
 import Hero from '@/components/home/Hero';
+import FreeZoneStrip from '@/components/home/FreeZoneStrip';
 import StatsStrip from '@/components/home/StatsStrip';
 import AsFeaturedIn from '@/components/home/AsFeaturedIn';
 import Story from '@/components/home/Story';
@@ -17,6 +18,7 @@ export default function Home() {
   return (
     <div className="w-full">
       <Hero />
+      <FreeZoneStrip />
       <StatsStrip />
       <AsFeaturedIn />
       <Story />
