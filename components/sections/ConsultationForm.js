@@ -1,10 +1,12 @@
 'use client';
 
 import { useId, useState } from 'react';
+import { track } from '@vercel/analytics';
 import Icon from '../ui/Icon';
 import { BUTTON } from '../ui/Button';
 import { PRACTICES } from '@/content/catalog';
 import { SITE } from '@/content/site';
+import { attribution } from '../analytics/client';
 
 const FIELD_CLASS =
   'min-h-[44px] w-full rounded-[6px] border border-rule bg-soft px-[15px] py-[13px] text-[14px] text-blue transition-[border-color,background,box-shadow] duration-200 placeholder:text-slate-2 focus:border-brand focus:bg-white focus:shadow-[0_0_0_3px_rgba(219,20,28,.12)] max-md:min-h-[48px] max-md:px-[14px] max-md:py-[12px] max-md:text-[16px]';
@@ -37,8 +39,9 @@ function Field({ label, htmlFor, children }) {
 }
 
 /**
- * Enquiry form that posts to /api/enquiry. `defaultService` preselects the
- * dropdown on service pages. `compact` is the short sidebar version: name,
+ * Enquiry form that posts to /api/enquiry, with the visitor's analytics
+ * session attached so the lead in tmfs-admin shows where they came from.
+ * `defaultService` preselects the dropdown on service pages. `compact` is the short sidebar version: name,
  * email and phone only, stacked, with a full-width callback button.
  */
 export default function ConsultationForm({ defaultService = '', compact = false }) {
@@ -52,6 +55,7 @@ export default function ConsultationForm({ defaultService = '', compact = false 
     data.phone = `${data.dial} ${data.phone}`;
     delete data.dial;
     data.source = window.location.pathname;
+    Object.assign(data, attribution());
     setStatus('sending');
     try {
       const res = await fetch('/api/enquiry', {
@@ -60,6 +64,7 @@ export default function ConsultationForm({ defaultService = '', compact = false 
         body: JSON.stringify(data),
       });
       setStatus(res.ok ? 'sent' : 'error');
+      if (res.ok) track('Lead', { service: data.service || 'General' });
     } catch {
       setStatus('error');
     }

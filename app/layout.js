@@ -1,8 +1,11 @@
 import 'leaflet/dist/leaflet.css';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import Tracker from '@/components/analytics/Tracker';
 import { SITE } from '@/content/site';
 
 // Falls back to localhost during local dev; set NEXT_PUBLIC_SITE_URL to the
@@ -101,6 +104,9 @@ export default function RootLayout({ children }) {
         <Header />
         <main>{children}</main>
         <Footer />
+        <Tracker />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

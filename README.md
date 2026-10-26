@@ -37,4 +37,7 @@ Design tokens (brand colors, fonts, keyframe animations, the two custom nav brea
 
 - The Dubai locations map uses [Leaflet](https://leafletjs.com/) and is loaded client-only (`next/dynamic` with `ssr: false`) since it needs the browser DOM.
 - Photography (logo, hero image, property photos, article thumbnails) lives in `public/images/` — these were recovered from the original design file's embedded asset manifest, not stock placeholders.
-- The contact form simulates submission locally (shows a "Thanks — we have it" confirmation) — wire `onSubmit` in `components/Contact.js` to a real endpoint/CRM when ready.
+- Enquiries (`app/api/enquiry/route.js`) are emailed to the team over SMTP (nodemailer, `SMTP_*` + `ENQUIRY_TO`) and recorded as leads in **tmfs-admin**, the CRM and analytics app in the sibling `tmfs-admin/` project. Either path succeeding counts as delivered, so the site still emails leads if the admin is down.
+- `components/analytics/` is a small first-party tracker (pageviews, engaged time, phone / WhatsApp / email clicks, form starts). It posts to `app/api/track/route.js`, which adds Vercel geo headers and forwards to the admin. Without those headers (local dev) the admin takes the country from the browser's timezone. It sets no cookies; an anonymous id lives in `localStorage`. Visit `/?tm_ignore=1` once to exclude your own browser.
+- `@vercel/analytics` and `@vercel/speed-insights` are mounted in the root layout; their data stays in the Vercel dashboard (the admin uses the first-party tracker above).
+- Environment variables are listed in `.env.example`.
