@@ -36,7 +36,7 @@ const SECTIONS = [
   },
   {
     h: '8. Contact',
-    p: 'Questions about these terms can be sent to manager@timemachine.ae or +971 52 214 9086.',
+    p: 'Questions about these terms can be sent to info@timemachine.ae or +971 52 214 9086.',
   },
 ];
 

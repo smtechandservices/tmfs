@@ -10,8 +10,8 @@ export const SITE = {
   phone: '+971522149086',
   phoneDisplay: '+971 52 214 9086',
   whatsapp: 'https://wa.me/971522149086',
-  email: 'manager@timemachine.ae',
-  emailHref: 'mailto:manager@timemachine.ae?subject=TMFS%20Website',
+  email: 'info@timemachine.ae',
+  emailHref: 'mailto:info@timemachine.ae?subject=TMFS%20Website',
   address: 'Millennium Central Hotel, Al Asayel Street, Next to Dubai Mall',
   poBox: 'PO Box 8405, Dubai Central Post Office',
   socials: [
