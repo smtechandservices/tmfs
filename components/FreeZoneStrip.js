@@ -1,6 +1,6 @@
-import FreeZoneMarquee from '../FreeZoneMarquee';
+import FreeZoneMarquee from './FreeZoneMarquee';
 
-/** Free-zone logo band directly under the hero. */
+/** Free-zone logo band: under the home hero, and above the footer on every page. */
 export default function FreeZoneStrip() {
   return (
     <section aria-label="Free zones we file in directly" className="border-b border-rule bg-white pt-[36px] pb-[32px] max-md:pt-[28px] max-md:pb-[24px]">

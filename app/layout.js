@@ -4,6 +4,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import FreeZoneStrip from '@/components/FreeZoneStrip';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import Tracker from '@/components/analytics/Tracker';
 import { SITE } from '@/content/site';
@@ -103,6 +104,7 @@ export default function RootLayout({ children }) {
         <WhatsAppButton />
         <Header />
         <main>{children}</main>
+        <FreeZoneStrip />
         <Footer />
         <Tracker />
         <Analytics />
