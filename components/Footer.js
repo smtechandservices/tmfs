@@ -24,24 +24,24 @@ const ICONS = {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-line bg-cream text-ink">
+    <footer className="bg-blue text-white">
       <div className="mx-auto grid max-w-[1320px] grid-cols-1 gap-[clamp(28px,4vw,48px)] px-[20px] pt-[clamp(48px,7vw,84px)] pb-[36px] navp:grid-cols-2 navd:grid-cols-[1.4fr_repeat(4,1fr)]">
         <div>
           <a href="/" className="mb-[22px] inline-block">
             <Logo className="block h-[96px] w-[96px]" />
           </a>
-          <p className="mb-[20px] max-w-[40ch] text-[14px] leading-[1.65] text-muted">{FOOTER_BLURB}</p>
+          <p className="mb-[20px] max-w-[40ch] text-[14px] leading-[1.65] text-white/75">{FOOTER_BLURB}</p>
           <ul className="mb-[20px] flex flex-col gap-[8px]">
-            <li className="text-[14px] leading-[1.6] text-muted">
+            <li className="text-[14px] leading-[1.6] text-white/75">
               {SITE.address}
               <br />
               {SITE.poBox}
             </li>
             <li>
-              <a href={`tel:${SITE.phone}`} className="text-[15px] font-bold text-blue hover:text-brand">{SITE.phoneDisplay}</a>
+              <a href={`tel:${SITE.phone}`} className="text-[15px] font-bold text-white hover:text-white/75">{SITE.phoneDisplay}</a>
             </li>
             <li>
-              <a href={SITE.emailHref} className="text-[14px] text-ink hover:text-brand">{SITE.email}</a>
+              <a href={SITE.emailHref} className="text-[14px] text-white hover:text-white/75">{SITE.email}</a>
             </li>
           </ul>
           <div className="flex gap-[8px]">
@@ -63,11 +63,11 @@ export default function Footer() {
 
         {FOOTER_COLUMNS.map((col) => (
           <div key={col.title}>
-            <h4 className="mb-[16px] font-mono text-[10px] font-medium uppercase tracking-[.16em] text-muted-2">{col.title}</h4>
+            <h4 className="mb-[16px] font-mono text-[10px] font-medium uppercase tracking-[.16em] text-white/55">{col.title}</h4>
             <ul className="flex flex-col gap-[9px]">
               {col.items.map((l) => (
                 <li key={l.href}>
-                  <a href={l.href} className="text-[13.5px] text-ink hover:text-brand">{l.title}</a>
+                  <a href={l.href} className="text-[13.5px] text-white/85 hover:text-white">{l.title}</a>
                 </li>
               ))}
             </ul>
@@ -75,18 +75,18 @@ export default function Footer() {
         ))}
       </div>
 
-      <div className="mx-auto max-w-[1320px] border-t border-line px-[20px] pt-[22px] pb-[34px]">
+      <div className="mx-auto max-w-[1320px] border-t border-white/15 px-[20px] pt-[22px] pb-[34px]">
         <div className="mb-[16px] flex flex-wrap items-center justify-between gap-[14px]">
-          <span className="text-[13px] text-muted-2">© {SITE.since}–{new Date().getFullYear()} Time Machine Group | All rights reserved</span>
+          <span className="text-[13px] text-white/60">© {SITE.since}–{new Date().getFullYear()} Time Machine Group | All rights reserved</span>
           <ul className="flex gap-[18px]">
             {LEGAL_LINKS.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="text-[13px] text-ink hover:text-brand">{l.title}</a>
+                <a href={l.href} className="text-[13px] text-white/85 hover:text-white">{l.title}</a>
               </li>
             ))}
           </ul>
         </div>
-        <p className="max-w-[120ch] text-[11.5px] leading-[1.6] text-muted-2">{DISCLAIMER}</p>
+        <p className="max-w-[120ch] text-[11.5px] leading-[1.6] text-white/55">{DISCLAIMER}</p>
       </div>
     </footer>
   );
