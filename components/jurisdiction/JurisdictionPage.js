@@ -1,4 +1,4 @@
-import { Hero, Dateline, Sidebar, LeadBand, CtaCard } from './Shell';
+import { Hero, Sidebar, LeadBand, CtaCard } from './Shell';
 import {
   Intro,
   WhyZone,
@@ -38,9 +38,8 @@ export default function JurisdictionPage({ page, group, crumbs, overview }) {
   return (
     <div className="w-full bg-white text-[#333]">
       <Hero content={page.hero} crumbs={crumbs} />
-      <Dateline published={page.published} updated={page.updated} />
 
-      <div className="mx-auto grid max-w-[1320px] grid-cols-[minmax(0,1fr)_340px] items-start gap-[44px] px-[24px] max-[1024px]:block max-[480px]:px-[18px]">
+      <div className="mx-auto grid max-w-[1320px] grid-cols-[minmax(0,1fr)_340px] items-start gap-[44px] px-[24px] pt-[28px] max-[1024px]:block max-[480px]:px-[18px]">
         <div className="min-w-0">
           {page.intro && <Intro content={page.intro} />}
           {page.why && <WhyZone content={page.why} />}

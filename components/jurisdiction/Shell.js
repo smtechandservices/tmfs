@@ -3,8 +3,6 @@ import Button from '../ui/Button';
 import ConsultationForm from '../sections/ConsultationForm';
 import { SITE } from '@/content/site';
 
-const formatDate = (iso) => new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
-
 /** Breadcrumb trail plus BreadcrumbList structured data. The last crumb is the current page. */
 function Crumbs({ crumbs }) {
   const jsonLd = {
@@ -60,22 +58,6 @@ export function Hero({ content, crumbs }) {
         </ul>
       </div>
     </section>
-  );
-}
-
-export function Dateline({ published, updated }) {
-  return (
-    <p className="py-[18px] pb-[26px] text-center text-[13px] leading-[1.5] text-[#6b7280] max-[560px]:px-[16px] max-[560px]:pt-[14px] max-[560px]:pb-[20px] max-[560px]:text-[12px]">
-      Published{' '}
-      <time dateTime={published} className="font-semibold whitespace-nowrap text-[#374151]">
-        {formatDate(published)}
-      </time>
-      <span aria-hidden="true"> · </span>
-      Updated{' '}
-      <time dateTime={updated} className="font-semibold whitespace-nowrap text-[#374151]">
-        {formatDate(updated)}
-      </time>
-    </p>
   );
 }
 
