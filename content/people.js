@@ -4,21 +4,18 @@ export const TEAM = [
     name: 'Aman Kapoor',
     title: 'Manager',
     bio: 'With over 4 years of experience in business setup and banking consultancy.',
-    img: '/images/aman.jpg',
   },
   {
     initials: 'VK',
     name: 'Varinder Kumar',
     title: 'Finance Manager',
     bio: 'Finance Manager at Time Machine Financial Services. Streamlining Financial Processes and Enhancing Efficiency.',
-    img: '/images/varinder.jpg',
   },
   {
     initials: 'SA',
     name: 'Mrs. Shaza Musa Galis Adam',
     title: 'Legal Counsel',
     bio: 'Ms. Shaza holds the position of Legal Counsel. With a wealth of experience in legal matters.',
-    img: '/images/shaza.jpg',
   },
 ];
 

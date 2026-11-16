@@ -24,7 +24,9 @@ export default function Leadership({ content = LEADERSHIP, people = TEAM, id }) 
               className="group/lead relative aspect-[3/4] overflow-hidden rounded-t-[30px] bg-[linear-gradient(#f8fafd_0%,#e8eef6_50%,#d8e2ee_100%)] shadow-[0_4px_16px_rgba(10,37,64,.06),0_1px_3px_rgba(10,37,64,.04)] transition-[transform,box-shadow] duration-500 hover:-translate-y-[8px] hover:shadow-[0_24px_48px_rgba(10,37,64,.18),0_4px_12px_rgba(10,37,64,.08)]"
             >
               <div className="absolute inset-0 overflow-hidden after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-[55%] after:bg-[linear-gradient(transparent_0%,rgba(11,6,82,.25)_25%,rgba(11,6,82,.75)_55%,rgba(8,4,50,.96)_100%)] after:content-['']">
-                <img src={p.img} alt={`${p.name}, ${p.title} at TMFS`} className="h-full w-full object-cover object-[center_18%] transition-transform duration-700 group-hover/lead:scale-105" />
+                <span aria-hidden="true" className="absolute inset-x-0 top-[30%] text-center font-display text-[112px] leading-none font-bold tracking-[-.04em] text-blue/[.14] transition-transform duration-700 group-hover/lead:scale-105 max-[1100px]:text-[88px] max-md:top-[24%] max-md:text-[52px]">
+                  {p.initials}
+                </span>
               </div>
               <div className="absolute inset-x-[18px] bottom-[18px] z-[2] rounded-t-[18px] border border-white/[.18] bg-[rgba(16,9,110,.42)] px-[20px] pt-[18px] pb-[20px] text-white backdrop-blur-[6px] max-md:inset-x-[10px] max-md:bottom-[10px] max-md:px-[12px] max-md:py-[14px]">
                 <h3 className="mb-[8px] text-center text-[22px] leading-[1.18] font-bold tracking-[-.02em] text-white [text-shadow:0_2px_8px_rgba(0,0,0,.3)] max-md:text-[15px]">{p.name}</h3>
