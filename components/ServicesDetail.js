@@ -239,7 +239,7 @@ export default function ServicesDetail() {
               Book a free consultation
             </a>
             <a
-              href="https://wa.me/971522149086"
+              href="https://wa.me/971581427348"
               target="_blank"
               rel="noopener"
               className="flex min-h-[52px] items-center rounded-full bg-blue px-[28px] py-[15px] text-[15px] font-bold text-white hover:bg-brand hover:text-white"

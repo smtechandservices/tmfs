@@ -32,7 +32,7 @@ const SECTIONS = [
   },
   {
     h: '7. Contact',
-    p: 'Questions about this policy can be sent to info@timemachine.ae or +971 52 214 9086.',
+    p: 'Questions about this policy can be sent to info@timemachine.ae or +971 58 142 7348.',
   },
 ];
 
